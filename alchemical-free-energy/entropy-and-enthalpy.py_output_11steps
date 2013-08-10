@@ -1,0 +1,227 @@
+Reading data/3-methylindole-11steps//dhdl.0.xvg...
+Reading data/3-methylindole-11steps//dhdl.1.xvg...
+Reading data/3-methylindole-11steps//dhdl.2.xvg...
+Reading data/3-methylindole-11steps//dhdl.3.xvg...
+Reading data/3-methylindole-11steps//dhdl.4.xvg...
+Reading data/3-methylindole-11steps//dhdl.5.xvg...
+Reading data/3-methylindole-11steps//dhdl.6.xvg...
+Reading data/3-methylindole-11steps//dhdl.7.xvg...
+Reading data/3-methylindole-11steps//dhdl.8.xvg...
+Reading data/3-methylindole-11steps//dhdl.9.xvg...
+Reading data/3-methylindole-11steps//dhdl.10.xvg...
+Correlation times:
+[ 1.08454527  1.          1.08515973  2.07670271  1.          1.          1.
+  1.          1.00908466  1.22057167  1.        ]
+
+number of uncorrelated samples:
+[370 401 370 193 401 401 401 401 397 329 401]
+
+Solving for MBAR estimate...
+Using embedded C++ helper code.
+K = 11, L = 11, N_max = 401, total samples = 4065
+N_k = 
+[370 401 370 193 401 401 401 401 397 329 401]
+Initializing free energies to zero.
+relative_change =        1.000
+iteration     0 : DeltaF =            5.257
+relative_change =        0.000
+iteration     1 : DeltaF =            5.258
+relative_change =        0.000
+Convergence achieved.
+Converged to tolerance of 4.787230e-07 in 2 iterations (5 function evaluations)
+DeltaF =    5.258
+relative_change =        1.000
+iteration     0 : DeltaF =            5.458
+relative_change =        0.001
+iteration     1 : DeltaF =            5.465
+relative_change =        0.000
+Convergence achieved.
+Converged to tolerance of 6.185281e-06 in 2 iterations (5 function evaluations)
+DeltaF =    5.465
+relative_change =        1.000
+iteration     0 : DeltaF =            4.967
+relative_change =        0.007
+iteration     1 : DeltaF =            4.934
+relative_change =        0.000
+Convergence achieved.
+Converged to tolerance of 4.245149e-05 in 2 iterations (5 function evaluations)
+DeltaF =    4.933
+relative_change =        1.000
+iteration     0 : DeltaF =           -1.951
+relative_change =        0.012
+iteration     1 : DeltaF =           -1.975
+relative_change =        0.000
+Convergence achieved.
+Converged to tolerance of 1.869626e-04 in 2 iterations (5 function evaluations)
+DeltaF =   -1.975
+relative_change =        1.000
+iteration     0 : DeltaF =            1.489
+relative_change =        0.068
+iteration     1 : DeltaF =            1.395
+relative_change =        0.004
+iteration     2 : DeltaF =            1.389
+relative_change =        0.000
+Convergence achieved.
+Converged to tolerance of 2.915501e-04 in 3 iterations (6 function evaluations)
+DeltaF =    1.389
+relative_change =        1.000
+iteration     0 : DeltaF =            0.174
+relative_change =        0.218
+iteration     1 : DeltaF =            0.222
+relative_change =        0.003
+iteration     2 : DeltaF =            0.223
+relative_change =        0.000
+Convergence achieved.
+Converged to tolerance of 4.267252e-05 in 3 iterations (6 function evaluations)
+DeltaF =    0.223
+relative_change =        1.000
+iteration     0 : DeltaF =           -1.646
+relative_change =        0.035
+iteration     1 : DeltaF =           -1.590
+relative_change =        0.000
+Convergence achieved.
+Converged to tolerance of 4.277347e-04 in 2 iterations (5 function evaluations)
+DeltaF =   -1.589
+relative_change =        1.000
+iteration     0 : DeltaF =           -3.449
+relative_change =        0.008
+iteration     1 : DeltaF =           -3.479
+relative_change =        0.000
+Convergence achieved.
+Converged to tolerance of 1.025189e-04 in 2 iterations (5 function evaluations)
+DeltaF =   -3.479
+relative_change =        1.000
+iteration     0 : DeltaF =           -1.292
+relative_change =        0.000
+iteration     1 : DeltaF =           -1.292
+relative_change =        0.000
+Convergence achieved.
+Converged to tolerance of 5.597906e-11 in 2 iterations (5 function evaluations)
+DeltaF =   -1.292
+relative_change =        1.000
+iteration     0 : DeltaF =           -0.829
+relative_change =        0.000
+iteration     1 : DeltaF =           -0.829
+relative_change =        0.000
+Convergence achieved.
+Converged to tolerance of 2.548652e-10 in 2 iterations (5 function evaluations)
+DeltaF =   -0.829
+initialized MBAR with BAR with values:
+f_k = 
+[  0.           5.2578585   10.7232382   15.65660513  13.68165797
+  15.07018056  15.29314718  13.70397869  10.22483063   8.9327814
+   8.1036378 ]
+Determining dimensionless free energies by Newton-Raphson iteration.
+There are 11 states with samples.
+Newton-Raphson iteration 0
+current f_k for states with samples =
+  0.0000 
+  5.2582 
+ 10.7233 
+ 15.6506 
+ 13.6725 
+ 15.0601 
+ 15.2822 
+ 13.6917 
+ 10.2081 
+  8.9171 
+  8.0895 
+relative max_delta = 1.066027e-03
+Newton-Raphson iteration 1
+current f_k for states with samples =
+  0.0000 
+  5.2615 
+ 10.7239 
+ 15.5968 
+ 13.5896 
+ 14.9691 
+ 15.1834 
+ 13.5815 
+ 10.0579 
+  8.7755 
+  7.9626 
+relative max_delta = 9.631120e-03
+Newton-Raphson iteration 2
+current f_k for states with samples =
+  0.0000 
+  5.2615 
+ 10.7238 
+ 15.5969 
+ 13.5894 
+ 14.9689 
+ 15.1832 
+ 13.5813 
+ 10.0577 
+  8.7754 
+  7.9625 
+relative max_delta = 1.612579e-05
+Newton-Raphson iteration 3
+current f_k for states with samples =
+  0.0000 
+  5.2615 
+ 10.7238 
+ 15.5969 
+ 13.5894 
+ 14.9689 
+ 15.1832 
+ 13.5813 
+ 10.0577 
+  8.7754 
+  7.9625 
+relative max_delta = 3.797559e-10
+Newton-Raphson iteration 4
+current f_k for states with samples =
+  0.0000 
+  5.2615 
+ 10.7238 
+ 15.5969 
+ 13.5894 
+ 14.9689 
+ 15.1832 
+ 13.5813 
+ 10.0577 
+  8.7754 
+  7.9625 
+relative max_delta = 1.775572e-12
+Converged to tolerance of 1.775572e-12 in 5 Newton-Raphson iterations.
+Recomputing all free energies...
+current f_k for all states =
+  0.0000 
+  5.2615 
+ 10.7238 
+ 15.5969 
+ 13.5894 
+ 14.9689 
+ 15.1832 
+ 13.5813 
+ 10.0577 
+  8.7754 
+  7.9625 
+Final dimensionless free energies
+f_k = 
+[  0.           5.26149055  10.72382421  15.59689152  13.58942899
+  14.96893246  15.18320813  13.5812653   10.05768013   8.77537326
+   7.96245667]
+Computing normalized weights...
+Estimating entropic and enthalpic contributions...
+
+Free energy difference (dG) between states 0 and 10
+ 7.962 +/-  0.271 kT
+19.734 +/-  0.673 kJ*mol^-1
+
+Enthalpic contribution (dH) by endpoint method
+59.155 +/-  5.142 kT
+146.607 +/- 12.744 kJ*mol^-1
+Entropic contribution (T*dS) by endpoint method
+51.193 +/-  5.149 kT
+425.749 +/- 42.824 J*mol^-1*K^-1
+
+Enthalpic contribution (dH) by MBAR
+56.609 +/-  4.251 kT
+140.297 +/- 10.536 kJ*mol^-1
+Entropic contribution (T*dS) by MBAR
+48.647 +/-  4.258 kT
+Entropy (dS) by MBAR
+404.575 +/- 35.415 J*mol^-1*K^-1
+
+Note that the enthalpic and entropic contributions have correlated errors, since dG = dH - T*dS.

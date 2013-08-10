@@ -1,0 +1,65 @@
+Script: alchemical-gromacs.py
+
+An illustration of MBAR applied to alchemical free energy
+calculations, and comparison of MBAR to a number of other free energy
+methods described in Paliwal and Shirts, J. Chem. Theory Comp, v. 7,
+4115-4134 (2011).
+
+The dataset contained in the data/ directory is obtained from a series
+of alchemical intermediates for computing the hydration free energy of
+3-methylindole using a beta version of Gromacs 4.6.  3-methylindole is
+represented by its OPLS parameters and water by TIP3P.  The paramters
+are from Shirts and Pande. J. Chem. Phys. 122, 134508 (2005).
+
+Electronic and van der Waals interactions are turned off in the same
+simulation, over 38 total states.  Files used to generate the data are
+included in the directory inputfiles/3-methylindole-38steps. The
+placeholder FEP_STATE is replaced with the integer 0 to 37 to produce
+the 38 input files.
+
+To run the files for a sparser lambda spacing (11 total states),
+invoke specifying the data directory to use with the command:
+
+python alchemical-gromacs.py -d data/3-methylindole-11steps -p dhdl -t 298
+
+For the denser lambda spacing with 38 total states, run
+python alchemical-gromacs.py -d data/3-methylindole-38steps -p dhdl -t 298
+
+Note that all these files were generated in gromacs with calc-lambda-neighbors = -1, where one calculates 
+the energy at all the other states.
+
+One can also run alchemical-gromacs.py on files that include just the
+states that are +1/-1 states from the intermediate simulated at.
+MBAR, however, cannot be run on this restricted data set.  The
+difference between these two files is automatically recognized.  For
+an example, try:
+
+python alchemical-gromacs.py -d data/3-methylindole-11steps-neighbors -p dhdl -t 298
+
+Note how all the output results are the same EXCEPT for MBAR, which
+must be omitted from the calculation.
+
+Sample output for both cases is provided in the files:
+alchemical-gromacs.py_output_11steps
+alchemical-gromacs.py_output_38steps
+alchemical-gromacs.py_output_11steps_neighbors
+
+Help for alchemical_gromacs.py (obtained with 'python alchemical_gromacs.py') is:
+
+Options:
+  -h, --help            show this help message and exit
+  -d DIR, --dir=DIR     Directory in which data files are stored. Default:
+                        Current dir.
+  -f, --forwrev         Plotting the free energy change as a function of time
+                        in both directions. Default: False.
+  -p PREFIX, --prefix=PREFIX
+                        Prefix for datafile sets, i.e. prod (default).
+  -s EQUILTIME, --skiptime=EQUILTIME
+                        Discard data prior to this specified time as
+                        'equilibration' data. Units picoseconds. Default: 100
+                        ps.
+  -t TEMPERATURE, --temperature=TEMPERATURE
+                        Temperature in K. Default: 298 K.
+  -v, --verbose         Verbose option for BAR and MBAR. Default: False.
+  -u UNITS, --units=UNITS
+                        Units to report energies, 'kJ' vs. 'kcal'. Default: kJ

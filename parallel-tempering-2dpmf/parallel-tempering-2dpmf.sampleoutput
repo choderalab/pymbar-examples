@@ -1,0 +1,1933 @@
+Reading potential energies...
+10000 lines read, processing 10000 snapshots
+Reading phi, psi trajectories...
+k = 0, 10000 phi lines read, 10000 psi lines read
+k = 1, 10000 phi lines read, 10000 psi lines read
+k = 2, 10000 phi lines read, 10000 psi lines read
+k = 3, 10000 phi lines read, 10000 psi lines read
+k = 4, 10000 phi lines read, 10000 psi lines read
+k = 5, 10000 phi lines read, 10000 psi lines read
+k = 6, 10000 phi lines read, 10000 psi lines read
+k = 7, 10000 phi lines read, 10000 psi lines read
+k = 8, 10000 phi lines read, 10000 psi lines read
+k = 9, 10000 phi lines read, 10000 psi lines read
+k = 10, 10000 phi lines read, 10000 psi lines read
+k = 11, 10000 phi lines read, 10000 psi lines read
+k = 12, 10000 phi lines read, 10000 psi lines read
+k = 13, 10000 phi lines read, 10000 psi lines read
+k = 14, 10000 phi lines read, 10000 psi lines read
+k = 15, 10000 phi lines read, 10000 psi lines read
+k = 16, 10000 phi lines read, 10000 psi lines read
+k = 17, 10000 phi lines read, 10000 psi lines read
+k = 18, 10000 phi lines read, 10000 psi lines read
+k = 19, 10000 phi lines read, 10000 psi lines read
+k = 20, 10000 phi lines read, 10000 psi lines read
+k = 21, 10000 phi lines read, 10000 psi lines read
+k = 22, 10000 phi lines read, 10000 psi lines read
+k = 23, 10000 phi lines read, 10000 psi lines read
+k = 24, 10000 phi lines read, 10000 psi lines read
+k = 25, 10000 phi lines read, 10000 psi lines read
+k = 26, 10000 phi lines read, 10000 psi lines read
+k = 27, 10000 phi lines read, 10000 psi lines read
+k = 28, 10000 phi lines read, 10000 psi lines read
+k = 29, 10000 phi lines read, 10000 psi lines read
+k = 30, 10000 phi lines read, 10000 psi lines read
+k = 31, 10000 phi lines read, 10000 psi lines read
+k = 32, 10000 phi lines read, 10000 psi lines read
+k = 33, 10000 phi lines read, 10000 psi lines read
+k = 34, 10000 phi lines read, 10000 psi lines read
+k = 35, 10000 phi lines read, 10000 psi lines read
+k = 36, 10000 phi lines read, 10000 psi lines read
+k = 37, 10000 phi lines read, 10000 psi lines read
+k = 38, 10000 phi lines read, 10000 psi lines read
+k = 39, 10000 phi lines read, 10000 psi lines read
+Reading replica indices...
+Replica indices for 500 iterations processed.
+Permuting data by replica...
+Computing statistical inefficiencies...
+g_cos(phi) = 5.6
+g_sin(phi) = 11.2
+g_cos(psi) = 182.9
+g_sin(psi) = 52.6
+Subsampling data...
+Using g = 182.9 to obtain 55 uncorrelated samples per temperature
+55 uncorrelated samples per temperature
+Computing reduced potential energies...
+Binning torsions...
+64 bins were populated:
+bin     0 (-162.0, -162.0)           55 conformations
+bin     1 (-162.0, -126.0)            7 conformations
+bin     2 (-162.0,  -90.0)            9 conformations
+bin     3 (-162.0,  -54.0)           25 conformations
+bin     4 (-162.0,  -18.0)            5 conformations
+bin     5 (-162.0,   18.0)            6 conformations
+bin     6 (-162.0,   54.0)           10 conformations
+bin     7 (-162.0,   90.0)           34 conformations
+bin     8 (-162.0,  126.0)          127 conformations
+bin     9 (-162.0,  162.0)          207 conformations
+bin    10 (-126.0, -162.0)           65 conformations
+bin    11 (-126.0, -126.0)           21 conformations
+bin    12 (-126.0,  -90.0)           26 conformations
+bin    13 (-126.0,  -54.0)           42 conformations
+bin    14 (-126.0,  -18.0)           17 conformations
+bin    15 (-126.0,   18.0)           11 conformations
+bin    16 (-126.0,   54.0)           16 conformations
+bin    17 (-126.0,   90.0)           44 conformations
+bin    18 (-126.0,  126.0)          162 conformations
+bin    19 (-126.0,  162.0)          215 conformations
+bin    20 ( -90.0, -162.0)           39 conformations
+bin    21 ( -90.0, -126.0)            7 conformations
+bin    22 ( -90.0,  -90.0)           15 conformations
+bin    23 ( -90.0,  -54.0)           47 conformations
+bin    24 ( -90.0,  -18.0)           23 conformations
+bin    25 ( -90.0,   18.0)            8 conformations
+bin    26 ( -90.0,   54.0)           12 conformations
+bin    27 ( -90.0,   90.0)           50 conformations
+bin    28 ( -90.0,  126.0)          144 conformations
+bin    29 ( -90.0,  162.0)          169 conformations
+bin    30 ( -54.0, -162.0)            9 conformations
+bin    31 ( -54.0, -126.0)            2 conformations
+bin    32 ( -54.0,  -90.0)            6 conformations
+bin    33 ( -54.0,  -54.0)           79 conformations
+bin    34 ( -54.0,  -18.0)           18 conformations
+bin    35 ( -54.0,   18.0)            2 conformations
+bin    36 ( -54.0,   54.0)            8 conformations
+bin    37 ( -54.0,   90.0)           34 conformations
+bin    38 ( -54.0,  126.0)          203 conformations
+bin    39 ( -54.0,  162.0)          169 conformations
+bin    40 ( -18.0,  -90.0)            1 conformations
+bin    41 ( -18.0,  -54.0)            3 conformations
+bin    42 ( -18.0,  126.0)            9 conformations
+bin    43 ( -18.0,  162.0)            2 conformations
+bin    44 (  18.0,  -90.0)            2 conformations
+bin    45 (  18.0,   18.0)            1 conformations
+bin    46 (  18.0,   54.0)            1 conformations
+bin    47 (  54.0, -162.0)            4 conformations
+bin    48 (  54.0, -126.0)            5 conformations
+bin    49 (  54.0,  -90.0)            2 conformations
+bin    50 (  54.0,  -54.0)            3 conformations
+bin    51 (  54.0,   54.0)            5 conformations
+bin    52 (  54.0,   90.0)            1 conformations
+bin    53 (  90.0, -162.0)            1 conformations
+bin    54 (  90.0, -126.0)            1 conformations
+bin    55 (  90.0,  -90.0)            1 conformations
+bin    56 (  90.0,  -18.0)            1 conformations
+bin    57 ( 126.0, -162.0)            1 conformations
+bin    58 ( 126.0,  -90.0)            1 conformations
+bin    59 ( 126.0,  -54.0)            1 conformations
+bin    60 ( 126.0,  126.0)            1 conformations
+bin    61 ( 162.0,   90.0)            1 conformations
+bin    62 ( 162.0,  126.0)            1 conformations
+bin    63 ( 162.0,  162.0)            3 conformations
+Using WHAM to generate histogram-based initial guess of dimensionless free energies f_k...
+Bin width is 13.204313 energy units to achieve nbins = 100
+iteration        0 relative max_delta = 1.000000e+00
+iteration        1 relative max_delta = 3.643216e-03
+iteration        2 relative max_delta = 3.564631e-03
+iteration        3 relative max_delta = 3.492226e-03
+iteration        4 relative max_delta = 3.420042e-03
+iteration        5 relative max_delta = 3.344494e-03
+iteration        6 relative max_delta = 3.264399e-03
+iteration        7 relative max_delta = 3.179259e-03
+iteration        8 relative max_delta = 3.087415e-03
+iteration        9 relative max_delta = 2.986351e-03
+iteration       10 relative max_delta = 2.874228e-03
+iteration       11 relative max_delta = 2.753325e-03
+iteration       12 relative max_delta = 2.631625e-03
+iteration       13 relative max_delta = 2.518825e-03
+iteration       14 relative max_delta = 2.419984e-03
+iteration       15 relative max_delta = 2.334146e-03
+iteration       16 relative max_delta = 2.257666e-03
+iteration       17 relative max_delta = 2.187293e-03
+iteration       18 relative max_delta = 2.121134e-03
+iteration       19 relative max_delta = 2.058395e-03
+iteration       20 relative max_delta = 1.998846e-03
+iteration       21 relative max_delta = 1.942462e-03
+iteration       22 relative max_delta = 1.889244e-03
+iteration       23 relative max_delta = 1.839146e-03
+iteration       24 relative max_delta = 1.792065e-03
+iteration       25 relative max_delta = 1.747845e-03
+iteration       26 relative max_delta = 1.706293e-03
+iteration       27 relative max_delta = 1.667190e-03
+iteration       28 relative max_delta = 1.630313e-03
+iteration       29 relative max_delta = 1.595446e-03
+iteration       30 relative max_delta = 1.562382e-03
+iteration       31 relative max_delta = 1.530926e-03
+iteration       32 relative max_delta = 1.500905e-03
+iteration       33 relative max_delta = 1.472168e-03
+iteration       34 relative max_delta = 1.444596e-03
+iteration       35 relative max_delta = 1.418097e-03
+iteration       36 relative max_delta = 1.392602e-03
+iteration       37 relative max_delta = 1.368057e-03
+iteration       38 relative max_delta = 1.344419e-03
+iteration       39 relative max_delta = 1.321648e-03
+iteration       40 relative max_delta = 1.299708e-03
+iteration       41 relative max_delta = 1.278561e-03
+iteration       42 relative max_delta = 1.258171e-03
+iteration       43 relative max_delta = 1.238500e-03
+iteration       44 relative max_delta = 1.219509e-03
+iteration       45 relative max_delta = 1.201161e-03
+iteration       46 relative max_delta = 1.183415e-03
+iteration       47 relative max_delta = 1.166236e-03
+iteration       48 relative max_delta = 1.149586e-03
+iteration       49 relative max_delta = 1.133432e-03
+iteration       50 relative max_delta = 1.117746e-03
+iteration       51 relative max_delta = 1.102498e-03
+iteration       52 relative max_delta = 1.087666e-03
+iteration       53 relative max_delta = 1.073226e-03
+iteration       54 relative max_delta = 1.059161e-03
+iteration       55 relative max_delta = 1.045452e-03
+iteration       56 relative max_delta = 1.032083e-03
+iteration       57 relative max_delta = 1.019040e-03
+iteration       58 relative max_delta = 1.006307e-03
+iteration       59 relative max_delta = 9.938707e-04
+iteration       60 relative max_delta = 9.817182e-04
+iteration       61 relative max_delta = 9.698360e-04
+iteration       62 relative max_delta = 9.582113e-04
+iteration       63 relative max_delta = 9.468317e-04
+iteration       64 relative max_delta = 9.356855e-04
+iteration       65 relative max_delta = 9.247622e-04
+iteration       66 relative max_delta = 9.140522e-04
+iteration       67 relative max_delta = 9.035473e-04
+iteration       68 relative max_delta = 8.932401e-04
+iteration       69 relative max_delta = 8.831247e-04
+iteration       70 relative max_delta = 8.731956e-04
+iteration       71 relative max_delta = 8.634483e-04
+iteration       72 relative max_delta = 8.538785e-04
+iteration       73 relative max_delta = 8.444822e-04
+iteration       74 relative max_delta = 8.352554e-04
+iteration       75 relative max_delta = 8.261940e-04
+iteration       76 relative max_delta = 8.172937e-04
+iteration       77 relative max_delta = 8.085502e-04
+iteration       78 relative max_delta = 7.999588e-04
+iteration       79 relative max_delta = 7.915148e-04
+iteration       80 relative max_delta = 7.832135e-04
+iteration       81 relative max_delta = 7.750502e-04
+iteration       82 relative max_delta = 7.670202e-04
+iteration       83 relative max_delta = 7.591192e-04
+iteration       84 relative max_delta = 7.513428e-04
+iteration       85 relative max_delta = 7.436869e-04
+iteration       86 relative max_delta = 7.361475e-04
+iteration       87 relative max_delta = 7.287209e-04
+iteration       88 relative max_delta = 7.214034e-04
+iteration       89 relative max_delta = 7.141916e-04
+iteration       90 relative max_delta = 7.070821e-04
+iteration       91 relative max_delta = 7.000718e-04
+iteration       92 relative max_delta = 6.931578e-04
+iteration       93 relative max_delta = 6.863373e-04
+iteration       94 relative max_delta = 6.796078e-04
+iteration       95 relative max_delta = 6.729668e-04
+iteration       96 relative max_delta = 6.664122e-04
+iteration       97 relative max_delta = 6.599421e-04
+iteration       98 relative max_delta = 6.535547e-04
+iteration       99 relative max_delta = 6.472483e-04
+iteration      100 relative max_delta = 6.410214e-04
+iteration      101 relative max_delta = 6.348726e-04
+iteration      102 relative max_delta = 6.288006e-04
+iteration      103 relative max_delta = 6.228039e-04
+iteration      104 relative max_delta = 6.168814e-04
+iteration      105 relative max_delta = 6.110318e-04
+iteration      106 relative max_delta = 6.052538e-04
+iteration      107 relative max_delta = 5.995462e-04
+iteration      108 relative max_delta = 5.939078e-04
+iteration      109 relative max_delta = 5.883373e-04
+iteration      110 relative max_delta = 5.828335e-04
+iteration      111 relative max_delta = 5.773953e-04
+iteration      112 relative max_delta = 5.720215e-04
+iteration      113 relative max_delta = 5.667109e-04
+iteration      114 relative max_delta = 5.614624e-04
+iteration      115 relative max_delta = 5.562750e-04
+iteration      116 relative max_delta = 5.511474e-04
+iteration      117 relative max_delta = 5.460786e-04
+iteration      118 relative max_delta = 5.410677e-04
+iteration      119 relative max_delta = 5.361134e-04
+iteration      120 relative max_delta = 5.312149e-04
+iteration      121 relative max_delta = 5.263711e-04
+iteration      122 relative max_delta = 5.215811e-04
+iteration      123 relative max_delta = 5.168440e-04
+iteration      124 relative max_delta = 5.121589e-04
+iteration      125 relative max_delta = 5.075248e-04
+iteration      126 relative max_delta = 5.029411e-04
+iteration      127 relative max_delta = 4.984068e-04
+iteration      128 relative max_delta = 4.939212e-04
+iteration      129 relative max_delta = 4.894835e-04
+iteration      130 relative max_delta = 4.850931e-04
+iteration      131 relative max_delta = 4.807492e-04
+iteration      132 relative max_delta = 4.764511e-04
+iteration      133 relative max_delta = 4.721982e-04
+iteration      134 relative max_delta = 4.679897e-04
+iteration      135 relative max_delta = 4.638251e-04
+iteration      136 relative max_delta = 4.597037e-04
+iteration      137 relative max_delta = 4.556249e-04
+iteration      138 relative max_delta = 4.515881e-04
+iteration      139 relative max_delta = 4.475926e-04
+iteration      140 relative max_delta = 4.436380e-04
+iteration      141 relative max_delta = 4.397237e-04
+iteration      142 relative max_delta = 4.358490e-04
+iteration      143 relative max_delta = 4.320134e-04
+iteration      144 relative max_delta = 4.282165e-04
+iteration      145 relative max_delta = 4.244576e-04
+iteration      146 relative max_delta = 4.207363e-04
+iteration      147 relative max_delta = 4.170520e-04
+iteration      148 relative max_delta = 4.134043e-04
+iteration      149 relative max_delta = 4.097927e-04
+iteration      150 relative max_delta = 4.062166e-04
+iteration      151 relative max_delta = 4.026757e-04
+iteration      152 relative max_delta = 3.991695e-04
+iteration      153 relative max_delta = 3.956975e-04
+iteration      154 relative max_delta = 3.922592e-04
+iteration      155 relative max_delta = 3.888544e-04
+iteration      156 relative max_delta = 3.854825e-04
+iteration      157 relative max_delta = 3.821431e-04
+iteration      158 relative max_delta = 3.788359e-04
+iteration      159 relative max_delta = 3.755604e-04
+iteration      160 relative max_delta = 3.723163e-04
+iteration      161 relative max_delta = 3.691032e-04
+iteration      162 relative max_delta = 3.659207e-04
+iteration      163 relative max_delta = 3.627685e-04
+iteration      164 relative max_delta = 3.596462e-04
+iteration      165 relative max_delta = 3.565535e-04
+iteration      166 relative max_delta = 3.534899e-04
+iteration      167 relative max_delta = 3.504553e-04
+iteration      168 relative max_delta = 3.474492e-04
+iteration      169 relative max_delta = 3.444713e-04
+iteration      170 relative max_delta = 3.415213e-04
+iteration      171 relative max_delta = 3.385989e-04
+iteration      172 relative max_delta = 3.357038e-04
+iteration      173 relative max_delta = 3.328356e-04
+iteration      174 relative max_delta = 3.299940e-04
+iteration      175 relative max_delta = 3.271788e-04
+iteration      176 relative max_delta = 3.243896e-04
+iteration      177 relative max_delta = 3.216261e-04
+iteration      178 relative max_delta = 3.188881e-04
+iteration      179 relative max_delta = 3.161752e-04
+iteration      180 relative max_delta = 3.134872e-04
+iteration      181 relative max_delta = 3.108238e-04
+iteration      182 relative max_delta = 3.081847e-04
+iteration      183 relative max_delta = 3.055697e-04
+iteration      184 relative max_delta = 3.029785e-04
+iteration      185 relative max_delta = 3.004107e-04
+iteration      186 relative max_delta = 2.978663e-04
+iteration      187 relative max_delta = 2.953448e-04
+iteration      188 relative max_delta = 2.928461e-04
+iteration      189 relative max_delta = 2.903698e-04
+iteration      190 relative max_delta = 2.879159e-04
+iteration      191 relative max_delta = 2.854839e-04
+iteration      192 relative max_delta = 2.830738e-04
+iteration      193 relative max_delta = 2.806852e-04
+iteration      194 relative max_delta = 2.783180e-04
+iteration      195 relative max_delta = 2.759718e-04
+iteration      196 relative max_delta = 2.736466e-04
+iteration      197 relative max_delta = 2.713420e-04
+iteration      198 relative max_delta = 2.690579e-04
+iteration      199 relative max_delta = 2.667941e-04
+iteration      200 relative max_delta = 2.645503e-04
+iteration      201 relative max_delta = 2.623263e-04
+iteration      202 relative max_delta = 2.601220e-04
+iteration      203 relative max_delta = 2.579372e-04
+iteration      204 relative max_delta = 2.557716e-04
+iteration      205 relative max_delta = 2.536251e-04
+iteration      206 relative max_delta = 2.514974e-04
+iteration      207 relative max_delta = 2.493885e-04
+iteration      208 relative max_delta = 2.472980e-04
+iteration      209 relative max_delta = 2.452259e-04
+iteration      210 relative max_delta = 2.431719e-04
+iteration      211 relative max_delta = 2.411359e-04
+iteration      212 relative max_delta = 2.391176e-04
+iteration      213 relative max_delta = 2.371170e-04
+iteration      214 relative max_delta = 2.351338e-04
+iteration      215 relative max_delta = 2.331679e-04
+iteration      216 relative max_delta = 2.312191e-04
+iteration      217 relative max_delta = 2.292872e-04
+iteration      218 relative max_delta = 2.273721e-04
+iteration      219 relative max_delta = 2.254736e-04
+iteration      220 relative max_delta = 2.235915e-04
+iteration      221 relative max_delta = 2.217258e-04
+iteration      222 relative max_delta = 2.198761e-04
+iteration      223 relative max_delta = 2.180425e-04
+iteration      224 relative max_delta = 2.162246e-04
+iteration      225 relative max_delta = 2.144225e-04
+iteration      226 relative max_delta = 2.126358e-04
+iteration      227 relative max_delta = 2.108645e-04
+iteration      228 relative max_delta = 2.091085e-04
+iteration      229 relative max_delta = 2.073675e-04
+iteration      230 relative max_delta = 2.056415e-04
+iteration      231 relative max_delta = 2.039303e-04
+iteration      232 relative max_delta = 2.022337e-04
+iteration      233 relative max_delta = 2.005516e-04
+iteration      234 relative max_delta = 1.988840e-04
+iteration      235 relative max_delta = 1.972305e-04
+iteration      236 relative max_delta = 1.955912e-04
+iteration      237 relative max_delta = 1.939659e-04
+iteration      238 relative max_delta = 1.923545e-04
+iteration      239 relative max_delta = 1.907567e-04
+iteration      240 relative max_delta = 1.891726e-04
+iteration      241 relative max_delta = 1.876019e-04
+iteration      242 relative max_delta = 1.860446e-04
+iteration      243 relative max_delta = 1.845005e-04
+iteration      244 relative max_delta = 1.829695e-04
+iteration      245 relative max_delta = 1.814515e-04
+iteration      246 relative max_delta = 1.799464e-04
+iteration      247 relative max_delta = 1.784540e-04
+iteration      248 relative max_delta = 1.769743e-04
+iteration      249 relative max_delta = 1.755071e-04
+iteration      250 relative max_delta = 1.740523e-04
+iteration      251 relative max_delta = 1.726098e-04
+iteration      252 relative max_delta = 1.711795e-04
+iteration      253 relative max_delta = 1.697612e-04
+iteration      254 relative max_delta = 1.683549e-04
+iteration      255 relative max_delta = 1.669605e-04
+iteration      256 relative max_delta = 1.655778e-04
+iteration      257 relative max_delta = 1.642068e-04
+iteration      258 relative max_delta = 1.628473e-04
+iteration      259 relative max_delta = 1.614993e-04
+iteration      260 relative max_delta = 1.601626e-04
+iteration      261 relative max_delta = 1.588372e-04
+iteration      262 relative max_delta = 1.575228e-04
+iteration      263 relative max_delta = 1.562196e-04
+iteration      264 relative max_delta = 1.549272e-04
+iteration      265 relative max_delta = 1.536457e-04
+iteration      266 relative max_delta = 1.523750e-04
+iteration      267 relative max_delta = 1.511149e-04
+iteration      268 relative max_delta = 1.498654e-04
+iteration      269 relative max_delta = 1.486263e-04
+iteration      270 relative max_delta = 1.473976e-04
+iteration      271 relative max_delta = 1.461792e-04
+iteration      272 relative max_delta = 1.449710e-04
+iteration      273 relative max_delta = 1.437729e-04
+iteration      274 relative max_delta = 1.425848e-04
+iteration      275 relative max_delta = 1.414066e-04
+iteration      276 relative max_delta = 1.402383e-04
+iteration      277 relative max_delta = 1.390797e-04
+iteration      278 relative max_delta = 1.379308e-04
+iteration      279 relative max_delta = 1.367915e-04
+iteration      280 relative max_delta = 1.356617e-04
+iteration      281 relative max_delta = 1.345413e-04
+iteration      282 relative max_delta = 1.334303e-04
+iteration      283 relative max_delta = 1.323285e-04
+iteration      284 relative max_delta = 1.312359e-04
+iteration      285 relative max_delta = 1.301524e-04
+iteration      286 relative max_delta = 1.290779e-04
+iteration      287 relative max_delta = 1.280124e-04
+iteration      288 relative max_delta = 1.269557e-04
+iteration      289 relative max_delta = 1.259078e-04
+iteration      290 relative max_delta = 1.248686e-04
+iteration      291 relative max_delta = 1.238381e-04
+iteration      292 relative max_delta = 1.228161e-04
+iteration      293 relative max_delta = 1.218026e-04
+iteration      294 relative max_delta = 1.207976e-04
+iteration      295 relative max_delta = 1.198009e-04
+iteration      296 relative max_delta = 1.188124e-04
+iteration      297 relative max_delta = 1.178322e-04
+iteration      298 relative max_delta = 1.168601e-04
+iteration      299 relative max_delta = 1.158961e-04
+iteration      300 relative max_delta = 1.149400e-04
+iteration      301 relative max_delta = 1.139919e-04
+iteration      302 relative max_delta = 1.130517e-04
+iteration      303 relative max_delta = 1.121192e-04
+iteration      304 relative max_delta = 1.111945e-04
+iteration      305 relative max_delta = 1.102774e-04
+iteration      306 relative max_delta = 1.093680e-04
+iteration      307 relative max_delta = 1.084660e-04
+iteration      308 relative max_delta = 1.075716e-04
+iteration      309 relative max_delta = 1.066845e-04
+iteration      310 relative max_delta = 1.058048e-04
+iteration      311 relative max_delta = 1.049324e-04
+iteration      312 relative max_delta = 1.040672e-04
+iteration      313 relative max_delta = 1.032091e-04
+iteration      314 relative max_delta = 1.023582e-04
+iteration      315 relative max_delta = 1.015143e-04
+iteration      316 relative max_delta = 1.006774e-04
+iteration      317 relative max_delta = 9.984734e-05
+iteration      318 relative max_delta = 9.902420e-05
+iteration      319 relative max_delta = 9.820785e-05
+iteration      320 relative max_delta = 9.739826e-05
+iteration      321 relative max_delta = 9.659535e-05
+iteration      322 relative max_delta = 9.579908e-05
+iteration      323 relative max_delta = 9.500939e-05
+iteration      324 relative max_delta = 9.422623e-05
+iteration      325 relative max_delta = 9.344953e-05
+iteration      326 relative max_delta = 9.267924e-05
+iteration      327 relative max_delta = 9.191532e-05
+iteration      328 relative max_delta = 9.115771e-05
+iteration      329 relative max_delta = 9.040635e-05
+iteration      330 relative max_delta = 8.966119e-05
+iteration      331 relative max_delta = 8.892218e-05
+iteration      332 relative max_delta = 8.818927e-05
+iteration      333 relative max_delta = 8.746241e-05
+iteration      334 relative max_delta = 8.674155e-05
+iteration      335 relative max_delta = 8.602663e-05
+iteration      336 relative max_delta = 8.531762e-05
+iteration      337 relative max_delta = 8.461445e-05
+iteration      338 relative max_delta = 8.391708e-05
+iteration      339 relative max_delta = 8.322546e-05
+iteration      340 relative max_delta = 8.253955e-05
+iteration      341 relative max_delta = 8.185929e-05
+iteration      342 relative max_delta = 8.118465e-05
+iteration      343 relative max_delta = 8.051556e-05
+iteration      344 relative max_delta = 7.985199e-05
+iteration      345 relative max_delta = 7.919389e-05
+iteration      346 relative max_delta = 7.854122e-05
+iteration      347 relative max_delta = 7.789392e-05
+iteration      348 relative max_delta = 7.725196e-05
+iteration      349 relative max_delta = 7.661529e-05
+iteration      350 relative max_delta = 7.598387e-05
+iteration      351 relative max_delta = 7.535765e-05
+iteration      352 relative max_delta = 7.473659e-05
+iteration      353 relative max_delta = 7.412065e-05
+iteration      354 relative max_delta = 7.350978e-05
+iteration      355 relative max_delta = 7.290395e-05
+iteration      356 relative max_delta = 7.230311e-05
+iteration      357 relative max_delta = 7.170721e-05
+iteration      358 relative max_delta = 7.111623e-05
+iteration      359 relative max_delta = 7.053011e-05
+iteration      360 relative max_delta = 6.994882e-05
+iteration      361 relative max_delta = 6.937232e-05
+iteration      362 relative max_delta = 6.880057e-05
+iteration      363 relative max_delta = 6.823352e-05
+iteration      364 relative max_delta = 6.767115e-05
+iteration      365 relative max_delta = 6.711341e-05
+iteration      366 relative max_delta = 6.656026e-05
+iteration      367 relative max_delta = 6.601166e-05
+iteration      368 relative max_delta = 6.546759e-05
+iteration      369 relative max_delta = 6.492799e-05
+iteration      370 relative max_delta = 6.439284e-05
+iteration      371 relative max_delta = 6.386209e-05
+iteration      372 relative max_delta = 6.333571e-05
+iteration      373 relative max_delta = 6.281367e-05
+iteration      374 relative max_delta = 6.229593e-05
+iteration      375 relative max_delta = 6.178244e-05
+iteration      376 relative max_delta = 6.127319e-05
+iteration      377 relative max_delta = 6.076813e-05
+iteration      378 relative max_delta = 6.026722e-05
+iteration      379 relative max_delta = 5.977044e-05
+iteration      380 relative max_delta = 5.927775e-05
+iteration      381 relative max_delta = 5.878912e-05
+iteration      382 relative max_delta = 5.830451e-05
+iteration      383 relative max_delta = 5.782388e-05
+iteration      384 relative max_delta = 5.734722e-05
+iteration      385 relative max_delta = 5.687448e-05
+iteration      386 relative max_delta = 5.640563e-05
+iteration      387 relative max_delta = 5.594063e-05
+iteration      388 relative max_delta = 5.547947e-05
+iteration      389 relative max_delta = 5.502210e-05
+iteration      390 relative max_delta = 5.456850e-05
+iteration      391 relative max_delta = 5.411863e-05
+iteration      392 relative max_delta = 5.367247e-05
+iteration      393 relative max_delta = 5.322997e-05
+iteration      394 relative max_delta = 5.279112e-05
+iteration      395 relative max_delta = 5.235589e-05
+iteration      396 relative max_delta = 5.192423e-05
+iteration      397 relative max_delta = 5.149613e-05
+iteration      398 relative max_delta = 5.107155e-05
+iteration      399 relative max_delta = 5.065046e-05
+iteration      400 relative max_delta = 5.023285e-05
+iteration      401 relative max_delta = 4.981867e-05
+iteration      402 relative max_delta = 4.940789e-05
+iteration      403 relative max_delta = 4.900050e-05
+iteration      404 relative max_delta = 4.859647e-05
+iteration      405 relative max_delta = 4.819576e-05
+iteration      406 relative max_delta = 4.779834e-05
+iteration      407 relative max_delta = 4.740420e-05
+iteration      408 relative max_delta = 4.701330e-05
+iteration      409 relative max_delta = 4.662563e-05
+iteration      410 relative max_delta = 4.624114e-05
+iteration      411 relative max_delta = 4.585981e-05
+iteration      412 relative max_delta = 4.548163e-05
+iteration      413 relative max_delta = 4.510656e-05
+iteration      414 relative max_delta = 4.473457e-05
+iteration      415 relative max_delta = 4.436565e-05
+iteration      416 relative max_delta = 4.399977e-05
+iteration      417 relative max_delta = 4.363689e-05
+iteration      418 relative max_delta = 4.327701e-05
+iteration      419 relative max_delta = 4.292008e-05
+iteration      420 relative max_delta = 4.256610e-05
+iteration      421 relative max_delta = 4.221503e-05
+iteration      422 relative max_delta = 4.186685e-05
+iteration      423 relative max_delta = 4.152153e-05
+iteration      424 relative max_delta = 4.117906e-05
+iteration      425 relative max_delta = 4.083941e-05
+iteration      426 relative max_delta = 4.050255e-05
+iteration      427 relative max_delta = 4.016847e-05
+iteration      428 relative max_delta = 3.983714e-05
+iteration      429 relative max_delta = 3.950853e-05
+iteration      430 relative max_delta = 3.918263e-05
+iteration      431 relative max_delta = 3.885942e-05
+iteration      432 relative max_delta = 3.853886e-05
+iteration      433 relative max_delta = 3.822095e-05
+iteration      434 relative max_delta = 3.790565e-05
+iteration      435 relative max_delta = 3.759295e-05
+iteration      436 relative max_delta = 3.728282e-05
+iteration      437 relative max_delta = 3.697525e-05
+iteration      438 relative max_delta = 3.667021e-05
+iteration      439 relative max_delta = 3.636768e-05
+iteration      440 relative max_delta = 3.606764e-05
+iteration      441 relative max_delta = 3.577007e-05
+iteration      442 relative max_delta = 3.547496e-05
+iteration      443 relative max_delta = 3.518227e-05
+iteration      444 relative max_delta = 3.489199e-05
+iteration      445 relative max_delta = 3.460411e-05
+iteration      446 relative max_delta = 3.431859e-05
+iteration      447 relative max_delta = 3.403543e-05
+iteration      448 relative max_delta = 3.375460e-05
+iteration      449 relative max_delta = 3.347608e-05
+iteration      450 relative max_delta = 3.319985e-05
+iteration      451 relative max_delta = 3.292590e-05
+iteration      452 relative max_delta = 3.265421e-05
+iteration      453 relative max_delta = 3.238475e-05
+iteration      454 relative max_delta = 3.211752e-05
+iteration      455 relative max_delta = 3.185248e-05
+iteration      456 relative max_delta = 3.158963e-05
+iteration      457 relative max_delta = 3.132894e-05
+iteration      458 relative max_delta = 3.107040e-05
+iteration      459 relative max_delta = 3.081399e-05
+iteration      460 relative max_delta = 3.055969e-05
+iteration      461 relative max_delta = 3.030749e-05
+iteration      462 relative max_delta = 3.005737e-05
+iteration      463 relative max_delta = 2.980930e-05
+iteration      464 relative max_delta = 2.956328e-05
+iteration      465 relative max_delta = 2.931928e-05
+iteration      466 relative max_delta = 2.907730e-05
+iteration      467 relative max_delta = 2.883731e-05
+iteration      468 relative max_delta = 2.859929e-05
+iteration      469 relative max_delta = 2.836324e-05
+iteration      470 relative max_delta = 2.812913e-05
+iteration      471 relative max_delta = 2.789696e-05
+iteration      472 relative max_delta = 2.766669e-05
+iteration      473 relative max_delta = 2.743832e-05
+iteration      474 relative max_delta = 2.721183e-05
+iteration      475 relative max_delta = 2.698721e-05
+iteration      476 relative max_delta = 2.676444e-05
+iteration      477 relative max_delta = 2.654351e-05
+iteration      478 relative max_delta = 2.632440e-05
+iteration      479 relative max_delta = 2.610709e-05
+iteration      480 relative max_delta = 2.589157e-05
+iteration      481 relative max_delta = 2.567783e-05
+iteration      482 relative max_delta = 2.546585e-05
+iteration      483 relative max_delta = 2.525562e-05
+iteration      484 relative max_delta = 2.504712e-05
+iteration      485 relative max_delta = 2.484034e-05
+iteration      486 relative max_delta = 2.463526e-05
+iteration      487 relative max_delta = 2.443188e-05
+iteration      488 relative max_delta = 2.423016e-05
+iteration      489 relative max_delta = 2.403012e-05
+iteration      490 relative max_delta = 2.383172e-05
+iteration      491 relative max_delta = 2.363495e-05
+iteration      492 relative max_delta = 2.343981e-05
+iteration      493 relative max_delta = 2.324628e-05
+iteration      494 relative max_delta = 2.305434e-05
+iteration      495 relative max_delta = 2.286399e-05
+iteration      496 relative max_delta = 2.267520e-05
+iteration      497 relative max_delta = 2.248797e-05
+iteration      498 relative max_delta = 2.230228e-05
+iteration      499 relative max_delta = 2.211813e-05
+iteration      500 relative max_delta = 2.193549e-05
+iteration      501 relative max_delta = 2.175436e-05
+iteration      502 relative max_delta = 2.157472e-05
+iteration      503 relative max_delta = 2.139657e-05
+iteration      504 relative max_delta = 2.121988e-05
+iteration      505 relative max_delta = 2.104465e-05
+iteration      506 relative max_delta = 2.087086e-05
+iteration      507 relative max_delta = 2.069851e-05
+iteration      508 relative max_delta = 2.052757e-05
+iteration      509 relative max_delta = 2.035805e-05
+iteration      510 relative max_delta = 2.018993e-05
+iteration      511 relative max_delta = 2.002319e-05
+iteration      512 relative max_delta = 1.985782e-05
+iteration      513 relative max_delta = 1.969382e-05
+iteration      514 relative max_delta = 1.953118e-05
+iteration      515 relative max_delta = 1.936987e-05
+iteration      516 relative max_delta = 1.920989e-05
+iteration      517 relative max_delta = 1.905124e-05
+iteration      518 relative max_delta = 1.889389e-05
+iteration      519 relative max_delta = 1.873784e-05
+iteration      520 relative max_delta = 1.858308e-05
+iteration      521 relative max_delta = 1.842959e-05
+iteration      522 relative max_delta = 1.827737e-05
+iteration      523 relative max_delta = 1.812640e-05
+iteration      524 relative max_delta = 1.797668e-05
+iteration      525 relative max_delta = 1.782820e-05
+iteration      526 relative max_delta = 1.768094e-05
+iteration      527 relative max_delta = 1.753489e-05
+iteration      528 relative max_delta = 1.739005e-05
+iteration      529 relative max_delta = 1.724640e-05
+iteration      530 relative max_delta = 1.710394e-05
+iteration      531 relative max_delta = 1.696266e-05
+iteration      532 relative max_delta = 1.682254e-05
+iteration      533 relative max_delta = 1.668357e-05
+iteration      534 relative max_delta = 1.654575e-05
+iteration      535 relative max_delta = 1.640907e-05
+iteration      536 relative max_delta = 1.627352e-05
+iteration      537 relative max_delta = 1.613909e-05
+iteration      538 relative max_delta = 1.600576e-05
+iteration      539 relative max_delta = 1.587353e-05
+iteration      540 relative max_delta = 1.574240e-05
+iteration      541 relative max_delta = 1.561235e-05
+iteration      542 relative max_delta = 1.548337e-05
+iteration      543 relative max_delta = 1.535545e-05
+iteration      544 relative max_delta = 1.522859e-05
+iteration      545 relative max_delta = 1.510278e-05
+iteration      546 relative max_delta = 1.497800e-05
+iteration      547 relative max_delta = 1.485426e-05
+iteration      548 relative max_delta = 1.473153e-05
+iteration      549 relative max_delta = 1.460982e-05
+iteration      550 relative max_delta = 1.448911e-05
+iteration      551 relative max_delta = 1.436940e-05
+iteration      552 relative max_delta = 1.425068e-05
+iteration      553 relative max_delta = 1.413294e-05
+iteration      554 relative max_delta = 1.401616e-05
+iteration      555 relative max_delta = 1.390036e-05
+iteration      556 relative max_delta = 1.378550e-05
+iteration      557 relative max_delta = 1.367160e-05
+iteration      558 relative max_delta = 1.355863e-05
+iteration      559 relative max_delta = 1.344660e-05
+iteration      560 relative max_delta = 1.333550e-05
+iteration      561 relative max_delta = 1.322531e-05
+iteration      562 relative max_delta = 1.311602e-05
+iteration      563 relative max_delta = 1.300765e-05
+iteration      564 relative max_delta = 1.290016e-05
+iteration      565 relative max_delta = 1.279356e-05
+iteration      566 relative max_delta = 1.268785e-05
+iteration      567 relative max_delta = 1.258300e-05
+iteration      568 relative max_delta = 1.247902e-05
+iteration      569 relative max_delta = 1.237590e-05
+iteration      570 relative max_delta = 1.227363e-05
+iteration      571 relative max_delta = 1.217221e-05
+iteration      572 relative max_delta = 1.207162e-05
+iteration      573 relative max_delta = 1.197186e-05
+iteration      574 relative max_delta = 1.187293e-05
+iteration      575 relative max_delta = 1.177481e-05
+iteration      576 relative max_delta = 1.167751e-05
+iteration      577 relative max_delta = 1.158100e-05
+iteration      578 relative max_delta = 1.148530e-05
+iteration      579 relative max_delta = 1.139038e-05
+iteration      580 relative max_delta = 1.129625e-05
+iteration      581 relative max_delta = 1.120289e-05
+iteration      582 relative max_delta = 1.111030e-05
+iteration      583 relative max_delta = 1.101848e-05
+iteration      584 relative max_delta = 1.092742e-05
+iteration      585 relative max_delta = 1.083711e-05
+iteration      586 relative max_delta = 1.074755e-05
+iteration      587 relative max_delta = 1.065872e-05
+iteration      588 relative max_delta = 1.057063e-05
+iteration      589 relative max_delta = 1.048326e-05
+iteration      590 relative max_delta = 1.039662e-05
+iteration      591 relative max_delta = 1.031069e-05
+iteration      592 relative max_delta = 1.022547e-05
+iteration      593 relative max_delta = 1.014096e-05
+iteration      594 relative max_delta = 1.005714e-05
+iteration      595 relative max_delta = 9.974018e-06
+iteration      596 relative max_delta = 9.891580e-06
+iteration      597 relative max_delta = 9.809823e-06
+iteration      598 relative max_delta = 9.728741e-06
+iteration      599 relative max_delta = 9.648328e-06
+iteration      600 relative max_delta = 9.568580e-06
+iteration      601 relative max_delta = 9.489490e-06
+iteration      602 relative max_delta = 9.411054e-06
+iteration      603 relative max_delta = 9.333265e-06
+iteration      604 relative max_delta = 9.256119e-06
+iteration      605 relative max_delta = 9.179609e-06
+iteration      606 relative max_delta = 9.103732e-06
+iteration      607 relative max_delta = 9.028482e-06
+iteration      608 relative max_delta = 8.953852e-06
+iteration      609 relative max_delta = 8.879840e-06
+iteration      610 relative max_delta = 8.806438e-06
+iteration      611 relative max_delta = 8.733643e-06
+iteration      612 relative max_delta = 8.661449e-06
+iteration      613 relative max_delta = 8.589852e-06
+iteration      614 relative max_delta = 8.518846e-06
+iteration      615 relative max_delta = 8.448426e-06
+iteration      616 relative max_delta = 8.378588e-06
+iteration      617 relative max_delta = 8.309327e-06
+iteration      618 relative max_delta = 8.240638e-06
+iteration      619 relative max_delta = 8.172517e-06
+iteration      620 relative max_delta = 8.104958e-06
+iteration      621 relative max_delta = 8.037957e-06
+iteration      622 relative max_delta = 7.971510e-06
+iteration      623 relative max_delta = 7.905611e-06
+iteration      624 relative max_delta = 7.840257e-06
+iteration      625 relative max_delta = 7.775443e-06
+iteration      626 relative max_delta = 7.711165e-06
+iteration      627 relative max_delta = 7.647417e-06
+iteration      628 relative max_delta = 7.584196e-06
+iteration      629 relative max_delta = 7.521497e-06
+iteration      630 relative max_delta = 7.459316e-06
+iteration      631 relative max_delta = 7.397649e-06
+iteration      632 relative max_delta = 7.336492e-06
+iteration      633 relative max_delta = 7.275839e-06
+iteration      634 relative max_delta = 7.215688e-06
+iteration      635 relative max_delta = 7.156034e-06
+iteration      636 relative max_delta = 7.096873e-06
+iteration      637 relative max_delta = 7.038200e-06
+iteration      638 relative max_delta = 6.980012e-06
+iteration      639 relative max_delta = 6.922305e-06
+iteration      640 relative max_delta = 6.865075e-06
+iteration      641 relative max_delta = 6.808317e-06
+iteration      642 relative max_delta = 6.752029e-06
+iteration      643 relative max_delta = 6.696205e-06
+iteration      644 relative max_delta = 6.640843e-06
+iteration      645 relative max_delta = 6.585939e-06
+iteration      646 relative max_delta = 6.531488e-06
+iteration      647 relative max_delta = 6.477486e-06
+iteration      648 relative max_delta = 6.423932e-06
+iteration      649 relative max_delta = 6.370819e-06
+iteration      650 relative max_delta = 6.318146e-06
+iteration      651 relative max_delta = 6.265907e-06
+iteration      652 relative max_delta = 6.214101e-06
+iteration      653 relative max_delta = 6.162722e-06
+iteration      654 relative max_delta = 6.111768e-06
+iteration      655 relative max_delta = 6.061235e-06
+iteration      656 relative max_delta = 6.011120e-06
+iteration      657 relative max_delta = 5.961419e-06
+iteration      658 relative max_delta = 5.912128e-06
+iteration      659 relative max_delta = 5.863245e-06
+iteration      660 relative max_delta = 5.814766e-06
+iteration      661 relative max_delta = 5.766688e-06
+iteration      662 relative max_delta = 5.719006e-06
+iteration      663 relative max_delta = 5.671719e-06
+iteration      664 relative max_delta = 5.624823e-06
+iteration      665 relative max_delta = 5.578314e-06
+iteration      666 relative max_delta = 5.532189e-06
+iteration      667 relative max_delta = 5.486446e-06
+iteration      668 relative max_delta = 5.441081e-06
+iteration      669 relative max_delta = 5.396090e-06
+iteration      670 relative max_delta = 5.351472e-06
+iteration      671 relative max_delta = 5.307222e-06
+iteration      672 relative max_delta = 5.263338e-06
+iteration      673 relative max_delta = 5.219817e-06
+iteration      674 relative max_delta = 5.176655e-06
+iteration      675 relative max_delta = 5.133850e-06
+iteration      676 relative max_delta = 5.091399e-06
+iteration      677 relative max_delta = 5.049299e-06
+iteration      678 relative max_delta = 5.007546e-06
+iteration      679 relative max_delta = 4.966139e-06
+iteration      680 relative max_delta = 4.925074e-06
+iteration      681 relative max_delta = 4.884348e-06
+iteration      682 relative max_delta = 4.843959e-06
+iteration      683 relative max_delta = 4.803904e-06
+iteration      684 relative max_delta = 4.764180e-06
+iteration      685 relative max_delta = 4.724784e-06
+iteration      686 relative max_delta = 4.685714e-06
+iteration      687 relative max_delta = 4.646967e-06
+iteration      688 relative max_delta = 4.608540e-06
+iteration      689 relative max_delta = 4.570430e-06
+iteration      690 relative max_delta = 4.532636e-06
+iteration      691 relative max_delta = 4.495154e-06
+iteration      692 relative max_delta = 4.457982e-06
+iteration      693 relative max_delta = 4.421117e-06
+iteration      694 relative max_delta = 4.384557e-06
+iteration      695 relative max_delta = 4.348299e-06
+iteration      696 relative max_delta = 4.312341e-06
+iteration      697 relative max_delta = 4.276680e-06
+iteration      698 relative max_delta = 4.241314e-06
+iteration      699 relative max_delta = 4.206240e-06
+iteration      700 relative max_delta = 4.171456e-06
+iteration      701 relative max_delta = 4.136960e-06
+iteration      702 relative max_delta = 4.102749e-06
+iteration      703 relative max_delta = 4.068820e-06
+iteration      704 relative max_delta = 4.035172e-06
+iteration      705 relative max_delta = 4.001803e-06
+iteration      706 relative max_delta = 3.968709e-06
+iteration      707 relative max_delta = 3.935888e-06
+iteration      708 relative max_delta = 3.903339e-06
+iteration      709 relative max_delta = 3.871059e-06
+iteration      710 relative max_delta = 3.839046e-06
+iteration      711 relative max_delta = 3.807298e-06
+iteration      712 relative max_delta = 3.775812e-06
+iteration      713 relative max_delta = 3.744586e-06
+iteration      714 relative max_delta = 3.713618e-06
+iteration      715 relative max_delta = 3.682907e-06
+iteration      716 relative max_delta = 3.652449e-06
+iteration      717 relative max_delta = 3.622243e-06
+iteration      718 relative max_delta = 3.592287e-06
+iteration      719 relative max_delta = 3.562579e-06
+iteration      720 relative max_delta = 3.533116e-06
+iteration      721 relative max_delta = 3.503897e-06
+iteration      722 relative max_delta = 3.474919e-06
+iteration      723 relative max_delta = 3.446181e-06
+iteration      724 relative max_delta = 3.417680e-06
+iteration      725 relative max_delta = 3.389415e-06
+iteration      726 relative max_delta = 3.361384e-06
+iteration      727 relative max_delta = 3.333584e-06
+iteration      728 relative max_delta = 3.306015e-06
+iteration      729 relative max_delta = 3.278673e-06
+iteration      730 relative max_delta = 3.251557e-06
+iteration      731 relative max_delta = 3.224666e-06
+iteration      732 relative max_delta = 3.197997e-06
+iteration      733 relative max_delta = 3.171548e-06
+iteration      734 relative max_delta = 3.145318e-06
+iteration      735 relative max_delta = 3.119305e-06
+iteration      736 relative max_delta = 3.093507e-06
+iteration      737 relative max_delta = 3.067922e-06
+iteration      738 relative max_delta = 3.042549e-06
+iteration      739 relative max_delta = 3.017385e-06
+iteration      740 relative max_delta = 2.992430e-06
+iteration      741 relative max_delta = 2.967681e-06
+iteration      742 relative max_delta = 2.943137e-06
+iteration      743 relative max_delta = 2.918795e-06
+iteration      744 relative max_delta = 2.894655e-06
+iteration      745 relative max_delta = 2.870714e-06
+iteration      746 relative max_delta = 2.846972e-06
+iteration      747 relative max_delta = 2.823425e-06
+iteration      748 relative max_delta = 2.800074e-06
+iteration      749 relative max_delta = 2.776915e-06
+iteration      750 relative max_delta = 2.753948e-06
+iteration      751 relative max_delta = 2.731171e-06
+iteration      752 relative max_delta = 2.708582e-06
+iteration      753 relative max_delta = 2.686180e-06
+iteration      754 relative max_delta = 2.663963e-06
+iteration      755 relative max_delta = 2.641930e-06
+iteration      756 relative max_delta = 2.620079e-06
+iteration      757 relative max_delta = 2.598409e-06
+iteration      758 relative max_delta = 2.576918e-06
+iteration      759 relative max_delta = 2.555604e-06
+iteration      760 relative max_delta = 2.534467e-06
+iteration      761 relative max_delta = 2.513505e-06
+iteration      762 relative max_delta = 2.492716e-06
+iteration      763 relative max_delta = 2.472099e-06
+iteration      764 relative max_delta = 2.451652e-06
+iteration      765 relative max_delta = 2.431375e-06
+iteration      766 relative max_delta = 2.411265e-06
+iteration      767 relative max_delta = 2.391321e-06
+iteration      768 relative max_delta = 2.371542e-06
+iteration      769 relative max_delta = 2.351927e-06
+iteration      770 relative max_delta = 2.332474e-06
+iteration      771 relative max_delta = 2.313182e-06
+iteration      772 relative max_delta = 2.294050e-06
+iteration      773 relative max_delta = 2.275075e-06
+iteration      774 relative max_delta = 2.256258e-06
+iteration      775 relative max_delta = 2.237596e-06
+iteration      776 relative max_delta = 2.219089e-06
+iteration      777 relative max_delta = 2.200734e-06
+iteration      778 relative max_delta = 2.182532e-06
+iteration      779 relative max_delta = 2.164479e-06
+iteration      780 relative max_delta = 2.146577e-06
+iteration      781 relative max_delta = 2.128822e-06
+iteration      782 relative max_delta = 2.111214e-06
+iteration      783 relative max_delta = 2.093751e-06
+iteration      784 relative max_delta = 2.076434e-06
+iteration      785 relative max_delta = 2.059259e-06
+iteration      786 relative max_delta = 2.042226e-06
+iteration      787 relative max_delta = 2.025334e-06
+iteration      788 relative max_delta = 2.008582e-06
+iteration      789 relative max_delta = 1.991968e-06
+iteration      790 relative max_delta = 1.975492e-06
+iteration      791 relative max_delta = 1.959152e-06
+iteration      792 relative max_delta = 1.942947e-06
+iteration      793 relative max_delta = 1.926876e-06
+iteration      794 relative max_delta = 1.910938e-06
+iteration      795 relative max_delta = 1.895132e-06
+iteration      796 relative max_delta = 1.879457e-06
+iteration      797 relative max_delta = 1.863911e-06
+iteration      798 relative max_delta = 1.848494e-06
+iteration      799 relative max_delta = 1.833204e-06
+iteration      800 relative max_delta = 1.818041e-06
+iteration      801 relative max_delta = 1.803003e-06
+iteration      802 relative max_delta = 1.788089e-06
+iteration      803 relative max_delta = 1.773299e-06
+iteration      804 relative max_delta = 1.758631e-06
+iteration      805 relative max_delta = 1.744085e-06
+iteration      806 relative max_delta = 1.729658e-06
+iteration      807 relative max_delta = 1.715351e-06
+iteration      808 relative max_delta = 1.701163e-06
+iteration      809 relative max_delta = 1.687091e-06
+iteration      810 relative max_delta = 1.673137e-06
+iteration      811 relative max_delta = 1.659297e-06
+iteration      812 relative max_delta = 1.645572e-06
+iteration      813 relative max_delta = 1.631960e-06
+iteration      814 relative max_delta = 1.618461e-06
+iteration      815 relative max_delta = 1.605074e-06
+iteration      816 relative max_delta = 1.591798e-06
+iteration      817 relative max_delta = 1.578631e-06
+iteration      818 relative max_delta = 1.565573e-06
+iteration      819 relative max_delta = 1.552623e-06
+iteration      820 relative max_delta = 1.539780e-06
+iteration      821 relative max_delta = 1.527043e-06
+iteration      822 relative max_delta = 1.514412e-06
+iteration      823 relative max_delta = 1.501885e-06
+iteration      824 relative max_delta = 1.489462e-06
+iteration      825 relative max_delta = 1.477142e-06
+iteration      826 relative max_delta = 1.464923e-06
+iteration      827 relative max_delta = 1.452806e-06
+iteration      828 relative max_delta = 1.440788e-06
+iteration      829 relative max_delta = 1.428870e-06
+iteration      830 relative max_delta = 1.417051e-06
+iteration      831 relative max_delta = 1.405330e-06
+iteration      832 relative max_delta = 1.393705e-06
+iteration      833 relative max_delta = 1.382176e-06
+iteration      834 relative max_delta = 1.370743e-06
+iteration      835 relative max_delta = 1.359405e-06
+iteration      836 relative max_delta = 1.348160e-06
+iteration      837 relative max_delta = 1.337008e-06
+iteration      838 relative max_delta = 1.325949e-06
+iteration      839 relative max_delta = 1.314980e-06
+iteration      840 relative max_delta = 1.304103e-06
+iteration      841 relative max_delta = 1.293316e-06
+iteration      842 relative max_delta = 1.282618e-06
+iteration      843 relative max_delta = 1.272008e-06
+iteration      844 relative max_delta = 1.261486e-06
+iteration      845 relative max_delta = 1.251051e-06
+iteration      846 relative max_delta = 1.240702e-06
+iteration      847 relative max_delta = 1.230439e-06
+iteration      848 relative max_delta = 1.220261e-06
+iteration      849 relative max_delta = 1.210167e-06
+iteration      850 relative max_delta = 1.200157e-06
+iteration      851 relative max_delta = 1.190229e-06
+iteration      852 relative max_delta = 1.180384e-06
+iteration      853 relative max_delta = 1.170619e-06
+iteration      854 relative max_delta = 1.160936e-06
+iteration      855 relative max_delta = 1.151333e-06
+iteration      856 relative max_delta = 1.141809e-06
+iteration      857 relative max_delta = 1.132364e-06
+iteration      858 relative max_delta = 1.122997e-06
+iteration      859 relative max_delta = 1.113707e-06
+iteration      860 relative max_delta = 1.104495e-06
+iteration      861 relative max_delta = 1.095358e-06
+iteration      862 relative max_delta = 1.086297e-06
+iteration      863 relative max_delta = 1.077311e-06
+iteration      864 relative max_delta = 1.068400e-06
+iteration      865 relative max_delta = 1.059562e-06
+iteration      866 relative max_delta = 1.050797e-06
+iteration      867 relative max_delta = 1.042105e-06
+iteration      868 relative max_delta = 1.033484e-06
+iteration      869 relative max_delta = 1.024935e-06
+iteration      870 relative max_delta = 1.016457e-06
+iteration      871 relative max_delta = 1.008049e-06
+iteration      872 relative max_delta = 9.997100e-07
+iteration      873 relative max_delta = 9.914402e-07
+iteration      874 relative max_delta = 9.832389e-07
+iteration      875 relative max_delta = 9.751054e-07
+iteration      876 relative max_delta = 9.670392e-07
+iteration      877 relative max_delta = 9.590397e-07
+iteration      878 relative max_delta = 9.511063e-07
+iteration      879 relative max_delta = 9.432386e-07
+iteration      880 relative max_delta = 9.354359e-07
+iteration      881 relative max_delta = 9.276978e-07
+iteration      882 relative max_delta = 9.200237e-07
+iteration      883 relative max_delta = 9.124131e-07
+iteration      884 relative max_delta = 9.048654e-07
+iteration      885 relative max_delta = 8.973802e-07
+iteration      886 relative max_delta = 8.899568e-07
+iteration      887 relative max_delta = 8.825949e-07
+iteration      888 relative max_delta = 8.752939e-07
+iteration      889 relative max_delta = 8.680532e-07
+iteration      890 relative max_delta = 8.608725e-07
+iteration      891 relative max_delta = 8.537511e-07
+iteration      892 relative max_delta = 8.466887e-07
+iteration      893 relative max_delta = 8.396846e-07
+iteration      894 relative max_delta = 8.327385e-07
+iteration      895 relative max_delta = 8.258499e-07
+iteration      896 relative max_delta = 8.190182e-07
+iteration      897 relative max_delta = 8.122431e-07
+iteration      898 relative max_delta = 8.055240e-07
+iteration      899 relative max_delta = 7.988604e-07
+iteration      900 relative max_delta = 7.922520e-07
+iteration      901 relative max_delta = 7.856982e-07
+iteration      902 relative max_delta = 7.791987e-07
+iteration      903 relative max_delta = 7.727529e-07
+iteration      904 relative max_delta = 7.663605e-07
+iteration      905 relative max_delta = 7.600209e-07
+iteration      906 relative max_delta = 7.537337e-07
+iteration      907 relative max_delta = 7.474986e-07
+iteration      908 relative max_delta = 7.413150e-07
+iteration      909 relative max_delta = 7.351826e-07
+iteration      910 relative max_delta = 7.291009e-07
+iteration      911 relative max_delta = 7.230695e-07
+iteration      912 relative max_delta = 7.170880e-07
+iteration      913 relative max_delta = 7.111560e-07
+iteration      914 relative max_delta = 7.052730e-07
+iteration      915 relative max_delta = 6.994387e-07
+iteration      916 relative max_delta = 6.936527e-07
+iteration      917 relative max_delta = 6.879145e-07
+iteration      918 relative max_delta = 6.822238e-07
+iteration      919 relative max_delta = 6.765802e-07
+iteration      920 relative max_delta = 6.709833e-07
+iteration      921 relative max_delta = 6.654326e-07
+iteration      922 relative max_delta = 6.599279e-07
+iteration      923 relative max_delta = 6.544687e-07
+iteration      924 relative max_delta = 6.490546e-07
+iteration      925 relative max_delta = 6.436854e-07
+iteration      926 relative max_delta = 6.383605e-07
+iteration      927 relative max_delta = 6.330797e-07
+iteration      928 relative max_delta = 6.278426e-07
+iteration      929 relative max_delta = 6.226488e-07
+iteration      930 relative max_delta = 6.174980e-07
+iteration      931 relative max_delta = 6.123898e-07
+iteration      932 relative max_delta = 6.073238e-07
+iteration      933 relative max_delta = 6.022998e-07
+iteration      934 relative max_delta = 5.973172e-07
+iteration      935 relative max_delta = 5.923760e-07
+iteration      936 relative max_delta = 5.874755e-07
+iteration      937 relative max_delta = 5.826157e-07
+iteration      938 relative max_delta = 5.777960e-07
+iteration      939 relative max_delta = 5.730162e-07
+iteration      940 relative max_delta = 5.682759e-07
+iteration      941 relative max_delta = 5.635748e-07
+iteration      942 relative max_delta = 5.589127e-07
+iteration      943 relative max_delta = 5.542891e-07
+iteration      944 relative max_delta = 5.497037e-07
+iteration      945 relative max_delta = 5.451563e-07
+iteration      946 relative max_delta = 5.406465e-07
+iteration      947 relative max_delta = 5.361740e-07
+iteration      948 relative max_delta = 5.317385e-07
+iteration      949 relative max_delta = 5.273396e-07
+iteration      950 relative max_delta = 5.229772e-07
+iteration      951 relative max_delta = 5.186509e-07
+iteration      952 relative max_delta = 5.143603e-07
+iteration      953 relative max_delta = 5.101052e-07
+iteration      954 relative max_delta = 5.058854e-07
+iteration      955 relative max_delta = 5.017004e-07
+iteration      956 relative max_delta = 4.975501e-07
+iteration      957 relative max_delta = 4.934341e-07
+iteration      958 relative max_delta = 4.893521e-07
+iteration      959 relative max_delta = 4.853039e-07
+iteration      960 relative max_delta = 4.812892e-07
+iteration      961 relative max_delta = 4.773077e-07
+iteration      962 relative max_delta = 4.733591e-07
+iteration      963 relative max_delta = 4.694432e-07
+iteration      964 relative max_delta = 4.655597e-07
+iteration      965 relative max_delta = 4.617084e-07
+iteration      966 relative max_delta = 4.578888e-07
+iteration      967 relative max_delta = 4.541009e-07
+iteration      968 relative max_delta = 4.503443e-07
+iteration      969 relative max_delta = 4.466188e-07
+iteration      970 relative max_delta = 4.429241e-07
+iteration      971 relative max_delta = 4.392600e-07
+iteration      972 relative max_delta = 4.356262e-07
+iteration      973 relative max_delta = 4.320224e-07
+iteration      974 relative max_delta = 4.284485e-07
+iteration      975 relative max_delta = 4.249041e-07
+iteration      976 relative max_delta = 4.213890e-07
+iteration      977 relative max_delta = 4.179030e-07
+iteration      978 relative max_delta = 4.144459e-07
+iteration      979 relative max_delta = 4.110173e-07
+iteration      980 relative max_delta = 4.076171e-07
+iteration      981 relative max_delta = 4.042451e-07
+iteration      982 relative max_delta = 4.009009e-07
+iteration      983 relative max_delta = 3.975844e-07
+iteration      984 relative max_delta = 3.942953e-07
+iteration      985 relative max_delta = 3.910334e-07
+iteration      986 relative max_delta = 3.877986e-07
+iteration      987 relative max_delta = 3.845904e-07
+iteration      988 relative max_delta = 3.814089e-07
+iteration      989 relative max_delta = 3.782536e-07
+iteration      990 relative max_delta = 3.751244e-07
+iteration      991 relative max_delta = 3.720212e-07
+iteration      992 relative max_delta = 3.689436e-07
+iteration      993 relative max_delta = 3.658914e-07
+iteration      994 relative max_delta = 3.628645e-07
+iteration      995 relative max_delta = 3.598627e-07
+iteration      996 relative max_delta = 3.568857e-07
+iteration      997 relative max_delta = 3.539333e-07
+iteration      998 relative max_delta = 3.510053e-07
+iteration      999 relative max_delta = 3.481015e-07
+iteration     1000 relative max_delta = 3.452218e-07
+iteration     1001 relative max_delta = 3.423659e-07
+iteration     1002 relative max_delta = 3.395336e-07
+iteration     1003 relative max_delta = 3.367248e-07
+iteration     1004 relative max_delta = 3.339391e-07
+iteration     1005 relative max_delta = 3.311766e-07
+iteration     1006 relative max_delta = 3.284368e-07
+iteration     1007 relative max_delta = 3.257198e-07
+iteration     1008 relative max_delta = 3.230252e-07
+iteration     1009 relative max_delta = 3.203529e-07
+iteration     1010 relative max_delta = 3.177027e-07
+iteration     1011 relative max_delta = 3.150745e-07
+iteration     1012 relative max_delta = 3.124680e-07
+iteration     1013 relative max_delta = 3.098830e-07
+iteration     1014 relative max_delta = 3.073194e-07
+iteration     1015 relative max_delta = 3.047771e-07
+iteration     1016 relative max_delta = 3.022557e-07
+iteration     1017 relative max_delta = 2.997553e-07
+iteration     1018 relative max_delta = 2.972755e-07
+iteration     1019 relative max_delta = 2.948162e-07
+iteration     1020 relative max_delta = 2.923773e-07
+iteration     1021 relative max_delta = 2.899585e-07
+iteration     1022 relative max_delta = 2.875598e-07
+iteration     1023 relative max_delta = 2.851809e-07
+iteration     1024 relative max_delta = 2.828216e-07
+iteration     1025 relative max_delta = 2.804819e-07
+iteration     1026 relative max_delta = 2.781616e-07
+iteration     1027 relative max_delta = 2.758604e-07
+iteration     1028 relative max_delta = 2.735783e-07
+iteration     1029 relative max_delta = 2.713151e-07
+iteration     1030 relative max_delta = 2.690706e-07
+iteration     1031 relative max_delta = 2.668446e-07
+iteration     1032 relative max_delta = 2.646371e-07
+iteration     1033 relative max_delta = 2.624478e-07
+iteration     1034 relative max_delta = 2.602766e-07
+iteration     1035 relative max_delta = 2.581234e-07
+iteration     1036 relative max_delta = 2.559880e-07
+iteration     1037 relative max_delta = 2.538703e-07
+iteration     1038 relative max_delta = 2.517701e-07
+iteration     1039 relative max_delta = 2.496873e-07
+iteration     1040 relative max_delta = 2.476217e-07
+iteration     1041 relative max_delta = 2.455732e-07
+iteration     1042 relative max_delta = 2.435416e-07
+iteration     1043 relative max_delta = 2.415268e-07
+iteration     1044 relative max_delta = 2.395287e-07
+iteration     1045 relative max_delta = 2.375472e-07
+iteration     1046 relative max_delta = 2.355820e-07
+iteration     1047 relative max_delta = 2.336331e-07
+iteration     1048 relative max_delta = 2.317003e-07
+iteration     1049 relative max_delta = 2.297835e-07
+iteration     1050 relative max_delta = 2.278825e-07
+iteration     1051 relative max_delta = 2.259973e-07
+iteration     1052 relative max_delta = 2.241277e-07
+iteration     1053 relative max_delta = 2.222735e-07
+iteration     1054 relative max_delta = 2.204347e-07
+iteration     1055 relative max_delta = 2.186111e-07
+iteration     1056 relative max_delta = 2.168026e-07
+iteration     1057 relative max_delta = 2.150090e-07
+iteration     1058 relative max_delta = 2.132303e-07
+iteration     1059 relative max_delta = 2.114663e-07
+iteration     1060 relative max_delta = 2.097169e-07
+iteration     1061 relative max_delta = 2.079819e-07
+iteration     1062 relative max_delta = 2.062614e-07
+iteration     1063 relative max_delta = 2.045550e-07
+iteration     1064 relative max_delta = 2.028628e-07
+iteration     1065 relative max_delta = 2.011845e-07
+iteration     1066 relative max_delta = 1.995202e-07
+iteration     1067 relative max_delta = 1.978696e-07
+iteration     1068 relative max_delta = 1.962326e-07
+iteration     1069 relative max_delta = 1.946092e-07
+iteration     1070 relative max_delta = 1.929993e-07
+iteration     1071 relative max_delta = 1.914026e-07
+iteration     1072 relative max_delta = 1.898192e-07
+iteration     1073 relative max_delta = 1.882489e-07
+iteration     1074 relative max_delta = 1.866915e-07
+iteration     1075 relative max_delta = 1.851471e-07
+iteration     1076 relative max_delta = 1.836154e-07
+iteration     1077 relative max_delta = 1.820964e-07
+iteration     1078 relative max_delta = 1.805899e-07
+iteration     1079 relative max_delta = 1.790959e-07
+iteration     1080 relative max_delta = 1.776143e-07
+iteration     1081 relative max_delta = 1.761449e-07
+iteration     1082 relative max_delta = 1.746877e-07
+iteration     1083 relative max_delta = 1.732425e-07
+iteration     1084 relative max_delta = 1.718093e-07
+iteration     1085 relative max_delta = 1.703880e-07
+iteration     1086 relative max_delta = 1.689784e-07
+iteration     1087 relative max_delta = 1.675805e-07
+iteration     1088 relative max_delta = 1.661941e-07
+iteration     1089 relative max_delta = 1.648192e-07
+iteration     1090 relative max_delta = 1.634557e-07
+iteration     1091 relative max_delta = 1.621035e-07
+iteration     1092 relative max_delta = 1.607624e-07
+iteration     1093 relative max_delta = 1.594324e-07
+iteration     1094 relative max_delta = 1.581135e-07
+iteration     1095 relative max_delta = 1.568054e-07
+iteration     1096 relative max_delta = 1.555082e-07
+iteration     1097 relative max_delta = 1.542217e-07
+iteration     1098 relative max_delta = 1.529459e-07
+iteration     1099 relative max_delta = 1.516806e-07
+iteration     1100 relative max_delta = 1.504258e-07
+iteration     1101 relative max_delta = 1.491813e-07
+iteration     1102 relative max_delta = 1.479472e-07
+iteration     1103 relative max_delta = 1.467232e-07
+iteration     1104 relative max_delta = 1.455094e-07
+iteration     1105 relative max_delta = 1.443056e-07
+iteration     1106 relative max_delta = 1.431118e-07
+iteration     1107 relative max_delta = 1.419279e-07
+iteration     1108 relative max_delta = 1.407537e-07
+iteration     1109 relative max_delta = 1.395893e-07
+iteration     1110 relative max_delta = 1.384345e-07
+iteration     1111 relative max_delta = 1.372892e-07
+iteration     1112 relative max_delta = 1.361535e-07
+iteration     1113 relative max_delta = 1.350271e-07
+iteration     1114 relative max_delta = 1.339100e-07
+iteration     1115 relative max_delta = 1.328022e-07
+iteration     1116 relative max_delta = 1.317036e-07
+iteration     1117 relative max_delta = 1.306140e-07
+iteration     1118 relative max_delta = 1.295334e-07
+iteration     1119 relative max_delta = 1.284618e-07
+iteration     1120 relative max_delta = 1.273991e-07
+iteration     1121 relative max_delta = 1.263451e-07
+iteration     1122 relative max_delta = 1.252999e-07
+iteration     1123 relative max_delta = 1.242633e-07
+iteration     1124 relative max_delta = 1.232353e-07
+iteration     1125 relative max_delta = 1.222158e-07
+iteration     1126 relative max_delta = 1.212047e-07
+iteration     1127 relative max_delta = 1.202020e-07
+iteration     1128 relative max_delta = 1.192076e-07
+iteration     1129 relative max_delta = 1.182214e-07
+iteration     1130 relative max_delta = 1.172434e-07
+iteration     1131 relative max_delta = 1.162734e-07
+iteration     1132 relative max_delta = 1.153115e-07
+iteration     1133 relative max_delta = 1.143576e-07
+iteration     1134 relative max_delta = 1.134115e-07
+iteration     1135 relative max_delta = 1.124733e-07
+iteration     1136 relative max_delta = 1.115428e-07
+iteration     1137 relative max_delta = 1.106200e-07
+iteration     1138 relative max_delta = 1.097049e-07
+iteration     1139 relative max_delta = 1.087973e-07
+iteration     1140 relative max_delta = 1.078972e-07
+iteration     1141 relative max_delta = 1.070046e-07
+iteration     1142 relative max_delta = 1.061194e-07
+iteration     1143 relative max_delta = 1.052414e-07
+iteration     1144 relative max_delta = 1.043708e-07
+iteration     1145 relative max_delta = 1.035074e-07
+iteration     1146 relative max_delta = 1.026511e-07
+iteration     1147 relative max_delta = 1.018018e-07
+iteration     1148 relative max_delta = 1.009596e-07
+iteration     1149 relative max_delta = 1.001244e-07
+iteration     1150 relative max_delta = 9.929609e-08
+iteration     1151 relative max_delta = 9.847463e-08
+iteration     1152 relative max_delta = 9.765996e-08
+iteration     1153 relative max_delta = 9.685203e-08
+iteration     1154 relative max_delta = 9.605079e-08
+iteration     1155 relative max_delta = 9.525617e-08
+iteration     1156 relative max_delta = 9.446813e-08
+iteration     1157 relative max_delta = 9.368660e-08
+iteration     1158 relative max_delta = 9.291155e-08
+iteration     1159 relative max_delta = 9.214290e-08
+iteration     1160 relative max_delta = 9.138061e-08
+iteration     1161 relative max_delta = 9.062463e-08
+iteration     1162 relative max_delta = 8.987490e-08
+iteration     1163 relative max_delta = 8.913138e-08
+iteration     1164 relative max_delta = 8.839401e-08
+iteration     1165 relative max_delta = 8.766273e-08
+iteration     1166 relative max_delta = 8.693751e-08
+iteration     1167 relative max_delta = 8.621828e-08
+iteration     1168 relative max_delta = 8.550501e-08
+iteration     1169 relative max_delta = 8.479764e-08
+iteration     1170 relative max_delta = 8.409611e-08
+iteration     1171 relative max_delta = 8.340040e-08
+iteration     1172 relative max_delta = 8.271043e-08
+iteration     1173 relative max_delta = 8.202618e-08
+iteration     1174 relative max_delta = 8.134759e-08
+iteration     1175 relative max_delta = 8.067461e-08
+iteration     1176 relative max_delta = 8.000719e-08
+iteration     1177 relative max_delta = 7.934530e-08
+iteration     1178 relative max_delta = 7.868889e-08
+iteration     1179 relative max_delta = 7.803790e-08
+iteration     1180 relative max_delta = 7.739230e-08
+iteration     1181 relative max_delta = 7.675204e-08
+iteration     1182 relative max_delta = 7.611708e-08
+iteration     1183 relative max_delta = 7.548737e-08
+iteration     1184 relative max_delta = 7.486288e-08
+iteration     1185 relative max_delta = 7.424354e-08
+iteration     1186 relative max_delta = 7.362933e-08
+iteration     1187 relative max_delta = 7.302020e-08
+iteration     1188 relative max_delta = 7.241612e-08
+iteration     1189 relative max_delta = 7.181702e-08
+iteration     1190 relative max_delta = 7.122289e-08
+iteration     1191 relative max_delta = 7.063367e-08
+iteration     1192 relative max_delta = 7.004932e-08
+iteration     1193 relative max_delta = 6.946981e-08
+iteration     1194 relative max_delta = 6.889510e-08
+iteration     1195 relative max_delta = 6.832513e-08
+iteration     1196 relative max_delta = 6.775989e-08
+iteration     1197 relative max_delta = 6.719932e-08
+iteration     1198 relative max_delta = 6.664338e-08
+iteration     1199 relative max_delta = 6.609205e-08
+iteration     1200 relative max_delta = 6.554528e-08
+iteration     1201 relative max_delta = 6.500303e-08
+iteration     1202 relative max_delta = 6.446526e-08
+iteration     1203 relative max_delta = 6.393195e-08
+iteration     1204 relative max_delta = 6.340304e-08
+iteration     1205 relative max_delta = 6.287852e-08
+iteration     1206 relative max_delta = 6.235833e-08
+iteration     1207 relative max_delta = 6.184244e-08
+iteration     1208 relative max_delta = 6.133083e-08
+iteration     1209 relative max_delta = 6.082344e-08
+iteration     1210 relative max_delta = 6.032026e-08
+iteration     1211 relative max_delta = 5.982123e-08
+iteration     1212 relative max_delta = 5.932634e-08
+iteration     1213 relative max_delta = 5.883553e-08
+iteration     1214 relative max_delta = 5.834879e-08
+iteration     1215 relative max_delta = 5.786608e-08
+iteration     1216 relative max_delta = 5.738736e-08
+iteration     1217 relative max_delta = 5.691260e-08
+iteration     1218 relative max_delta = 5.644176e-08
+iteration     1219 relative max_delta = 5.597483e-08
+iteration     1220 relative max_delta = 5.551175e-08
+iteration     1221 relative max_delta = 5.505251e-08
+iteration     1222 relative max_delta = 5.459706e-08
+iteration     1223 relative max_delta = 5.414539e-08
+iteration     1224 relative max_delta = 5.369745e-08
+iteration     1225 relative max_delta = 5.325321e-08
+iteration     1226 relative max_delta = 5.281265e-08
+iteration     1227 relative max_delta = 5.237574e-08
+iteration     1228 relative max_delta = 5.194244e-08
+iteration     1229 relative max_delta = 5.151272e-08
+iteration     1230 relative max_delta = 5.108656e-08
+iteration     1231 relative max_delta = 5.066393e-08
+iteration     1232 relative max_delta = 5.024479e-08
+iteration     1233 relative max_delta = 4.982912e-08
+iteration     1234 relative max_delta = 4.941689e-08
+iteration     1235 relative max_delta = 4.900806e-08
+iteration     1236 relative max_delta = 4.860262e-08
+iteration     1237 relative max_delta = 4.820054e-08
+iteration     1238 relative max_delta = 4.780178e-08
+iteration     1239 relative max_delta = 4.740632e-08
+iteration     1240 relative max_delta = 4.701413e-08
+iteration     1241 relative max_delta = 4.662519e-08
+iteration     1242 relative max_delta = 4.623946e-08
+iteration     1243 relative max_delta = 4.585692e-08
+iteration     1244 relative max_delta = 4.547755e-08
+iteration     1245 relative max_delta = 4.510132e-08
+iteration     1246 relative max_delta = 4.472820e-08
+iteration     1247 relative max_delta = 4.435817e-08
+iteration     1248 relative max_delta = 4.399120e-08
+iteration     1249 relative max_delta = 4.362726e-08
+iteration     1250 relative max_delta = 4.326634e-08
+iteration     1251 relative max_delta = 4.290840e-08
+iteration     1252 relative max_delta = 4.255342e-08
+iteration     1253 relative max_delta = 4.220138e-08
+iteration     1254 relative max_delta = 4.185225e-08
+iteration     1255 relative max_delta = 4.150601e-08
+iteration     1256 relative max_delta = 4.116263e-08
+iteration     1257 relative max_delta = 4.082210e-08
+iteration     1258 relative max_delta = 4.048438e-08
+iteration     1259 relative max_delta = 4.014945e-08
+iteration     1260 relative max_delta = 3.981730e-08
+iteration     1261 relative max_delta = 3.948790e-08
+iteration     1262 relative max_delta = 3.916121e-08
+iteration     1263 relative max_delta = 3.883724e-08
+iteration     1264 relative max_delta = 3.851594e-08
+iteration     1265 relative max_delta = 3.819730e-08
+iteration     1266 relative max_delta = 3.788130e-08
+iteration     1267 relative max_delta = 3.756791e-08
+iteration     1268 relative max_delta = 3.725711e-08
+iteration     1269 relative max_delta = 3.694889e-08
+iteration     1270 relative max_delta = 3.664321e-08
+iteration     1271 relative max_delta = 3.634006e-08
+iteration     1272 relative max_delta = 3.603942e-08
+iteration     1273 relative max_delta = 3.574127e-08
+iteration     1274 relative max_delta = 3.544559e-08
+iteration     1275 relative max_delta = 3.515235e-08
+iteration     1276 relative max_delta = 3.486154e-08
+iteration     1277 relative max_delta = 3.457313e-08
+iteration     1278 relative max_delta = 3.428711e-08
+iteration     1279 relative max_delta = 3.400345e-08
+iteration     1280 relative max_delta = 3.372214e-08
+iteration     1281 relative max_delta = 3.344316e-08
+iteration     1282 relative max_delta = 3.316649e-08
+iteration     1283 relative max_delta = 3.289211e-08
+iteration     1284 relative max_delta = 3.261999e-08
+iteration     1285 relative max_delta = 3.235013e-08
+iteration     1286 relative max_delta = 3.208250e-08
+iteration     1287 relative max_delta = 3.181708e-08
+iteration     1288 relative max_delta = 3.155386e-08
+iteration     1289 relative max_delta = 3.129282e-08
+iteration     1290 relative max_delta = 3.103394e-08
+iteration     1291 relative max_delta = 3.077719e-08
+iteration     1292 relative max_delta = 3.052258e-08
+iteration     1293 relative max_delta = 3.027007e-08
+iteration     1294 relative max_delta = 3.001964e-08
+iteration     1295 relative max_delta = 2.977129e-08
+iteration     1296 relative max_delta = 2.952500e-08
+iteration     1297 relative max_delta = 2.928074e-08
+iteration     1298 relative max_delta = 2.903850e-08
+iteration     1299 relative max_delta = 2.879827e-08
+iteration     1300 relative max_delta = 2.856002e-08
+iteration     1301 relative max_delta = 2.832375e-08
+iteration     1302 relative max_delta = 2.808942e-08
+iteration     1303 relative max_delta = 2.785704e-08
+iteration     1304 relative max_delta = 2.762658e-08
+iteration     1305 relative max_delta = 2.739803e-08
+iteration     1306 relative max_delta = 2.717137e-08
+iteration     1307 relative max_delta = 2.694658e-08
+iteration     1308 relative max_delta = 2.672365e-08
+iteration     1309 relative max_delta = 2.650257e-08
+iteration     1310 relative max_delta = 2.628332e-08
+iteration     1311 relative max_delta = 2.606588e-08
+iteration     1312 relative max_delta = 2.585023e-08
+iteration     1313 relative max_delta = 2.563638e-08
+iteration     1314 relative max_delta = 2.542429e-08
+iteration     1315 relative max_delta = 2.521396e-08
+iteration     1316 relative max_delta = 2.500536e-08
+iteration     1317 relative max_delta = 2.479849e-08
+iteration     1318 relative max_delta = 2.459334e-08
+iteration     1319 relative max_delta = 2.438988e-08
+iteration     1320 relative max_delta = 2.418810e-08
+iteration     1321 relative max_delta = 2.398800e-08
+iteration     1322 relative max_delta = 2.378954e-08
+iteration     1323 relative max_delta = 2.359274e-08
+iteration     1324 relative max_delta = 2.339755e-08
+iteration     1325 relative max_delta = 2.320399e-08
+iteration     1326 relative max_delta = 2.301202e-08
+iteration     1327 relative max_delta = 2.282165e-08
+iteration     1328 relative max_delta = 2.263284e-08
+iteration     1329 relative max_delta = 2.244560e-08
+iteration     1330 relative max_delta = 2.225991e-08
+iteration     1331 relative max_delta = 2.207576e-08
+iteration     1332 relative max_delta = 2.189313e-08
+iteration     1333 relative max_delta = 2.171200e-08
+iteration     1334 relative max_delta = 2.153238e-08
+iteration     1335 relative max_delta = 2.135425e-08
+iteration     1336 relative max_delta = 2.117758e-08
+iteration     1337 relative max_delta = 2.100238e-08
+iteration     1338 relative max_delta = 2.082863e-08
+iteration     1339 relative max_delta = 2.065632e-08
+iteration     1340 relative max_delta = 2.048543e-08
+iteration     1341 relative max_delta = 2.031595e-08
+iteration     1342 relative max_delta = 2.014788e-08
+iteration     1343 relative max_delta = 1.998120e-08
+iteration     1344 relative max_delta = 1.981590e-08
+iteration     1345 relative max_delta = 1.965196e-08
+iteration     1346 relative max_delta = 1.948938e-08
+iteration     1347 relative max_delta = 1.932815e-08
+iteration     1348 relative max_delta = 1.916825e-08
+iteration     1349 relative max_delta = 1.900967e-08
+iteration     1350 relative max_delta = 1.885240e-08
+iteration     1351 relative max_delta = 1.869644e-08
+iteration     1352 relative max_delta = 1.854176e-08
+iteration     1353 relative max_delta = 1.838837e-08
+iteration     1354 relative max_delta = 1.823624e-08
+iteration     1355 relative max_delta = 1.808537e-08
+iteration     1356 relative max_delta = 1.793576e-08
+iteration     1357 relative max_delta = 1.778737e-08
+iteration     1358 relative max_delta = 1.764022e-08
+iteration     1359 relative max_delta = 1.749428e-08
+iteration     1360 relative max_delta = 1.734955e-08
+iteration     1361 relative max_delta = 1.720602e-08
+iteration     1362 relative max_delta = 1.706368e-08
+iteration     1363 relative max_delta = 1.692251e-08
+iteration     1364 relative max_delta = 1.678251e-08
+iteration     1365 relative max_delta = 1.664367e-08
+iteration     1366 relative max_delta = 1.650598e-08
+iteration     1367 relative max_delta = 1.636943e-08
+iteration     1368 relative max_delta = 1.623400e-08
+iteration     1369 relative max_delta = 1.609970e-08
+iteration     1370 relative max_delta = 1.596651e-08
+iteration     1371 relative max_delta = 1.583442e-08
+iteration     1372 relative max_delta = 1.570342e-08
+iteration     1373 relative max_delta = 1.557351e-08
+iteration     1374 relative max_delta = 1.544467e-08
+iteration     1375 relative max_delta = 1.531689e-08
+iteration     1376 relative max_delta = 1.519018e-08
+iteration     1377 relative max_delta = 1.506451e-08
+iteration     1378 relative max_delta = 1.493988e-08
+iteration     1379 relative max_delta = 1.481629e-08
+iteration     1380 relative max_delta = 1.469371e-08
+iteration     1381 relative max_delta = 1.457215e-08
+iteration     1382 relative max_delta = 1.445160e-08
+iteration     1383 relative max_delta = 1.433204e-08
+iteration     1384 relative max_delta = 1.421347e-08
+iteration     1385 relative max_delta = 1.409588e-08
+iteration     1386 relative max_delta = 1.397927e-08
+iteration     1387 relative max_delta = 1.386362e-08
+iteration     1388 relative max_delta = 1.374893e-08
+iteration     1389 relative max_delta = 1.363518e-08
+iteration     1390 relative max_delta = 1.352238e-08
+iteration     1391 relative max_delta = 1.341051e-08
+iteration     1392 relative max_delta = 1.329957e-08
+iteration     1393 relative max_delta = 1.318954e-08
+iteration     1394 relative max_delta = 1.308042e-08
+iteration     1395 relative max_delta = 1.297221e-08
+iteration     1396 relative max_delta = 1.286489e-08
+iteration     1397 relative max_delta = 1.275846e-08
+iteration     1398 relative max_delta = 1.265291e-08
+iteration     1399 relative max_delta = 1.254823e-08
+iteration     1400 relative max_delta = 1.244442e-08
+iteration     1401 relative max_delta = 1.234147e-08
+iteration     1402 relative max_delta = 1.223937e-08
+iteration     1403 relative max_delta = 1.213811e-08
+iteration     1404 relative max_delta = 1.203770e-08
+iteration     1405 relative max_delta = 1.193811e-08
+iteration     1406 relative max_delta = 1.183935e-08
+iteration     1407 relative max_delta = 1.174140e-08
+iteration     1408 relative max_delta = 1.164426e-08
+iteration     1409 relative max_delta = 1.154793e-08
+iteration     1410 relative max_delta = 1.145240e-08
+iteration     1411 relative max_delta = 1.135765e-08
+iteration     1412 relative max_delta = 1.126369e-08
+iteration     1413 relative max_delta = 1.117050e-08
+iteration     1414 relative max_delta = 1.107809e-08
+iteration     1415 relative max_delta = 1.098644e-08
+iteration     1416 relative max_delta = 1.089555e-08
+iteration     1417 relative max_delta = 1.080541e-08
+iteration     1418 relative max_delta = 1.071602e-08
+iteration     1419 relative max_delta = 1.062737e-08
+iteration     1420 relative max_delta = 1.053945e-08
+iteration     1421 relative max_delta = 1.045226e-08
+iteration     1422 relative max_delta = 1.036579e-08
+iteration     1423 relative max_delta = 1.028003e-08
+iteration     1424 relative max_delta = 1.019498e-08
+iteration     1425 relative max_delta = 1.011064e-08
+iteration     1426 relative max_delta = 1.002700e-08
+iteration     1427 relative max_delta = 9.944044e-09
+Converged to relative tolerance of 9.944044e-09 (convergence tolerance 1.000000e-08) in 1427 iterations
+f_k = 
+[    0.           157.65833114   311.20759739   460.61799637   605.9190306
+   747.29266759   884.9146071   1018.81240573  1149.10831481  1275.93297625
+  1399.37443995  1519.40675819  1636.1159718   1749.64712462  1860.12101888
+  1967.59485585  2072.15734622  2173.886241    2272.82827419  2369.006801
+  2462.43100735  2553.25518235  2641.62070814  2727.55061771  2811.10703965
+  2892.32807286  2971.28214436  3048.05266169  3122.69240427  3195.28760179
+  3265.85973963  3334.43007425  3400.98988196  3465.58497585  3528.29990353
+  3589.22972139  3648.45833985  3706.00487003  3761.90067289  3816.16576311]
+Initializing MBAR (will estimate free energy differences first time)...
+Could not import working embedded C++ helper code -- using pure Python version instead.
+K = 40, L = 40, N_max = 55, total samples = 2200
+N_k = 
+[55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55
+ 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55]
+Initializing f_k with provided initial guess.
+[    0.           157.65833114   311.20759739   460.61799637   605.9190306
+   747.29266759   884.9146071   1018.81240573  1149.10831481  1275.93297625
+  1399.37443995  1519.40675819  1636.1159718   1749.64712462  1860.12101888
+  1967.59485585  2072.15734622  2173.886241    2272.82827419  2369.006801
+  2462.43100735  2553.25518235  2641.62070814  2727.55061771  2811.10703965
+  2892.32807286  2971.28214436  3048.05266169  3122.69240427  3195.28760179
+  3265.85973963  3334.43007425  3400.98988196  3465.58497585  3528.29990353
+  3589.22972139  3648.45833985  3706.00487003  3761.90067289  3816.16576311]
+Initial dimensionless free energies
+f_k = 
+[    0.           157.65833114   311.20759739   460.61799637   605.9190306
+   747.29266759   884.9146071   1018.81240573  1149.10831481  1275.93297625
+  1399.37443995  1519.40675819  1636.1159718   1749.64712462  1860.12101888
+  1967.59485585  2072.15734622  2173.886241    2272.82827419  2369.006801
+  2462.43100735  2553.25518235  2641.62070814  2727.55061771  2811.10703965
+  2892.32807286  2971.28214436  3048.05266169  3122.69240427  3195.28760179
+  3265.85973963  3334.43007425  3400.98988196  3465.58497585  3528.29990353
+  3589.22972139  3648.45833985  3706.00487003  3761.90067289  3816.16576311]
+MBAR: Computing dimensionless free energies by iteration.  This may take from seconds to minutes, depending on the quantity of data...
+Self-consistent iteration 0
+current f_k =
+[    0.           157.63462322   311.18646327   460.61077216   605.91555957
+   747.28154643   884.90846566  1018.81200723  1149.09381604  1275.91645587
+  1399.36728497  1519.39921479  1636.1011056   1749.63345314  1860.12085937
+  1967.59951192  2072.14632311  2173.86500109  2272.81142284  2368.99286587
+  2462.41701468  2553.24485024  2641.61391274  2727.54385351  2811.10071504
+  2892.32311697  2971.27654413  3048.04618332  3122.68432414  3195.275855
+  3265.8434951   3334.41191157  3400.97553448  3465.57492589  3528.29064076
+  3589.21846871  3648.44481982  3705.99223309  3761.89201196  3816.15907643]
+relative max_delta = 6.212510e-06
+Determining dimensionless free energies by Newton-Raphson iteration.
+There are 40 states with samples.
+Newton-Raphson iteration 0
+current f_k for states with samples =
+  0.0000 
+157.6344 
+311.1866 
+460.6119 
+605.9177 
+747.2844 
+884.9117 
+1018.8152 
+1149.0968 
+1275.9192 
+1399.3699 
+1519.4018 
+1636.1037 
+1749.6360 
+1860.1232 
+1967.6013 
+2072.1472 
+2173.8649 
+2272.8107 
+2368.9919 
+2462.4161 
+2553.2442 
+2641.6135 
+2727.5436 
+2811.1004 
+2892.3224 
+2971.2753 
+3048.0441 
+3122.6813 
+3195.2719 
+3265.8386 
+3334.4063 
+3400.9695 
+3465.5687 
+3528.2843 
+3589.2121 
+3648.4385 
+3705.9860 
+3761.8859 
+3816.1531 
+relative max_delta = 1.672463e-06
+Newton-Raphson iteration 1
+current f_k for states with samples =
+  0.0000 
+157.6325 
+311.1878 
+460.6220 
+605.9373 
+747.3102 
+884.9406 
+1018.8441 
+1149.1236 
+1275.9442 
+1399.3939 
+1519.4252 
+1636.1267 
+1749.6590 
+1860.1448 
+1967.6177 
+2072.1551 
+2173.8644 
+2272.8041 
+2368.9830 
+2462.4081 
+2553.2384 
+2641.6100 
+2727.5414 
+2811.0975 
+2892.3164 
+2971.2638 
+3048.0252 
+3122.6539 
+3195.2358 
+3265.7945 
+3334.3558 
+3400.9150 
+3465.5122 
+3528.2270 
+3589.1546 
+3648.3813 
+3705.9297 
+3761.8309 
+3816.0994 
+relative max_delta = 1.505262e-05
+Newton-Raphson iteration 2
+current f_k for states with samples =
+  0.0000 
+157.6325 
+311.1878 
+460.6220 
+605.9373 
+747.3102 
+884.9406 
+1018.8441 
+1149.1236 
+1275.9442 
+1399.3939 
+1519.4252 
+1636.1267 
+1749.6590 
+1860.1448 
+1967.6177 
+2072.1551 
+2173.8644 
+2272.8041 
+2368.9830 
+2462.4081 
+2553.2384 
+2641.6100 
+2727.5414 
+2811.0974 
+2892.3164 
+2971.2638 
+3048.0252 
+3122.6539 
+3195.2358 
+3265.7945 
+3334.3558 
+3400.9150 
+3465.5122 
+3528.2270 
+3589.1546 
+3648.3813 
+3705.9297 
+3761.8309 
+3816.0994 
+relative max_delta = 1.686866e-09
+Converged to tolerance of 1.686866e-09 in 3 Newton-Raphson iterations.
+Recomputing all free energies...
+current f_k for all states =
+  0.0000 
+157.6325 
+311.1878 
+460.6220 
+605.9373 
+747.3102 
+884.9406 
+1018.8441 
+1149.1236 
+1275.9442 
+1399.3939 
+1519.4252 
+1636.1267 
+1749.6590 
+1860.1448 
+1967.6177 
+2072.1551 
+2173.8644 
+2272.8041 
+2368.9830 
+2462.4081 
+2553.2384 
+2641.6100 
+2727.5414 
+2811.0974 
+2892.3164 
+2971.2638 
+3048.0252 
+3122.6539 
+3195.2358 
+3265.7945 
+3334.3558 
+3400.9150 
+3465.5122 
+3528.2270 
+3589.1546 
+3648.3813 
+3705.9297 
+3761.8309 
+3816.0994 
+Final dimensionless free energies
+f_k = 
+[    0.           157.63251042   311.18779631   460.6220465    605.93732449
+   747.31023962   884.94057086  1018.84405276  1149.1236305   1275.94421204
+  1399.39393109  1519.42522726  1636.12674529  1749.6589715   1860.14475691
+  1967.61765623  2072.15510302  2173.86435797  2272.80413959  2368.98301755
+  2462.40809647  2553.23836409  2641.60999856  2727.5413793   2811.09744904
+  2892.31640837  2971.26382325  3048.02521293  3122.65390154  3195.23582594
+  3265.79448605  3334.35583692  3400.9150217   3465.51220373  3528.22702827
+  3589.15464016  3648.38133347  3705.92969504  3761.83087855  3816.09944366]
+Computing normalized weights...
+Computing potential of mean force...
+bins f_i = 
+[  2.11289956e+00   3.17991222e+00   7.60798223e+00   3.44026956e+00
+   1.85262207e+01   7.80217158e+00   3.94951544e+00   2.39879593e+00
+   8.16619995e-01   7.31017566e-01   1.52681565e+00   2.88059692e+00
+   3.09717866e+00   2.32544338e+00   2.91037489e+00   5.71104072e+00
+   3.72582033e+00   2.99623101e+00   9.97415173e-01   5.12264245e-01
+   2.45231187e+00   3.92330820e+00   6.41181941e+00   1.70491181e+00
+   3.21667129e+00   5.76994710e+01   3.15653228e+00   2.67334669e+00
+   9.15622584e-01   5.94941028e-01   3.83209368e+00   1.72990603e+02
+   4.20422690e+00   3.07387949e+00   3.48944113e+00   8.82338187e+01
+   1.17233257e+01   8.29469460e+00   0.00000000e+00   3.26891678e-01
+   3.78148549e+01   1.29591070e+02   5.70681562e+00   3.47227153e+02
+   2.70773962e+02   3.06195209e+02   4.51120557e+02   6.21640903e+01
+   9.02000078e+00   3.64796413e+02   1.46704340e+02   1.95738336e+01
+   4.04197619e+02   4.58080754e+02   4.81654001e+00   9.16292491e+01
+   2.42017115e+02   1.84979344e+02   3.59755009e+02   4.49474853e+02
+   2.23538827e+01   4.69717745e+02   1.21472538e+02   1.31660173e+02]
+Forming W_nk matrix...
+bin     0 count =         55
+bin     1 count =          7
+bin     2 count =          9
+bin     3 count =         25
+bin     4 count =          5
+bin     5 count =          6
+bin     6 count =         10
+bin     7 count =         34
+bin     8 count =        127
+bin     9 count =        207
+bin    10 count =         65
+bin    11 count =         21
+bin    12 count =         26
+bin    13 count =         42
+bin    14 count =         17
+bin    15 count =         11
+bin    16 count =         16
+bin    17 count =         44
+bin    18 count =        162
+bin    19 count =        215
+bin    20 count =         39
+bin    21 count =          7
+bin    22 count =         15
+bin    23 count =         47
+bin    24 count =         23
+bin    25 count =          8
+bin    26 count =         12
+bin    27 count =         50
+bin    28 count =        144
+bin    29 count =        169
+bin    30 count =          9
+bin    31 count =          2
+bin    32 count =          6
+bin    33 count =         79
+bin    34 count =         18
+bin    35 count =          2
+bin    36 count =          8
+bin    37 count =         34
+bin    38 count =        203
+bin    39 count =        169
+bin    40 count =          1
+bin    41 count =          3
+bin    42 count =          9
+bin    43 count =          2
+bin    44 count =          2
+bin    45 count =          1
+bin    46 count =          1
+bin    47 count =          4
+bin    48 count =          5
+bin    49 count =          2
+bin    50 count =          3
+bin    51 count =          5
+bin    52 count =          1
+bin    53 count =          1
+bin    54 count =          1
+bin    55 count =          1
+bin    56 count =          1
+bin    57 count =          1
+bin    58 count =          1
+bin    59 count =          1
+bin    60 count =          1
+bin    61 count =          1
+bin    62 count =          1
+bin    63 count =          3
+2D PMF
+
+     bin    phi    psi        N          f         df
+       0 -162.0 -162.0       55      2.113      0.559
+       1 -162.0 -126.0        7      3.180      1.017
+       2 -162.0  -90.0        9      7.608      1.033
+       3 -162.0  -54.0       25      3.440      0.999
+       4 -162.0  -18.0        5     18.526      0.838
+       5 -162.0   18.0        6      7.802      1.034
+       6 -162.0   54.0       10      3.950      1.021
+       7 -162.0   90.0       34      2.399      0.652
+       8 -162.0  126.0      127      0.817      0.309
+       9 -162.0  162.0      207      0.731      0.305
+      10 -126.0 -162.0       65      1.527      0.421
+      11 -126.0 -126.0       21      2.881      0.755
+      12 -126.0  -90.0       26      3.097      0.957
+      13 -126.0  -54.0       42      2.325      0.620
+      14 -126.0  -18.0       17      2.910      0.781
+      15 -126.0   18.0       11      5.711      1.018
+      16 -126.0   54.0       16      3.726      1.018
+      17 -126.0   90.0       44      2.996      0.860
+      18 -126.0  126.0      162      0.997      0.358
+      19 -126.0  162.0      215      0.512      0.288
+      20  -90.0 -162.0       39      2.452      0.564
+      21  -90.0 -126.0        7      3.923      0.796
+      22  -90.0  -90.0       15      6.412      1.029
+      23  -90.0  -54.0       47      1.705      0.466
+      24  -90.0  -18.0       23      3.217      0.992
+      25  -90.0   18.0        8     57.699      1.091
+      26  -90.0   54.0       12      3.157      1.017
+      27  -90.0   90.0       50      2.673      0.657
+      28  -90.0  126.0      144      0.916      0.346
+      29  -90.0  162.0      169      0.595      0.291
+      30  -54.0 -162.0        9      3.832      0.949
+      31  -54.0 -126.0        2    172.991      1.143
+      32  -54.0  -90.0        6      4.204      1.009
+      33  -54.0  -54.0       79      3.074      0.713
+      34  -54.0  -18.0       18      3.489      0.758
+      35  -54.0   18.0        2     88.234      1.108
+      36  -54.0   54.0        8     11.723      0.747
+      37  -54.0   90.0       34      8.295      0.845
+      38  -54.0  126.0      203      0.000      0.000
+      39  -54.0  162.0      169      0.327      0.266
+      40  -18.0  -90.0        1     37.815      1.075
+      41  -18.0  -54.0        3    129.591      1.127
+      42  -18.0  126.0        9      5.707      0.875
+      43  -18.0  162.0        2    347.227      1.186
+      44   18.0  -90.0        2    270.774      1.170
+      45   18.0   18.0        1    306.195      1.178
+      46   18.0   54.0        1    451.121      1.204
+      47   54.0 -162.0        4     62.164      1.094
+      48   54.0 -126.0        5      9.020      1.037
+      49   54.0  -90.0        2    364.796      1.190
+      50   54.0  -54.0        3    146.704      1.134
+      51   54.0   54.0        5     19.574      1.055
+      52   54.0   90.0        1    404.198      1.197
+      53   90.0 -162.0        1    458.081      1.205
+      54   90.0 -126.0        1      4.817      1.025
+      55   90.0  -90.0        1     91.629      1.110
+      56   90.0  -18.0        1    242.017      1.163
+      57  126.0 -162.0        1    184.979      1.147
+      58  126.0  -90.0        1    359.755      1.189
+      59  126.0  -54.0        1    449.475      1.203
+      60  126.0  126.0        1     22.354      1.059
+      61  162.0   90.0        1    469.718      1.206
+      62  162.0  126.0        1    121.473      1.124
+      63  162.0  162.0        3    131.660      1.127
