@@ -110,7 +110,8 @@ header_lines, snap_size, lv, lv_names, n_states = [], [], [], [], []
 # Read in the metadata.
 for filename in filenames:
    print "Reading metadata from %s..." % filename
-   excerpt = getoutput("""head -n 120 %s | grep '@ s[0-9]' -A 2 -n | tr '\-:/,()"\\' ' '""" % filename).split('\n')
+   #MRS: may eventually want to make this processing a bit smarter rather than just reading off the first 1200 lines.
+   excerpt = getoutput("""head -n 1200 %s | grep '@ s[0-9]' -A 2 -n | tr '\-:/,()"\\' ' '""" % filename).split('\n')
    header_lines.append(int(excerpt[-3].split()[0]))              # Count up the header lines in the file.
    n_components = 0                                              # Initiallize the number of components tracer.
    for line in excerpt:

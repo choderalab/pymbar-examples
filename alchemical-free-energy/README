@@ -7,9 +7,10 @@ methods described in Paliwal and Shirts, J. Chem. Theory Comp, v. 7,
 
 The dataset contained in the data/ directory is obtained from a series
 of alchemical intermediates for computing the hydration free energy of
-3-methylindole using a beta version of Gromacs 4.6.  3-methylindole is
-represented by its OPLS parameters and water by TIP3P.  The paramters
-are from Shirts and Pande. J. Chem. Phys. 122, 134508 (2005).
+3-methylindole using a beta version of Gromacs 4.6.  File output is
+consistent with Gromacs 5.0. 3-methylindole is represented by its OPLS
+parameters and water by TIP3P.  The paramters are from Shirts and
+Pande. J. Chem. Phys. 122, 134508 (2005).
 
 Electronic and van der Waals interactions are turned off in the same
 simulation, over 38 total states.  Files used to generate the data are
@@ -29,10 +30,10 @@ Note that all these files were generated in gromacs with calc-lambda-neighbors =
 the energy at all the other states.
 
 One can also run alchemical-gromacs.py on files that include just the
-states that are +1/-1 states from the intermediate simulated at.
-MBAR, however, cannot be run on this restricted data set.  The
-difference between these two files is automatically recognized.  For
-an example, try:
+states that are +1/-1 states from the intermediate simulated at, which
+is default for GROMACS.  MBAR, however, cannot be run on this
+restricted data set.  The difference between these two files is
+automatically recognized.  For an example, try:
 
 python alchemical-gromacs.py -d data/3-methylindole-11steps-neighbors -p dhdl -t 298
 
