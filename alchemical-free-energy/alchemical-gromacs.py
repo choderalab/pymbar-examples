@@ -115,26 +115,42 @@ header_lines, snap_size, lv, lv_names, n_states = [], [], [], [], []
 for filename in filenames:
    print "Reading metadata from %s..." % filename
    #MRS: may eventually want to make this processing a bit smarter rather than just reading off the first 1200 lines.
-   excerpt = getoutput("""head -n 1200 %s | grep '@ s[0-9]' -A 2 -n | tr '\-:/,()"\\' ' '""" % filename).split('\n')
-   header_lines.append(int(excerpt[-3].split()[0]))              # Count up the header lines in the file.
+   readhead = open(filename,'r')
+   headlines = readhead.readlines(200000) # 200K bytes should guarantee that the entire header is read in.
+   readhead.close()
+   nhead = 0
+   excerpt = []
+   for line in headlines:
+      if line[0:3] == '@ s':
+         removes = ['\\','\"','\n','(',')',',','-','/','=']
+         for r in removes:
+             line = line.replace(r,' ')
+         excerpt.append(line)
+
+      if line[0] == '@' or line[0] == '#':
+         nhead += 1
+
+   # find the size in time of the snapshot by saving two consecutive locations
+   snap_size.append(float(headlines[nhead].split()[0]))          # Store the time to determine the snapshot size.
+   snap_size.append(float(headlines[nhead+1].split()[0]))          # Store the time to determine the snapshot size.
+
+   header_lines.append(nhead)
+
    n_components = 0                                              # Initiallize the number of components tracer.
    for line in excerpt:
       elements = line.split()
       if 'legend' in elements:
          if 'dH' in elements:
-            lv_names.append(elements[8])                         # Store the lambda type names.
+            lv_names.append(elements[7])                         # Store the lambda type names.
             n_components += 1                                    # Count up the energy components.
          if 'xD' in elements:
             lv.append(elements[-n_components:])                  # Store the lambda type values.
-
-         if 'Energy' in elements:                                # Keep track of the booleans for                               
+         if 'Energy' in elements:                                # Keep track of the booleans for
             bEnergy[len(n_states)] = True                        #   the total energy,
          if 'pV' in elements:
             bPV[len(n_states)] = True                            #   the PV energy,
          if 'state' in elements:                                 
             bExpanded[len(n_states)] = True                      #   and file's type (regular vs. expanded ensemble).
-      else:
-         snap_size.append(float(elements[1]))                    # Store the time to determine the snapshot size.
 
    n_states.append(len(lv) - sum(n_states))                      # Keep track of the dE columns' number.
 
