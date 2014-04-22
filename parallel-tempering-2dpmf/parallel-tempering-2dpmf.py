@@ -31,7 +31,7 @@
 import numpy
 from math import *
 import pymbar # for MBAR analysis
-import timeseries # for timeseries analysis
+from pymbar import timeseries # for timeseries analysis
 import commands
 import os
 import os.path

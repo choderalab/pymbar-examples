@@ -12,7 +12,7 @@ from numpy import * # array routines
 import numpy
 from math import * # additional mathematical functions
 import pymbar # multistate Bennett acceptance ratio analysis (provided by pymbar)
-import timeseries # timeseries analysis (provided by pymbar)
+from pymbar import timeseries # timeseries analysis (provided by pymbar)
 import commands
 import os
 import os.path
@@ -234,7 +234,7 @@ print "analysis took %f seconds" % elapsed_time
 # compute observed and expected histograms at each state
 for l in range(0,K):
     # compute PMF at state l
-    (f_i, df_i) = mbar.computePMF(u_kln[:,l,:], bin_kn, nbins, CppOptimize = True)
+    (f_i, df_i) = mbar.computePMF(u_kln[:,l,:], bin_kn, nbins)
     # compute estimate of PMF including Jacobian term
     pmf_i = f_i + numpy.log(bin_width_i)
     # center pmf
