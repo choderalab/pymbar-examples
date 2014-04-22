@@ -10,8 +10,7 @@
 import numpy # numerical array library
 #from math import *
 import pymbar # multistate Bennett acceptance ratio
-import timeseries # timeseries analysis
-import pdb
+from pymbar import timeseries # timeseries analysis
 # Constants.
 kB = 1.381e-23 * 6.022e23 / 1000.0 # Boltzmann constant in kJ/mol/K
 
