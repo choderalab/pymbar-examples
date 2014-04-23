@@ -32,6 +32,13 @@ from pymbar import testsystems, EXP, EXPGauss, BAR, MBAR
 # HELPER FUNCTIONS
 #=============================================================================================
 
+def stddev_away(namex,errorx,dx):
+
+  if dx > 0:
+    print "%s differs by %.3f standard deviations from analytical" % (namex,errorx/dx)
+  else:
+    print "%s differs by an undefined number of standard deviations" % (namex)
+
 def GetAnalytical(beta,K,O,observables):
 
   # For a harmonic oscillator with spring constant K,
@@ -166,7 +173,7 @@ for i in range(Knon-1):
   bar_analytical = (f_k_analytical[k1]-f_k_analytical[k]) 
   bar_error = bar_analytical - df_bar
   print "BAR estimator for reduced free energy from states %d to %d is %f +/- %f" % (k,k1,df_bar,ddf_bar) 
-  print "BAR estimator differs by %f standard deviations" % numpy.abs(bar_error/ddf_bar)
+  stddev_away("BAR estimator",bar_error,ddf_bar)
 
 print "=============================================="
 print "             Testing computeEXP               "
@@ -180,7 +187,7 @@ for k in range(K-1):
     exp_analytical = (f_k_analytical[k+1]-f_k_analytical[k]) 
     exp_error = exp_analytical - df_exp
     print "df from states %d to %d is %f +/- %f" % (k,k+1,df_exp,ddf_exp) 
-    print "df differs by %f standard deviations from analytical" % numpy.abs(exp_error/ddf_exp)
+    stddev_away("df",exp_error,ddf_exp)
 
 print "EXP reverse free energy"
 for k in range(1,K):
@@ -191,7 +198,7 @@ for k in range(1,K):
     exp_analytical = (f_k_analytical[k]-f_k_analytical[k-1]) 
     exp_error = exp_analytical - df_exp
     print "df from states %d to %d is %f +/- %f" % (k,k-1,df_exp,ddf_exp) 
-    print "df differs by %f standard deviations from analytical" % numpy.abs(exp_error/ddf_exp)
+    stddev_away("df",exp_error,ddf_exp)
 
 print "=============================================="
 print "             Testing computeGauss               "
@@ -205,7 +212,7 @@ for k in range(K-1):
     gauss_analytical = (f_k_analytical[k+1]-f_k_analytical[k]) 
     gauss_error = gauss_analytical - df_gauss
     print "df for reduced free energy from states %d to %d is %f +/- %f" % (k,k+1,df_gauss,ddf_gauss) 
-    print "df differs by %f standard deviations from analytical" % numpy.abs(gauss_error/ddf_gauss)
+    stddev_away("df",gauss_error,ddf_gauss)
 
 print "Gaussian reverse estimate"
 for k in range(1,K):
@@ -216,7 +223,7 @@ for k in range(1,K):
     gauss_analytical = (f_k_analytical[k]-f_k_analytical[k-1]) 
     gauss_error = gauss_analytical - df_gauss
     print "df for reduced free energy from states %d to %d is %f +/- %f" % (k,k-1,df_gauss,ddf_gauss) 
-    print "df differs by %f standard deviations from analytical" % numpy.abs(gauss_error/ddf_gauss)
+    stddev_away("df",gauss_error,ddf_gauss)
     
 print "======================================"
 print "      Testing computeExpectations"
