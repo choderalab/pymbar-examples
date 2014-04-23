@@ -7,7 +7,7 @@
 import sys
 import numpy
 import pymbar # for MBAR analysis
-import timeseries # for timeseries analysis
+from pymbar import timeseries # for timeseries analysis
 import os
 import os.path
 import optparse

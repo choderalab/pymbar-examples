@@ -1,311 +1,610 @@
-Gaussian widths:
-[ 1.          0.70710678  0.5         0.35355339  0.25      ]
 Computing dimensionless free energies analytically...
-This script will perform 40 replicates of an experiment where samples are drawn from 5 harmonic oscillators.
+This script will draw samples from 6 harmonic oscillators.
 The harmonic oscillators have equilibrium positions
-[ 0.  1.  2.  3.  5.]
+[0 1 2 3 4 5]
 and spring constants
-[  1.   2.   4.   8.  16.]
+[25 16  9  4  1  1]
 and the following number of samples will be drawn from each (can be zero if no samples drawn):
-[400 400 400 400 400]
+[100000 100000 100000 100000      0 100000]
 
-Performing replicate 1 / 40
 generating samples...
+======================================
+      Initializing MBAR               
+======================================
 Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 2 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 3 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 4 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 5 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 6 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 7 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 8 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 9 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 10 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 11 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 12 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 13 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 14 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 15 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 16 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 17 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 18 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 19 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 20 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 21 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 22 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 23 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 24 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 25 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 26 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 27 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 28 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 29 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 30 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 31 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 32 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 33 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 34 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 35 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 36 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 37 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 38 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 39 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-Performing replicate 40 / 40
-generating samples...
-Estimating relative free energies from simulation (this may take a while)...
-Computing covariance matrix...
-
-Computation of Confidence intervals
------------------------------------
-If the error is normally distributed, the actual error will be less than a
-multiplier 'alpha' times the computed uncertainty 'sigma' a fraction of
-time given by:
-P(error < alpha sigma) = erf(alpha / sqrt(2))
-For example, the true error should be less than 1.0 * sigma
-(one standard deviation) a total of 68% of the time, and
-less than 2.0 * sigma (two standard deviations) 95% of the time.
-The observed fraction of the time that error < alpha sigma, and its
-uncertainty, is given as 'obs' (with uncertainty 'obs err') below.
-This should be compared to the column labeled 'normal'.
-A weak lower bound that holds regardless of how the error is distributed is given
-by Chebyshev's inequality, and is listed as 'cheby' below.
-Uncertainty estimates are tested for both free energy differences and expectations.
-
-Error vs. alpha
-alpha      cheby        obs        obs err range     normal
-  0.1 -99.000000   0.119403 (  0.089591,  0.152799)   0.079656
-  0.2 -24.000000   0.268657 (  0.226503,  0.312991)   0.158519
-  0.3 -10.111111   0.375622 (  0.328954,  0.423462)   0.235823
-  0.4  -5.250000   0.425373 (  0.377482,  0.473968)   0.310843
-  0.5  -3.000000   0.507463 (  0.458642,  0.556213)   0.382925
-  0.6  -1.777778   0.577114 (  0.528545,  0.624957)   0.451494
-  0.7  -1.040816   0.606965 (  0.558802,  0.654120)   0.516073
-  0.8  -0.562500   0.651741 (  0.604541,  0.697512)   0.576289
-  0.9  -0.234568   0.679104 (  0.632713,  0.723808)   0.631880
-  1.0  -0.000000   0.726368 (  0.681807,  0.768796)   0.682689
-  1.1   0.173554   0.756219 (  0.713127,  0.796896)   0.728668
-  1.2   0.305556   0.783582 (  0.742078,  0.822414)   0.769861
-  1.3   0.408284   0.815920 (  0.776636,  0.852228)   0.806399
-  1.4   0.489796   0.855721 (  0.819789,  0.888303)   0.838487
-  1.5   0.555556   0.863184 (  0.827972,  0.894975)   0.866386
-  1.6   0.609375   0.883085 (  0.849965,  0.912597)   0.890401
-  1.7   0.653979   0.898010 (  0.866649,  0.925624)   0.910869
-  1.8   0.691358   0.917910 (  0.889212,  0.942677)   0.928139
-  1.9   0.722992   0.947761 (  0.924020,  0.967294)   0.942567
-  2.0   0.750000   0.960199 (  0.939054,  0.977024)   0.954500
-  2.1   0.773243   0.965174 (  0.945201,  0.980784)   0.964271
-  2.2   0.793388   0.972637 (  0.954618,  0.986228)   0.972193
-  2.3   0.810964   0.975124 (  0.957823,  0.987978)   0.978552
-  2.4   0.826389   0.980100 (  0.964365,  0.991349)   0.983605
-  2.5   0.840000   0.982587 (  0.967719,  0.992954)   0.987581
-  2.6   0.852071   0.982587 (  0.967719,  0.992954)   0.990678
-  2.7   0.862826   0.982587 (  0.967719,  0.992954)   0.993066
-  2.8   0.872449   0.982587 (  0.967719,  0.992954)   0.994890
-  2.9   0.881094   0.985075 (  0.971143,  0.994490)   0.996268
-  3.0   0.888889   0.985075 (  0.971143,  0.994490)   0.997300
-  3.1   0.895942   0.985075 (  0.971143,  0.994490)   0.998065
-  3.2   0.902344   0.997512 (  0.990843,  0.999937)   0.998626
-  3.3   0.908173   0.997512 (  0.990843,  0.999937)   0.999033
-  3.4   0.913495   0.997512 (  0.990843,  0.999937)   0.999326
-  3.5   0.918367   0.997512 (  0.990843,  0.999937)   0.999535
-  3.6   0.922840   0.997512 (  0.990843,  0.999937)   0.999682
-  3.7   0.926954   0.997512 (  0.990843,  0.999937)   0.999784
-  3.8   0.930748   0.997512 (  0.990843,  0.999937)   0.999855
-  3.9   0.934254   0.997512 (  0.990843,  0.999937)   0.999904
-  4.0   0.937500   0.997512 (  0.990843,  0.999937)   0.999937
-     ------------  Cumulative Statistics -----------------
-     -----------------------------------------------------
-         i      average    bias     stdev      rms error 
-     -----------------------------------------------------
-         0     0.0000      0.0000      0.0000      0.0000
-         1     0.3526      0.0061      0.0394      0.0399
-         2     0.7106      0.0174      0.0772      0.0791
-         3     1.0675      0.0278      0.1265      0.1296
-         4     1.5673      0.1810      1.3621      1.3741
-     -----------------------------------------------------
-    Total:     1.5673      0.1810      1.3621      1.3741
-
-Computation of Confidence intervals
------------------------------------
-If the error is normally distributed, the actual error will be less than a
-multiplier 'alpha' times the computed uncertainty 'sigma' a fraction of
-time given by:
-P(error < alpha sigma) = erf(alpha / sqrt(2))
-For example, the true error should be less than 1.0 * sigma
-(one standard deviation) a total of 68% of the time, and
-less than 2.0 * sigma (two standard deviations) 95% of the time.
-The observed fraction of the time that error < alpha sigma, and its
-uncertainty, is given as 'obs' (with uncertainty 'obs err') below.
-This should be compared to the column labeled 'normal'.
-A weak lower bound that holds regardless of how the error is distributed is given
-by Chebyshev's inequality, and is listed as 'cheby' below.
-Uncertainty estimates are tested for both free energy differences and expectations.
-
-Error vs. alpha
-alpha      cheby        obs        obs err range     normal
-  0.1 -99.000000   0.064356 (  0.034884,  0.101964)   0.079656
-  0.2 -24.000000   0.143564 (  0.098803,  0.195003)   0.158519
-  0.3 -10.111111   0.217822 (  0.163791,  0.277143)   0.235823
-  0.4  -5.250000   0.297030 (  0.236161,  0.361705)   0.310843
-  0.5  -3.000000   0.356436 (  0.291977,  0.423588)   0.382925
-  0.6  -1.777778   0.415842 (  0.348906,  0.484356)   0.451494
-  0.7  -1.040816   0.485149 (  0.416609,  0.553966)   0.516073
-  0.8  -0.562500   0.544554 (  0.475702,  0.612571)   0.576289
-  0.9  -0.234568   0.608911 (  0.540836,  0.674943)   0.631880
-  1.0  -0.000000   0.683168 (  0.617535,  0.745366)   0.682689
-  1.1   0.173554   0.712871 (  0.648728,  0.773022)   0.728668
-  1.2   0.305556   0.782178 (  0.722857,  0.836209)   0.769861
-  1.3   0.408284   0.821782 (  0.766242,  0.871292)   0.806399
-  1.4   0.489796   0.846535 (  0.793837,  0.892740)   0.838487
-  1.5   0.555556   0.881188 (  0.833262,  0.921978)   0.866386
-  1.6   0.609375   0.896040 (  0.850513,  0.934154)   0.890401
-  1.7   0.653979   0.910891 (  0.868037,  0.946060)   0.910869
-  1.8   0.691358   0.935644 (  0.898036,  0.965116)   0.928139
-  1.9   0.722992   0.945545 (  0.910411,  0.972368)   0.942567
-  2.0   0.750000   0.965347 (  0.936163,  0.985886)   0.954500
-  2.1   0.773243   0.970297 (  0.942906,  0.988968)   0.964271
-  2.2   0.793388   0.970297 (  0.942906,  0.988968)   0.972193
-  2.3   0.810964   0.975248 (  0.949833,  0.991875)   0.978552
-  2.4   0.826389   0.985149 (  0.964520,  0.996911)   0.983605
-  2.5   0.840000   0.995050 (  0.981815,  0.999874)   0.987581
-  2.6   0.852071   0.995050 (  0.981815,  0.999874)   0.990678
-  2.7   0.862826   0.995050 (  0.981815,  0.999874)   0.993066
-  2.8   0.872449   0.995050 (  0.981815,  0.999874)   0.994890
-  2.9   0.881094   0.995050 (  0.981815,  0.999874)   0.996268
-  3.0   0.888889   0.995050 (  0.981815,  0.999874)   0.997300
-  3.1   0.895942   0.995050 (  0.981815,  0.999874)   0.998065
-  3.2   0.902344   0.995050 (  0.981815,  0.999874)   0.998626
-  3.3   0.908173   0.995050 (  0.981815,  0.999874)   0.999033
-  3.4   0.913495   0.995050 (  0.981815,  0.999874)   0.999326
-  3.5   0.918367   0.995050 (  0.981815,  0.999874)   0.999535
-  3.6   0.922840   0.995050 (  0.981815,  0.999874)   0.999682
-  3.7   0.926954   0.995050 (  0.981815,  0.999874)   0.999784
-  3.8   0.930748   0.995050 (  0.981815,  0.999874)   0.999855
-  3.9   0.934254   0.995050 (  0.981815,  0.999874)   0.999904
-  4.0   0.937500   0.995050 (  0.981815,  0.999874)   0.999937
-     ------------  Cumulative Statistics -----------------
-     -----------------------------------------------------
-         i      average    bias     stdev      rms error 
-     -----------------------------------------------------
-         0     1.0022      0.0022      0.0287      0.0288
-         1     0.7065     -0.0006      0.0122      0.0122
-         2     0.5003      0.0003      0.0098      0.0098
-         3     0.3536      0.0000      0.0092      0.0092
-         4     0.2488     -0.0012      0.0079      0.0080
-     -----------------------------------------------------
-    Total:     0.2488     -0.0012      0.0079      0.0080
+Using embedded C++ helper code.
+K = (states with samples) 6, L (total states) = 6, N_max = 100000, total samples = 500000
+There are 5 states with samples.
+N_k = 
+[ 100000.  100000.  100000.  100000.       0.  100000.]
+Initializing free energies to zero.
+Initial dimensionless free energies with method zeros
+f_k = 
+[ 0.  0.  0.  0.  0.  0.]
+Determining dimensionless free energies by Newton-Raphson iteration.
+self consistent iteration gradient norm is 1.0224e+08, Newton-Raphson gradient norm is 2.4717e+06
+Choosing self-consistent iteration on iteration 0
+current f_k for states with samples =
+[ 0.          0.01090135  0.0563571   0.02322996 -0.1071778 ]
+relative max_delta = 1.000000e+00
+self consistent iteration gradient norm is 6.8544e+07, Newton-Raphson gradient norm is  1.115e+06
+Choosing self-consistent iteration for lower gradient on iteration 1
+current f_k for states with samples =
+[ 0.          0.02434625  0.10121862  0.03158772 -0.19443986]
+relative max_delta = 4.487869e-01
+self consistent iteration gradient norm is 4.7992e+07, Newton-Raphson gradient norm is  5.408e+05
+Newton-Raphson used on iteration 2
+current f_k for states with samples =
+[ 0.         -0.24025758 -0.51658974 -0.90936325 -1.55862438]
+relative max_delta = 8.752491e-01
+self consistent iteration gradient norm is 3.4655e+05, Newton-Raphson gradient norm is     49.614
+Newton-Raphson used on iteration 3
+current f_k for states with samples =
+[ 0.         -0.24550114 -0.53678651 -0.94726861 -1.6431977 ]
+relative max_delta = 5.146874e-02
+self consistent iteration gradient norm is     27.472, Newton-Raphson gradient norm is 3.1659e-07
+Newton-Raphson used on iteration 4
+current f_k for states with samples =
+[ 0.         -0.24550317 -0.53681452 -0.94736459 -1.64372037]
+relative max_delta = 3.179798e-04
+self consistent iteration gradient norm is 1.6567e-07, Newton-Raphson gradient norm is 2.4318e-16
+Newton-Raphson used on iteration 5
+current f_k for states with samples =
+[ 0.         -0.24550317 -0.53681452 -0.94736459 -1.6437204 ]
+relative max_delta = 2.206553e-08
+self consistent iteration gradient norm is 2.4754e-16, Newton-Raphson gradient norm is 2.5542e-16
+Choosing self-consistent iteration for lower gradient on iteration 6
+current f_k for states with samples =
+[ 0.         -0.24550317 -0.53681452 -0.94736459 -1.6437204 ]
+relative max_delta = 5.727672e-14
+Converged to tolerance of 5.727672e-14 in 7 iterations.
+Of 7 iterations, 4 were Newton-Raphson iterations and 3 were self-consistent iterations
+Recomputing all free energies and log weights for storage
+Final dimensionless free energies
+f_k = 
+[ 0.         -0.24550317 -0.53681452 -0.94736459 -1.64022944 -1.6437204 ]
+MBAR initialization complete.
+=============================================
+      Testing getFreeEnergyDifferences       
+=============================================
+Error in free energies is:
+[[ 0.         -0.02235962 -0.02598889 -0.03107386 -0.03079153 -0.03428249]
+ [ 0.02235962  0.         -0.00362928 -0.00871424 -0.00843191 -0.01192288]
+ [ 0.02598889  0.00362928  0.         -0.00508497 -0.00480264 -0.0082936 ]
+ [ 0.03107386  0.00871424  0.00508497  0.          0.00028233 -0.00320863]
+ [ 0.03079153  0.00843191  0.00480264 -0.00028233  0.         -0.00349096]
+ [ 0.03428249  0.01192288  0.0082936   0.00320863  0.00349096  0.        ]]
+Standard deviations away is:
+[[ 0.          1.00819447  1.02253348  1.17230651  1.1378565   1.23257215]
+ [ 1.00819447  0.          0.31324815  0.6307566   0.56746972  0.73674183]
+ [ 1.02253348  0.31324815  0.          0.80813775  0.56886536  0.78725824]
+ [ 1.17230651  0.6307566   0.80813775  0.          0.05888384  0.42315612]
+ [ 1.1378565   0.56746972  0.56886536  0.05888384  0.          1.08760882]
+ [ 1.23257215  0.73674183  0.78725824  0.42315612  1.08760882  0.        ]]
+==============================================
+             Testing computeBAR               
+==============================================
+BAR estimator for reduced free energy from states 0 to 1 is -0.245682 +/- 0.022179
+BAR estimator differs by 1.016204 standard deviations
+BAR estimator for reduced free energy from states 1 to 2 is -0.289890 +/- 0.011670
+BAR estimator differs by 0.189176 standard deviations
+BAR estimator for reduced free energy from states 2 to 3 is -0.412572 +/- 0.006403
+BAR estimator differs by 1.109860 standard deviations
+BAR estimator for reduced free energy from states 3 to 5 is -0.696259 +/- 0.007585
+BAR estimator differs by 0.410256 standard deviations
+==============================================
+             Testing computeEXP               
+==============================================
+EXP forward free energy
+df from states 0 to 1 is 1.009948 +/- 0.212933
+df differs by 5.790976 standard deviations from analytical
+df from states 1 to 2 is 0.200823 +/- 0.139273
+df differs by 3.507527 standard deviations from analytical
+df from states 2 to 3 is -0.168047 +/- 0.058393
+df differs by 4.065886 standard deviations from analytical
+df from states 3 to 4 is -0.610266 +/- 0.051746
+df differs by 1.601669 standard deviations from analytical
+EXP reverse free energy
+df from states 1 to 0 is -0.149822 +/- 0.492342
+df differs by 0.148923 standard deviations from analytical
+df from states 2 to 1 is -0.392900 +/- 0.052767
+df differs by 1.993998 standard deviations from analytical
+df from states 3 to 2 is -0.430201 +/- 0.012138
+df differs by 2.037910 standard deviations from analytical
+df from states 5 to 4 is 0.001028 +/- 0.004220
+df differs by 0.243618 standard deviations from analytical
+==============================================
+             Testing computeGauss               
+==============================================
+Gaussian forward estimate
+df for reduced free energy from states 0 to 1 is 2.693587 +/- 0.025044
+df differs by 116.462987 standard deviations from analytical
+df for reduced free energy from states 1 to 2 is 1.690027 +/- 0.013593
+df differs by 145.494517 standard deviations from analytical
+df for reduced free energy from states 2 to 3 is 0.759172 +/- 0.006161
+df differs by 189.018714 standard deviations from analytical
+df for reduced free energy from states 3 to 4 is -0.144701 +/- 0.002607
+df differs by 210.352899 standard deviations from analytical
+Gaussian reverse estimate
+df for reduced free energy from states 1 to 0 is -6.775315 +/- 0.089807
+df differs by 72.958059 standard deviations from analytical
+df for reduced free energy from states 2 to 1 is -6.004745 +/- 0.066519
+df differs by 85.946293 standard deviations from analytical
+df for reduced free energy from states 3 to 2 is -5.392841 +/- 0.049321
+df differs by 101.120090 standard deviations from analytical
+df for reduced free energy from states 5 to 4 is 0.001655 +/- 0.003882
+df differs by 0.426241 standard deviations from analytical
+======================================
+      Testing computeExpectations
+======================================
+============================================
+      Testing observable position
+============================================
+Analytical estimator of position is
+[0 1 2 3 4 5]
+MBAR estimator of the position is
+[  3.26177113e-04   1.00107267e+00   1.99985645e+00   3.00108506e+00
+   4.00195977e+00   5.00456674e+00]
+MBAR estimators differ by X standard deviations
+[ 0.51885952  1.38725151  0.14846809  0.76563881  0.53047842  1.47063273]
+Standard estimator of position is (states with samples):
+[  3.15340102e-04   1.00127331e+00   1.99927591e+00   3.00262582e+00
+   5.00341673e+00]
+Standard estimators differ by X standard deviations (states with samples)
+[ 0.49992394  1.61273407  0.68659166  1.66287555  1.0785606 ]
+============================================
+      Testing observable position^2
+============================================
+Analytical estimator of position^2 is
+[  0.04         1.0625       4.11111111   9.25        17.          26.        ]
+MBAR estimator of the position^2 is
+[  0.03979844   1.06431649   4.11050858   9.25585594  17.01820615
+  26.04533019]
+MBAR estimators differ by X standard deviations
+[ 1.16050974  1.17073084  0.15747291  0.6876948   0.62634008  1.43127135]
+Standard estimator of position^2 is (states with samples):
+[  0.03978756   1.0648842    4.10832563   9.26510923  26.03770302]
+Standard estimators differ by X standard deviations (states with samples)
+[ 1.18469468  1.48390895  0.65590756  1.58135276  1.17996264]
+============================================
+      Testing observable potential energy
+============================================
+Analytical estimator of potential energy is
+[ 0.5  0.5  0.5  0.5  0.5  0.5]
+MBAR estimator of the potential energy is
+[ 0.49748056  0.49736917  0.49987255  0.4986911   0.50126399  0.49983138]
+MBAR estimators differ by X standard deviations
+[ 1.16050975  1.34266026  0.07685196  0.86877553  0.90289     0.08554414]
+Standard estimator of potential energy is (states with samples):
+[ 0.49734447  0.49870066  0.50049903  0.49870866  0.50176786]
+Standard estimators differ by X standard deviations (states with samples)
+[ 1.18469468  0.58253605  0.22393849  0.57910413  0.79008611]
+============================================
+      Testing observable RMS displacement
+============================================
+Analytical estimator of RMS displacement is
+[ 0.2         0.25        0.33333333  0.5         1.          1.        ]
+MBAR estimator of the RMS displacement is
+[ 0.19949548  0.24934142  0.33329085  0.49934512  1.00126319  0.99983137]
+MBAR estimators differ by X standard deviations
+[ 1.15904413  1.34088944  0.07684707  0.86820621  0.9034599   0.08553692]
+Standard estimator of RMS displacement is (states with samples):
+[ 0.19946819  0.24967495  0.33349963  0.49935391  1.0017663 ]
+Standard estimators differ by X standard deviations (states with samples)
+[ 1.18311749  0.5821571   0.22399433  0.57872974  0.79078326]
+=============================================
+      Testing computeMultipleExpectations
+=============================================
+Averages for state 0
+[ 0.00032618  0.03979844]
+Correlation matrix between observables for state 0
+[[  3.95191318e-07  -2.66574753e-09]
+ [ -2.66574753e-09   3.01640717e-08]]
+Averages for state 1
+[ 1.00107267  1.06431649]
+Correlation matrix between observables for state 1
+[[  5.97890999e-07   1.18474621e-06]
+ [  1.18474621e-06   2.40741023e-06]]
+Averages for state 2
+[ 1.99985645  4.11050858]
+Correlation matrix between observables for state 2
+[[  9.34881961e-07   3.68282479e-06]
+ [  3.68282479e-06   1.46402989e-05]]
+Averages for state 3
+[ 3.00108506  9.25585594]
+Correlation matrix between observables for state 3
+[[  2.00846162e-06   1.20206431e-05]
+ [  1.20206431e-05   7.25105661e-05]]
+Averages for state 4
+[  4.00195977  17.01820615]
+Correlation matrix between observables for state 4
+[[  1.36481909e-05   1.06910330e-04]
+ [  1.06910330e-04   8.44920383e-04]]
+Averages for state 5
+[  5.00456674  26.04533019]
+Correlation matrix between observables for state 5
+[[  9.64283378e-06   9.75905719e-05]
+ [  9.75905719e-05   1.00306971e-03]]
+============================================
+      Testing computeEntropyAndEnthalpy
+============================================
+Computing average energy and entropy by MBAR.
+Free energies
+[[ 0.         -0.24550317 -0.53681452 -0.94736459 -1.64022944 -1.6437204 ]
+ [ 0.24550317  0.         -0.29131135 -0.70186143 -1.39472627 -1.39821724]
+ [ 0.53681452  0.29131135  0.         -0.41055008 -1.10341492 -1.10690589]
+ [ 0.94736459  0.70186143  0.41055008  0.         -0.69286485 -0.69635581]
+ [ 1.64022944  1.39472627  1.10341492  0.69286485  0.         -0.00349096]
+ [ 1.6437204   1.39821724  1.10690589  0.69635581  0.00349096  0.        ]]
+[[ 0.          0.02217788  0.02541618  0.0265066   0.02706099  0.02781378]
+ [ 0.02217788  0.          0.01158594  0.01381554  0.01485879  0.01618325]
+ [ 0.02541618  0.01158594  0.          0.00629221  0.00844248  0.01053479]
+ [ 0.0265066   0.01381554  0.00629221  0.          0.00479475  0.00758262]
+ [ 0.02706099  0.01485879  0.00844248  0.00479475  0.          0.00320976]
+ [ 0.02781378  0.01618325  0.01053479  0.00758262  0.00320976  0.        ]]
+maximum difference between values computed here and in computeFreeEnergies is 0
+maximum difference between uncertainties computed here and in computeFreeEnergies is 8.32667e-17
+Energies
+[[  0.00000000e+00  -1.11394741e-04   2.39198966e-03   1.21053378e-03
+    3.78343037e-03   2.35081873e-03]
+ [  1.11394741e-04   0.00000000e+00   2.50338440e-03   1.32192852e-03
+    3.89482511e-03   2.46221347e-03]
+ [ -2.39198966e-03  -2.50338440e-03   0.00000000e+00  -1.18145588e-03
+    1.39144072e-03  -4.11709295e-05]
+ [ -1.21053378e-03  -1.32192852e-03   1.18145588e-03   0.00000000e+00
+    2.57289659e-03   1.14028495e-03]
+ [ -3.78343037e-03  -3.89482511e-03  -1.39144072e-03  -2.57289659e-03
+    0.00000000e+00  -1.43261165e-03]
+ [ -2.35081873e-03  -2.46221347e-03   4.11709295e-05  -1.14028495e-03
+    1.43261165e-03   0.00000000e+00]]
+[[ 0.          0.00301208  0.00273183  0.00264254  0.00258833  0.00293242]
+ [ 0.00301208  0.          0.00280011  0.00247438  0.00245691  0.00278157]
+ [ 0.00273183  0.00280011  0.          0.00256591  0.00223347  0.00258566]
+ [ 0.00264254  0.00247438  0.00256591  0.          0.00210051  0.00272598]
+ [ 0.00258833  0.00245691  0.00223347  0.00210051  0.          0.00210266]
+ [ 0.00293242  0.00278157  0.00258566  0.00272598  0.00210266  0.        ]]
+maximum difference between values computed here and in computeExpectations is 0
+Entropies
+[[ 0.          0.24539177  0.53920651  0.94857513  1.64401287  1.64607122]
+ [-0.24539177  0.          0.29381473  0.70318335  1.3986211   1.40067945]
+ [-0.53920651 -0.29381473  0.          0.40936862  1.10480636  1.10686472]
+ [-0.94857513 -0.70318335 -0.40936862  0.          0.69543774  0.6974961 ]
+ [-1.64401287 -1.3986211  -1.10480636 -0.69543774  0.          0.00205835]
+ [-1.64607122 -1.40067945 -1.10686472 -0.6974961  -0.00205835  0.        ]]
+[[ 0.          0.02041293  0.02425189  0.02561491  0.02599718  0.02690347]
+ [ 0.02041293  0.          0.00981535  0.01276816  0.01358667  0.01519075]
+ [ 0.02425189  0.00981535  0.          0.00515109  0.00724843  0.009572  ]
+ [ 0.02561491  0.01276816  0.00515109  0.          0.00380558  0.00625077]
+ [ 0.02599718  0.01358667  0.00724843  0.00380558  0.          0.00295609]
+ [ 0.02690347  0.01519075  0.009572    0.00625077  0.00295609  0.        ]]
+Error in entropies is:
+[[ 0.         -0.02235962 -0.02598889 -0.03107386 -0.03079153 -0.03428249]
+ [ 0.02235962  0.         -0.00362928 -0.00871424 -0.00843191 -0.01192288]
+ [ 0.02598889  0.00362928  0.         -0.00508497 -0.00480264 -0.0082936 ]
+ [ 0.03107386  0.00871424  0.00508497  0.          0.00028233 -0.00320863]
+ [ 0.03079153  0.00843191  0.00480264 -0.00028233  0.         -0.00349096]
+ [ 0.03428249  0.01192288  0.0082936   0.00320863  0.00349096  0.        ]]
+Standard deviations away is:
+[[ 0.          1.08990806  1.17025442  1.26037507  1.32995031  1.36165754]
+ [ 1.08990806  0.          0.62480285  0.78603104  0.90726677  0.94696355]
+ [ 1.17025442  0.62480285  0.          0.7578033   0.85454031  0.86214263]
+ [ 1.26037507  0.78603104  0.7578033   0.          0.60189611  0.69574093]
+ [ 1.32995031  0.90726677  0.85454031  0.60189611  0.          0.69630819]
+ [ 1.36165754  0.94696355  0.86214263  0.69574093  0.69630819  0.        ]]
+============================================
+      Testing computePerturbedFreeEnergies
+============================================
+Computing dimensionless free energies analytically...
+Error in free energies is:
+[[ 0.         -0.02038252 -0.02353964 -0.02613245 -0.02777695]
+ [ 0.02038252  0.         -0.00315712 -0.00574993 -0.00739443]
+ [ 0.02353964  0.00315712  0.         -0.00259282 -0.00423731]
+ [ 0.02613245  0.00574993  0.00259282  0.         -0.0016445 ]
+ [ 0.02777695  0.00739443  0.00423731  0.0016445   0.        ]]
+Standard deviations away is:
+[[ 0.          1.51634646  1.37098844  1.42586195  1.43835516]
+ [ 1.51634646  0.          0.40374124  0.56721531  0.62525863]
+ [ 1.37098844  0.40374124  0.          0.51503197  0.53840345]
+ [ 1.42586195  0.56721531  0.51503197  0.          0.41130079]
+ [ 1.43835516  0.62525863  0.53840345  0.41130079  0.        ]]
+============================================
+      Testing computePerturbedExpectation   
+============================================
+============================================
+      Testing observable position
+============================================
+Analytical estimator of position is
+3.5
+MBAR estimator of the position is
+3.4996308056
+MBAR estimators differ by X standard deviations
+0.14755445581
+============================================
+      Testing observable position^2
+============================================
+Analytical estimator of position^2 is
+12.75
+MBAR estimator of the position^2 is
+12.7461223242
+MBAR estimators differ by X standard deviations
+0.218048194099
+============================================
+      Testing observable potential energy
+============================================
+Analytical estimator of potential energy is
+0.5
+MBAR estimator of the potential energy is
+0.498706685072
+MBAR estimators differ by X standard deviations
+0.898122943726
+============================================
+      Testing observable RMS displacement
+============================================
+Analytical estimator of RMS displacement is
+0.707106781187
+MBAR estimator of the RMS displacement is
+0.706191677289
+MBAR estimators differ by X standard deviations
+0.897541413476
+============================================
+      Testing computeOverlap   
+============================================
+Overlap matrix output
+[[  9.80463345e-01   1.95296274e-02   3.87576398e-06   2.66331841e-07
+    0.00000000e+00   2.88562505e-06]
+ [  1.95296274e-02   9.15625114e-01   6.32285133e-02   1.40448909e-03
+    0.00000000e+00   2.12256264e-04]
+ [  3.87576398e-06   6.32285133e-02   7.70199487e-01   1.60153472e-01
+    0.00000000e+00   6.41465191e-03]
+ [  2.66331841e-07   1.40448909e-03   1.60153472e-01   7.15771073e-01
+    0.00000000e+00   1.22670699e-01]
+ [  2.01196854e-04   5.48178668e-03   5.96424636e-02   3.55404981e-01
+    0.00000000e+00   5.79269572e-01]
+ [  2.88562505e-06   2.12256264e-04   6.41465191e-03   1.22670699e-01
+    0.00000000e+00   8.70699507e-01]]
+Sum of row 0 is 1.000000 (should be 1), looks like it is.
+Sum of row 1 is 1.000000 (should be 1), looks like it is.
+Sum of row 2 is 1.000000 (should be 1), looks like it is.
+Sum of row 3 is 1.000000 (should be 1), looks like it is.
+Sum of row 4 is 1.000000 (should be 1), looks like it is.
+Sum of row 5 is 1.000000 (should be 1), looks like it is.
+Overlap eigenvalue output
+[ 1.          0.98100874  0.91813709  0.80346062  0.55015208  0.        ]
+Overlap scalar output
+0.0189912646523
+============================================
+      Testing computePMF   
+============================================
+There are a total of 49 umbrellas.
+Constructing umbrellas...
+Generating 1000 samples for each of 49 umbrellas...
+Solving for free energies of state ...
+Computing PMF ...
+2D PMF:
+399 counts out of 49000 counts not in any bin
+     bin      x      y        N          f       true      error         df   sigmas
+       1  -0.65  -0.65        8      8.771      8.537     -0.235      0.370     0.63
+       2  -0.65  -0.56       30      7.454      7.404     -0.050      0.204     0.24
+       3  -0.65  -0.47       52      6.370      6.446      0.076      0.165     0.46
+       4  -0.65  -0.37       65      5.425      5.662      0.237      0.152     1.56
+       5  -0.65  -0.28       74      4.713      5.052      0.339      0.142     2.39
+       6  -0.65  -0.19       58      4.554      4.617      0.062      0.154     0.41
+       7  -0.65  -0.09       64      4.179      4.356      0.177      0.148     1.20
+       8  -0.65   0.00       54      4.287      4.268     -0.019      0.157     0.12
+       9  -0.65   0.09       60      4.254      4.356      0.101      0.151     0.67
+      10  -0.65   0.19       61      4.500      4.617      0.117      0.151     0.78
+      11  -0.65   0.28       65      4.882      5.052      0.171      0.149     1.15
+      12  -0.65   0.37       52      5.735      5.662     -0.073      0.164     0.44
+      13  -0.65   0.47       59      6.286      6.446      0.160      0.159     1.01
+      14  -0.65   0.56       30      7.557      7.404     -0.153      0.204     0.75
+      15  -0.65   0.65        7      8.837      8.537     -0.300      0.404     0.74
+      16  -0.56  -0.65       34      7.279      7.404      0.126      0.195     0.64
+      17  -0.56  -0.56      122      6.066      6.272      0.206      0.126     1.64
+      18  -0.56  -0.47      195      5.086      5.314      0.228      0.111     2.05
+      19  -0.56  -0.37      192      4.425      4.530      0.105      0.109     0.96
+      20  -0.56  -0.28      199      3.758      3.920      0.162      0.106     1.54
+      21  -0.56  -0.19      187      3.430      3.484      0.055      0.106     0.52
+      22  -0.56  -0.09      186      3.154      3.223      0.069      0.105     0.66
+      23  -0.56   0.00      217      2.945      3.136      0.191      0.102     1.88
+      24  -0.56   0.09      194      3.132      3.223      0.092      0.104     0.88
+      25  -0.56   0.19      189      3.398      3.484      0.086      0.106     0.81
+      26  -0.56   0.28      223      3.647      3.920      0.273      0.103     2.65
+      27  -0.56   0.37      164      4.557      4.530     -0.027      0.113     0.24
+      28  -0.56   0.47      177      5.242      5.314      0.071      0.114     0.63
+      29  -0.56   0.56      124      6.127      6.272      0.145      0.126     1.16
+      30  -0.56   0.65       30      7.532      7.404     -0.127      0.204     0.62
+      31  -0.47  -0.65       52      6.335      6.446      0.111      0.167     0.66
+      32  -0.47  -0.56      176      5.151      5.314      0.163      0.113     1.44
+      33  -0.47  -0.47      265      4.223      4.356      0.133      0.103     1.29
+      34  -0.47  -0.37      294      3.414      3.572      0.158      0.098     1.61
+      35  -0.47  -0.28      302      2.806      2.962      0.156      0.096     1.63
+      36  -0.47  -0.19      275      2.511      2.526      0.015      0.096     0.16
+      37  -0.47  -0.09      286      2.210      2.265      0.055      0.094     0.59
+      38  -0.47   0.00      278      2.160      2.178      0.018      0.095     0.19
+      39  -0.47   0.09      275      2.235      2.265      0.030      0.095     0.31
+      40  -0.47   0.19      296      2.413      2.526      0.114      0.095     1.20
+      41  -0.47   0.28      291      2.862      2.962      0.100      0.096     1.04
+      42  -0.47   0.37      306      3.419      3.572      0.152      0.097     1.56
+      43  -0.47   0.47      290      4.206      4.356      0.150      0.101     1.48
+      44  -0.47   0.56      178      5.228      5.314      0.086      0.113     0.76
+      45  -0.47   0.65       48      6.444      6.446      0.003      0.171     0.02
+      46  -0.37  -0.65       67      5.373      5.662      0.289      0.149     1.94
+      47  -0.37  -0.56      198      4.360      4.530      0.170      0.108     1.57
+      48  -0.37  -0.47      287      3.474      3.572      0.098      0.099     0.99
+      49  -0.37  -0.37      321      2.618      2.788      0.170      0.094     1.80
+      50  -0.37  -0.28      286      2.154      2.178      0.024      0.094     0.25
+      51  -0.37  -0.19      300      1.694      1.742      0.048      0.092     0.52
+      52  -0.37  -0.09      318      1.403      1.481      0.078      0.090     0.86
+      53  -0.37   0.00      297      1.415      1.394     -0.021      0.091     0.23
+      54  -0.37   0.09      297      1.494      1.481     -0.013      0.091     0.15
+      55  -0.37   0.19      315      1.684      1.742      0.058      0.091     0.63
+      56  -0.37   0.28      314      2.110      2.178      0.067      0.093     0.73
+      57  -0.37   0.37      331      2.607      2.788      0.181      0.094     1.93
+      58  -0.37   0.47      270      3.561      3.572      0.011      0.100     0.11
+      59  -0.37   0.56      157      4.648      4.530     -0.119      0.114     1.04
+      60  -0.37   0.65       59      5.669      5.662     -0.007      0.156     0.04
+      61  -0.28  -0.65       62      4.899      5.052      0.154      0.152     1.01
+      62  -0.28  -0.56      196      3.773      3.920      0.147      0.106     1.38
+      63  -0.28  -0.47      274      2.884      2.962      0.078      0.097     0.80
+      64  -0.28  -0.37      334      2.002      2.178      0.176      0.092     1.92
+      65  -0.28  -0.28      313      1.488      1.568      0.080      0.091     0.88
+      66  -0.28  -0.19      341      0.969      1.132      0.163      0.088     1.86
+      67  -0.28  -0.09      339      0.751      0.871      0.120      0.086     1.39
+      68  -0.28   0.00      298      0.792      0.784     -0.008      0.088     0.09
+      69  -0.28   0.09      290      0.902      0.871     -0.031      0.089     0.34
+      70  -0.28   0.19      341      0.993      1.132      0.139      0.088     1.58
+      71  -0.28   0.28      280      1.592      1.568     -0.024      0.093     0.26
+      72  -0.28   0.37      316      2.043      2.178      0.135      0.093     1.46
+      73  -0.28   0.47      304      2.829      2.962      0.132      0.096     1.38
+      74  -0.28   0.56      211      3.743      3.920      0.177      0.105     1.69
+      75  -0.28   0.65       54      5.070      5.052     -0.017      0.160     0.11
+      76  -0.19  -0.65       60      4.515      4.617      0.102      0.152     0.67
+      77  -0.19  -0.56      200      3.351      3.484      0.134      0.105     1.28
+      78  -0.19  -0.47      303      2.377      2.526      0.149      0.094     1.58
+      79  -0.19  -0.37      303      1.692      1.742      0.050      0.092     0.54
+      80  -0.19  -0.28      310      1.075      1.132      0.058      0.089     0.64
+      81  -0.19  -0.19      309      0.663      0.697      0.034      0.088     0.39
+      82  -0.19  -0.09      311      0.398      0.436      0.038      0.085     0.44
+      83  -0.19   0.00      324      0.293      0.348      0.056      0.084     0.66
+      84  -0.19   0.09      326      0.369      0.436      0.066      0.085     0.78
+      85  -0.19   0.19      302      0.689      0.697      0.008      0.088     0.10
+      86  -0.19   0.28      313      1.075      1.132      0.058      0.089     0.65
+      87  -0.19   0.37      342      1.538      1.742      0.204      0.090     2.27
+      88  -0.19   0.47      285      2.458      2.526      0.068      0.096     0.71
+      89  -0.19   0.56      194      3.380      3.484      0.105      0.105     1.00
+      90  -0.19   0.65       58      4.535      4.617      0.082      0.154     0.53
+      91  -0.09  -0.65       50      4.432      4.356     -0.076      0.162     0.47
+      92  -0.09  -0.56      167      3.271      3.223     -0.048      0.108     0.44
+      93  -0.09  -0.47      309      2.131      2.265      0.134      0.093     1.44
+      94  -0.09  -0.37      322      1.364      1.481      0.117      0.090     1.30
+      95  -0.09  -0.28      291      0.875      0.871     -0.004      0.089     0.04
+      96  -0.09  -0.19      322      0.366      0.436      0.070      0.085     0.82
+      97  -0.09  -0.09      300      0.176      0.174     -0.002      0.083     0.02
+      98  -0.09   0.00      305      0.086      0.087      0.001      0.082     0.02
+      99  -0.09   0.09      275      0.273      0.174     -0.099      0.085     1.16
+     100  -0.09   0.19      315      0.384      0.436      0.051      0.085     0.60
+     101  -0.09   0.28      337      0.724      0.871      0.147      0.086     1.71
+     102  -0.09   0.37      281      1.476      1.481      0.005      0.092     0.05
+     103  -0.09   0.47      317      2.054      2.265      0.211      0.092     2.29
+     104  -0.09   0.56      193      3.126      3.223      0.097      0.104     0.93
+     105  -0.09   0.65       66      4.171      4.356      0.184      0.146     1.27
+     106   0.00  -0.65       52      4.346      4.268     -0.078      0.159     0.49
+     107   0.00  -0.56      222      2.928      3.136      0.208      0.101     2.06
+     108   0.00  -0.47      272      2.184      2.178     -0.006      0.095     0.07
+     109   0.00  -0.37      314      1.310      1.394      0.084      0.090     0.93
+     110   0.00  -0.28      321      0.687      0.784      0.097      0.087     1.12
+     111   0.00  -0.19      334      0.252      0.348      0.096      0.084     1.15
+     112   0.00  -0.09      317      0.046      0.087      0.041      0.081     0.50
+     113   0.00   0.00      308      0.000      0.000      0.041      0.000     0.00
+     114   0.00   0.09      329      0.014      0.087      0.073      0.081     0.91
+     115   0.00   0.19      323      0.279      0.348      0.069      0.084     0.82
+     116   0.00   0.28      308      0.739      0.784      0.045      0.088     0.51
+     117   0.00   0.37      327      1.257      1.394      0.137      0.089     1.53
+     118   0.00   0.47      291      2.096      2.178      0.082      0.094     0.87
+     119   0.00   0.56      181      3.085      3.136      0.051      0.106     0.48
+     120   0.00   0.65       57      4.223      4.268      0.046      0.154     0.30
+     121   0.09  -0.65       56      4.362      4.356     -0.006      0.154     0.04
+     122   0.09  -0.56      180      3.213      3.223      0.010      0.106     0.10
+     123   0.09  -0.47      285      2.203      2.265      0.062      0.094     0.66
+     124   0.09  -0.37      304      1.429      1.481      0.052      0.091     0.57
+     125   0.09  -0.28      308      0.817      0.871      0.054      0.088     0.62
+     126   0.09  -0.19      285      0.486      0.436     -0.050      0.087     0.57
+     127   0.09  -0.09      325      0.100      0.174      0.074      0.082     0.90
+     128   0.09   0.00      307      0.079      0.087      0.008      0.082     0.10
+     129   0.09   0.09      296      0.190      0.174     -0.016      0.084     0.19
+     130   0.09   0.19      281      0.490      0.436     -0.055      0.087     0.63
+     131   0.09   0.28      319      0.787      0.871      0.084      0.087     0.96
+     132   0.09   0.37      309      1.396      1.481      0.085      0.091     0.94
+     133   0.09   0.47      285      2.178      2.265      0.087      0.094     0.92
+     134   0.09   0.56      180      3.181      3.223      0.042      0.106     0.40
+     135   0.09   0.65       61      4.199      4.356      0.156      0.150     1.04
+     136   0.19  -0.65       80      4.208      4.617      0.409      0.137     2.97
+     137   0.19  -0.56      170      3.525      3.484     -0.041      0.109     0.38
+     138   0.19  -0.47      293      2.419      2.526      0.107      0.095     1.13
+     139   0.19  -0.37      333      1.617      1.742      0.126      0.090     1.39
+     140   0.19  -0.28      302      1.110      1.132      0.022      0.090     0.25
+     141   0.19  -0.19      298      0.698      0.697     -0.001      0.088     0.02
+     142   0.19  -0.09      283      0.486      0.436     -0.050      0.087     0.58
+     143   0.19   0.00      328      0.283      0.348      0.065      0.084     0.78
+     144   0.19   0.09      321      0.371      0.436      0.064      0.085     0.75
+     145   0.19   0.19      319      0.623      0.697      0.074      0.087     0.85
+     146   0.19   0.28      322      1.029      1.132      0.104      0.089     1.17
+     147   0.19   0.37      339      1.557      1.742      0.185      0.090     2.05
+     148   0.19   0.47      287      2.424      2.526      0.103      0.095     1.07
+     149   0.19   0.56      189      3.382      3.484      0.103      0.106     0.97
+     150   0.19   0.65       71      4.320      4.617      0.297      0.143     2.07
+     151   0.28  -0.65       62      4.878      5.052      0.175      0.152     1.15
+     152   0.28  -0.56      169      3.954      3.920     -0.034      0.110     0.31
+     153   0.28  -0.47      277      2.881      2.962      0.081      0.097     0.83
+     154   0.28  -0.37      329      1.996      2.178      0.182      0.092     1.98
+     155   0.28  -0.28      332      1.407      1.568      0.161      0.090     1.80
+     156   0.28  -0.19      325      1.009      1.132      0.123      0.088     1.40
+     157   0.28  -0.09      297      0.826      0.871      0.045      0.089     0.51
+     158   0.28   0.00      324      0.694      0.784      0.090      0.087     1.04
+     159   0.28   0.09      290      0.880      0.871     -0.009      0.089     0.10
+     160   0.28   0.19      292      1.144      1.132     -0.012      0.091     0.13
+     161   0.28   0.28      324      1.433      1.568      0.135      0.090     1.50
+     162   0.28   0.37      312      2.068      2.178      0.110      0.093     1.18
+     163   0.28   0.47      318      2.753      2.962      0.209      0.095     2.20
+     164   0.28   0.56      177      3.862      3.920      0.058      0.109     0.53
+     165   0.28   0.65       53      5.026      5.052      0.026      0.160     0.16
+     166   0.37  -0.65       61      5.487      5.662      0.175      0.154     1.14
+     167   0.37  -0.56      182      4.459      4.530      0.071      0.110     0.64
+     168   0.37  -0.47      288      3.450      3.572      0.122      0.099     1.24
+     169   0.37  -0.37      336      2.585      2.788      0.203      0.093     2.17
+     170   0.37  -0.28      287      2.116      2.178      0.062      0.095     0.66
+     171   0.37  -0.19      351      1.474      1.742      0.268      0.089     3.00
+     172   0.37  -0.09      330      1.291      1.481      0.190      0.089     2.12
+     173   0.37   0.00      317      1.274      1.394      0.120      0.090     1.33
+     174   0.37   0.09      325      1.364      1.481      0.117      0.090     1.31
+     175   0.37   0.19      293      1.739      1.742      0.003      0.093     0.03
+     176   0.37   0.28      327      1.996      2.178      0.182      0.092     1.98
+     177   0.37   0.37      293      2.721      2.788      0.066      0.096     0.69
+     178   0.37   0.47      293      3.403      3.572      0.169      0.098     1.72
+     179   0.37   0.56      183      4.449      4.530      0.081      0.110     0.74
+     180   0.37   0.65       66      5.420      5.662      0.242      0.150     1.61
+     181   0.47  -0.65       50      6.370      6.446      0.076      0.170     0.45
+     182   0.47  -0.56      194      5.051      5.314      0.262      0.111     2.36
+     183   0.47  -0.47      262      4.198      4.356      0.157      0.103     1.53
+     184   0.47  -0.37      284      3.402      3.572      0.170      0.099     1.72
+     185   0.47  -0.28      315      2.720      2.962      0.242      0.095     2.55
+     186   0.47  -0.19      265      2.473      2.526      0.053      0.097     0.55
+     187   0.47  -0.09      288      2.151      2.265      0.114      0.094     1.21
+     188   0.47   0.00      276      2.136      2.178      0.042      0.095     0.44
+     189   0.47   0.09      288      2.138      2.265      0.127      0.094     1.35
+     190   0.47   0.19      289      2.404      2.526      0.122      0.095     1.29
+     191   0.47   0.28      284      2.873      2.962      0.088      0.097     0.91
+     192   0.47   0.37      291      3.422      3.572      0.150      0.098     1.53
+     193   0.47   0.47      273      4.208      4.356      0.148      0.102     1.45
+     194   0.47   0.56      178      5.142      5.314      0.172      0.113     1.52
+     195   0.47   0.65       62      6.243      6.446      0.203      0.156     1.30
+     196   0.56  -0.65       39      7.206      7.404      0.199      0.184     1.08
+     197   0.56  -0.56      115      6.109      6.272      0.163      0.128     1.28
+     198   0.56  -0.47      180      5.105      5.314      0.209      0.113     1.85
+     199   0.56  -0.37      177      4.410      4.530      0.120      0.111     1.08
+     200   0.56  -0.28      192      3.723      3.920      0.197      0.107     1.84
+     201   0.56  -0.19      218      3.195      3.484      0.289      0.103     2.82
+     202   0.56  -0.09      214      2.949      3.223      0.274      0.102     2.69
+     203   0.56   0.00      184      3.038      3.136      0.098      0.106     0.92
+     204   0.56   0.09      197      3.044      3.223      0.179      0.104     1.73
+     205   0.56   0.19      203      3.312      3.484      0.173      0.104     1.66
+     206   0.56   0.28      183      3.839      3.920      0.081      0.108     0.75
+     207   0.56   0.37      179      4.436      4.530      0.094      0.111     0.85
+     208   0.56   0.47      179      5.161      5.314      0.153      0.113     1.35
+     209   0.56   0.56      128      6.003      6.272      0.269      0.125     2.16
+     210   0.56   0.65       35      7.299      7.404      0.105      0.192     0.55
+     211   0.65  -0.65       12      8.261      8.537      0.276      0.310     0.89
+     212   0.65  -0.56       41      7.080      7.404      0.324      0.181     1.79
+     213   0.65  -0.47       50      6.318      6.446      0.128      0.169     0.76
+     214   0.65  -0.37       68      5.273      5.662      0.390      0.149     2.62
+     215   0.65  -0.28       64      4.787      5.052      0.265      0.150     1.77
+     216   0.65  -0.19       53      4.524      4.617      0.093      0.160     0.58
+     217   0.65  -0.09       49      4.403      4.356     -0.048      0.163     0.29
+     218   0.65   0.00       62      4.059      4.268      0.210      0.149     1.41
+     219   0.65   0.09       68      4.062      4.356      0.293      0.145     2.03
+     220   0.65   0.19       64      4.423      4.617      0.194      0.149     1.30
+     221   0.65   0.28       67      4.754      5.052      0.299      0.148     2.02
+     222   0.65   0.37       47      5.735      5.662     -0.073      0.171     0.43
+     223   0.65   0.47       62      6.129      6.446      0.318      0.155     2.04
+     224   0.65   0.56       27      7.557      7.404     -0.153      0.213     0.72
+     225   0.65   0.65       16      8.069      8.537      0.468      0.268     1.75
