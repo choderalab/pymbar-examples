@@ -55,7 +55,7 @@ parser.add_option('-s', '--skiptime', dest = 'equiltime', help = 'Discard data p
 parser.add_option('-t', '--temperature', dest = 'temperature', help = "Temperature in K. Default: 298 K.", default = 298, type=float)
 parser.add_option('-u', '--units', dest = 'units', help = 'Units to report energies: \'kJ\', \'kcal\', and \'kBT\'. Default: \'kJ\'', default = 'kJ')
 parser.add_option('-v', '--verbose', dest = 'verbose', help = 'Verbose option for BAR and MBAR. Default: False.', default = False, action = 'store_true')
-parser.add_option('-x', '--ignoreWL', dest = 'bignoreWL', help = 'Do not check whether the WL weights are equilibrated. No log file needed as an accompanying input.', default = False, action = 'store_true')
+parser.add_option('-x', '--ignoreWL', dest = 'bIgnoreWL', help = 'Do not check whether the WL weights are equilibrated. No log file needed as an accompanying input.', default = False, action = 'store_true')
 
 (options, args) = parser.parse_args()
 datafile_directory = options.dir
@@ -249,7 +249,7 @@ for nf in range(n_files):
    # If it is ee, find the information on when the WL weights equilibration was reached and discard to the greater of WLequiltime and equiltime.
    if bExpanded[nf]:
       logfilename = filenames[nf].replace('.xvg', '.log')
-      if not(options.ignoreWL):
+      if not(options.bIgnoreWL):
          if not os.path.isfile(logfilename):
             parser.error('\nExpanded ensemble also requires log files as input, and the file \'%s\' was not found.\nYou may rerun with the -x flag and the data will be discarded to \'equiltime\', not bothering\nwith the extraction of the information on when the WL weights equilibration was reached.\nOtherwise, put the proper log file into the directory which is subject to the analysis.' % logfilename)
          try:
