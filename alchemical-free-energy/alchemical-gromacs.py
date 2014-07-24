@@ -18,9 +18,8 @@ from commands import getoutput # a note for the future: in Python 3.X, 'getoutpu
 import pymbar # multistate Bennett acceptance ratio estimator
 import pymbar
 from pymbar import timeseries # for timeseries analysis
-from pymbar import bar,exponential_averaging
+from pymbar import bar, EXP, EXPGauss
 from pymbar.bar import BAR
-from pymbar.exponential_averaging import EXP,EXPGauss
 from optparse import OptionParser # for parsing command-line options
 import os # operating system dependent modules of Python
 import time as ttt_time # for timing
