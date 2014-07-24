@@ -80,7 +80,7 @@ Binning data...
 Evaluating reduced potential energies...
 Running MBAR...
 Using embedded C++ helper code.
-K = 26, L = 26, N_max = 501, total samples = 7443
+K = (states with samples) 26, L (total states) = 26, N_max = 501, total samples = 7443
 There are 26 states with samples.
 N_k = 
 [420 401 197 122 343 203 369 326 317 313 410 256 429 246 329 115  42  82
@@ -149,7 +149,7 @@ current f_k for states with samples =
    7.14369737   3.25826868   0.1346788    1.67556643  12.27981569
    8.64425688]
 relative max_delta = 4.828312e-05
-self consistent iteration gradient norm is 1.9279e-11, Newton-Raphson gradient norm is 6.0607e-24
+self consistent iteration gradient norm is 1.9279e-11, Newton-Raphson gradient norm is 4.0658e-24
 Newton-Raphson used on iteration 6
 current f_k for states with samples =
 [  0.           5.67115185  10.61309514  11.44969531   9.16106047
@@ -158,8 +158,8 @@ current f_k for states with samples =
    5.50534627   5.22606167   7.03885057   7.97151995   8.64053058
    7.14369734   3.25826866   0.1346788    1.67556643  12.27981581
    8.64425685]
-relative max_delta = 7.889216e-09
-Converged to tolerance of 7.889216e-09 in 7 iterations.
+relative max_delta = 7.889192e-09
+Converged to tolerance of 7.889192e-09 in 7 iterations.
 Of 7 iterations, 5 were Newton-Raphson iterations and 2 were self-consistent iterations
 Recomputing all free energies and log weights for storage
 Final dimensionless free energies
