@@ -19,7 +19,8 @@ All the flags were customized to Sire; therefore, there is no need for you -- at
 
 -r is the number of decimal places the free energies are to be reported with
 
--m is the methods the free energies are to be estimated with: TI and TI-CUBIC. If you want just TI-CUBIC, use -m ti_cubic
+-m is the methods the free energies are to be estimated with: TI and TI-CUBIC.
+If you want just TI-CUBIC, use -m ti_cubic
 
 -g will produce graphs: the TI as a filled area under the interpolation curve (dhdl_TI.pdf) and the bar plot of ∆G's evaluated for each pair of adjacent states (dF_state.pdf). This requires matplotlib.
 
