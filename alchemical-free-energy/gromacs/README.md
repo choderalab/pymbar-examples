@@ -43,7 +43,7 @@ python alchemical_analysis.py -d data/3-methylindole-11steps-neighbors
 Note how all the output results are the same _except_ for MBAR, which
 is omitted from the calculation.
 
-Sample output for both cases is provided in the files:  
+Sample outputs are provided in the files:  
 ```
 output_38steps/screen_printout.txt
 output_11steps/screen_printout.txt
