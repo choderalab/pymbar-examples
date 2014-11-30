@@ -40,7 +40,8 @@ Note how all the output results are the same EXCEPT for MBAR, which
 is omitted from the calculation.
 
 Sample output for both cases is provided in the files:  
-```output_38steps/screen_printout.txt
+```
+output_38steps/screen_printout.txt
 output_11steps/screen_printout.txt
 output_11steps_neighbors/screen_printout.txt
 output_11steps_skip_lambda/screen_printout.txt
