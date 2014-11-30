@@ -119,4 +119,5 @@ Help for `alchemical_analysis.py` (obtained with `python alchemical_analysis.py 
                         BAR and MBAR. Default: 1e-10.
   -z INIT_WITH, --initialize=INIT_WITH
                         The initial MBAR free energy guess; either 'BAR' or
-                        'zeroes'. Default: 'BAR'.```
+                        'zeroes'. Default: 'BAR'.
+```
