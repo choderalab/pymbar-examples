@@ -51,9 +51,13 @@ Help for `alchemical_analysis.py` (obtained with `python alchemical_analysis.py 
 
 Options:
   -h, --help            show this help message and exit
+  
   -a SOFTWARE, --software=SOFTWARE
+  
                         Package's name the data files come from. Default:
+                        
                         Sire.
+                        
   -c, --cfm             The Curve-Fitting-Method-based consistency inspector.
                         Default: False.
   -d DATAFILE_DIRECTORY, --dir=DATAFILE_DIRECTORY
