@@ -51,7 +51,7 @@ directory with the data files to contain only those that are of interest.
 
 Help for `alchemical_analysis.py` (obtained with `python alchemical_analysis.py -h`) is:
 
-Options:
+```Options:
   -h, --help            show this help message and exit
   -a SOFTWARE, --software=SOFTWARE
                         Package's name the data files come from. Default:
@@ -119,4 +119,4 @@ Options:
                         BAR and MBAR. Default: 1e-10.
   -z INIT_WITH, --initialize=INIT_WITH
                         The initial MBAR free energy guess; either 'BAR' or
-                        'zeroes'. Default: 'BAR'.
+                        'zeroes'. Default: 'BAR'.```
