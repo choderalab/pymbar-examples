@@ -49,13 +49,10 @@ The dataset contained in the data/ directory is obtained from a 16-window simula
 
 Help for `alchemical_analysis.py` (obtained with `python alchemical_analysis.py -h`) is:
 
-Options:
+```Options:
   -h, --help            show this help message and exit
-  
   -a SOFTWARE, --software=SOFTWARE
-  
                         Package's name the data files come from. Default:
-                        
                         Sire.
                         
   -c, --cfm             The Curve-Fitting-Method-based consistency inspector.
@@ -123,3 +120,4 @@ Options:
   -z INIT_WITH, --initialize=INIT_WITH
                         The initial MBAR free energy guess; either 'BAR' or
                         'zeroes'. Default: 'BAR'.
+```
