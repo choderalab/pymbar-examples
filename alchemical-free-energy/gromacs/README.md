@@ -40,7 +40,7 @@ automatically recognized. For an example, try:
 python alchemical_analysis.py -d data/3-methylindole-11steps-neighbors
 ```
 
-Note how all the output results are the same EXCEPT for MBAR, which
+Note how all the output results are the same _except_ for MBAR, which
 is omitted from the calculation.
 
 Sample output for both cases is provided in the files:  
