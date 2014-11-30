@@ -33,8 +33,7 @@ One can also run `alchemical_analysis.py` on files that include just the
 states that are +1/-1 states from the intermediate simulated at, which
 is default for GROMACS. MBAR, however, cannot be run on this
 restricted data set.  The difference between these two files is
-automatically recognized. For an example, try:
-
+automatically recognized. For an example, try: 
 `python alchemical_analysis.py -d data/3-methylindole-11steps-neighbors`
 
 Note how all the output results are the same EXCEPT for MBAR, which
