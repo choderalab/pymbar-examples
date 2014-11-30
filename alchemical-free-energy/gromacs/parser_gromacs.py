@@ -259,16 +259,17 @@ def readDataGromacs(parser, P):
             bSelective_MBAR = False
    
    elif len(ndE_unique) <= 3:
+      bSelective_MBAR = False
       # Scenario #2: Have the adjacent states only; 2 dE columns for the terminal states, 3 for inner ones.
       if ndE_unique.tolist() == [2, 3]:
          lv  = [l[i>0]  for i,l in enumerate(lv)]
       # Scenario #3: Have a mixture of formats (adjacent and all): either [2,3,K], or [2,K], or [3,K].
       else:
          lv = lv[ndE_unique.argmax()]
-      if 'MBAR' in methods:
+      if 'MBAR' in P.methods:
          print "\nNumber of states is NOT the same for all simulations; I'm assuming that we only evaluate"
          print "nearest neighbor states, and so cannot use MBAR, removing the method."
-         methods.remove('MBAR')
+         P.methods.remove('MBAR')
       print "\nStitching together the dhdl files. I am assuming that the files are numbered in order of"
       print "increasing lambda; otherwise, results will not be correct."
    

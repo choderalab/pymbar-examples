@@ -1,51 +1,54 @@
-To run the analysis, execute the script with python
+Script: `alchemical_analysis.py`
 
-`python alchemical_analysis.py`
+An illustration of MBAR applied to alchemical free energy
+calculations, and comparison of MBAR to a number of other free energy
+methods described in Paliwal and Shirts, J. Chem. Theory Comp, v. 7,
+4115-4134 (2011).
 
-within the directory with the data files.
+The dataset contained in the data/ directory is obtained from a series
+of alchemical intermediates for computing the hydration free energy of
+3-methylindole using a beta version of Gromacs 4.6. File output is
+consistent with Gromacs 5.0. 3-methylindole is represented by its OPLS
+parameters and water by TIP3P.  The paramters are from Shirts and
+Pande. J. Chem. Phys. 122, 134508 (2005).
 
-All the flags were customized to Sire; therefore, there is no need for you -- at least at the stage of getting it to know -- to provide any. Here is a brief overview what these flags are. (The focus is on those that are relevant to Sire, or, more accurately, to the situation when the files to be analyzed contain only the dV/dLambda data.  
-`python alchemical_analysis.py -h` would yield a more detailed description).
+Electrostatic and van der Waals interactions are turned off in the same
+simulation, over 38 total states.  Files used to generate the data are
+included in the directory inputfiles/3-methylindole-38steps. The
+placeholder FEP_STATE is replaced with the integer 0 to 37 to produce
+the 38 input files.
 
--a is the name of the software the files come from; set to 'Sire'
+To run the files for a sparser lambda spacing (11 total states),
+invoke specifying the data directory to use with the command:
 
--p is the data file prefix; set to 'actual_grad_'
+`python alchemical_analysis.py -d data/3-methylindole-11steps`
 
--q is the data file suffix; set to 'dat'
+For the denser lambda spacing with 38 total states, run
+`python alchemical_analysis.py -d data/3-methylindole-38steps`
 
--d is the path to where the data files are; set to '.'
+Note that all these files were generated in gromacs with `calc-lambda-neighbors = -1`, where one calculates 
+the energy at all the other states.
 
--u is the units the free energy are to be reported in; kcal/mol
+One can also run `alchemical_analysis.py` on files that include just the
+states that are +1/-1 states from the intermediate simulated at, which
+is default for GROMACS. MBAR, however, cannot be run on this
+restricted data set.  The difference between these two files is
+automatically recognized. For an example, try:
 
--r is the number of decimal places the free energies are to be reported with
+`python alchemical_analysis.py -d data/3-methylindole-11steps-neighbors`
 
--m is the methods the free energies are to be estimated with: TI and TI-CUBIC. If you want just TI-CUBIC, use -m ti_cubic
+Note how all the output results are the same EXCEPT for MBAR, which
+is omitted from the calculation.
 
--g will produce graphs: the TI as a filled area under the interpolation curve (dhdl_TI.pdf) and the bar plot of ∆G's evaluated for each pair of adjacent states (dF_state.pdf). This requires matplotlib.
+Sample output for both cases is provided in the files:
+output_38steps/screen_printout.txt
+output_11steps/screen_printout.txt
+output_11steps_neighbors/screen_printout.txt
+output_11steps_skip_lambda/screen_printout.txt
 
--s is to be used whenever you want to discard some initial snapshots
-
-The file parser (`parser_sire.py`) is separated from the analysis proper (`alchemical_analysis.py`); make sure the former is either handy or a pythonpath is established for it. (There is `parser_gromacs.py`, as well, in case you want to run the analysis on Gromacs' files).
-
-Also, to make it self-contained, all imports of not built-in modules needed for some non-trivial tasks have been hidden under the conditional statements. In other words, if you do not want to bother with the autocorrelation analysis (the -i flag) there is no need to checkout `timeseries.py` from the `pymbar` repository. numpy and matplotlib (for the graphs, optional) are the only prerequisites for the script.
-
-(If you do not have python installed) Install one of its scientific distributions, like Enthought Canopy or Anaconda, and you will get it with a bunch of libraries (among which are numpy and matplotlib) rather than a stand-alone python.
-
-Below is a list of the command the output files were obtained with.
-
-screen_printout_1.txt:   
-`python alchemical_analysis.py -d data/ -o .`
-(Analysis with default settings)
-
-screen_printout_2.txt:   
-`python alchemical_analysis.py -d data/ -o . -m ti_cubic -u kJ -r 8`
-(The free energies are to be estimated with TI-CUBIC and reported in kJ/mol, with 8 decimal places)
-
-screen_printout_3.txt:   
-`python alchemical_analysis.py -d data/ -o . -s 50`
-(Skip first 50 ps)
-
-The dataset contained in the data/ directory is obtained from a 16-window simulation of the gas-phase methane-to-ethane transformation run in the Michel lab at the University of Edinburgh.
+The last file from the above list corresponds to the analysis that does not account for some intermediate
+states. This is controlled by the -k flag. An alternative approach (no need to use the -k flag) is for the
+directory with the data files to contain only those that are of interest.
 
 Help for `alchemical_analysis.py` (obtained with `python alchemical_analysis.py -h`) is:
 
@@ -53,7 +56,7 @@ Options:
   -h, --help            show this help message and exit
   -a SOFTWARE, --software=SOFTWARE
                         Package's name the data files come from. Default:
-                        Sire.
+                        Gromacs.
   -c, --cfm             The Curve-Fitting-Method-based consistency inspector.
                         Default: False.
   -d DATAFILE_DIRECTORY, --dir=DATAFILE_DIRECTORY
@@ -91,10 +94,9 @@ Options:
                         script will be stored. Default: Same as
                         datafile_directory.
   -p PREFIX, --prefix=PREFIX
-                        Prefix for datafile sets, i.e.'actual_grad_'
-                        (default).
+                        Prefix for datafile sets, i.e.'dhdl' (default).
   -q SUFFIX, --suffix=SUFFIX
-                        Suffix for datafile sets, i.e. 'dat' (default).
+                        Suffix for datafile sets, i.e. 'xvg' (default).
   -r DECIMAL, --decimal=DECIMAL
                         The number of decimal places the free energies are to
                         be reported with. No worries, this is for the text
@@ -108,7 +110,7 @@ Options:
                         Temperature in K. Default: 298 K.
   -u UNITS, --units=UNITS
                         Units to report energies: 'kJ', 'kcal', and 'kBT'.
-                        Default: 'kcal'
+                        Default: 'kJ'
   -v, --verbose         Verbose option for BAR and MBAR. Default: False.
   -w, --overlap         Print out and plot the overlap matrix. Default: False.
   -x, --ignoreWL        Do not check whether the WL weights are equilibrated.

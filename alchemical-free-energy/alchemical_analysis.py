@@ -792,10 +792,7 @@ def plotdFvsLambda():
       elif (only one of them in methods) -- plots the integration area of the method."""
       min_dl = dlam[dlam != 0].min()
       S = int(0.4/min_dl)
-      if S>19918:
-         fig = pl.figure(figsize = (S,6))
-      else:
-         fig = pl.figure(figsize = (8,6))
+      fig = pl.figure(figsize = (8,6))
       ax = fig.add_subplot(1,1,1)
       ax.spines['bottom'].set_position('zero')
       ax.spines['top'].set_color('none')
@@ -863,19 +860,27 @@ def plotdFvsLambda():
             ndx += 1
 
       # Make sure the tick labels are not overcrowded.
-      xt = range(K)
-      min_dl = 0.0155
-      if S>5:
-         i = 0
-         while i < len(xs)-1:
-            if i==10:
-               min_dl *= 2
-            if xs[i+1]-xs[i] < min_dl:
-               xt[i+1] = ''
-               i += 1
-            i += 1
+      xs = numpy.array(xs)
+      dl_mat = numpy.array([xs-i for i in xs])
+      ri = range(len(xs))
+
+      def getInd(r=ri, z=[0]):
+         primo = r[0]
+         min_dl=ndx*0.02*2**(primo>10)
+         if dl_mat[primo].max()<min_dl:
+            return z
+         for i in r:
+            for j in range(len(xs)):
+               if dl_mat[i,j]>min_dl:
+                  z.append(j)
+                  return getInd(ri[j:], z)
+
+      xt = [i if (i in getInd()) else '' for i in range(K)]
       pl.xticks(xs[1:], xt[1:], fontsize=10)
       pl.yticks(fontsize=10)
+      #ax = pl.gca()
+      #for label in ax.get_xticklabels():
+      #   label.set_bbox(dict(fc='w', ec='None', alpha=0.5))
 
       # Remove the abscissa ticks and set up the axes limits.
       for tick in ax.get_xticklines():
@@ -990,10 +995,10 @@ if __name__ == "__main__":
 
    if P.software == 'Gromacs':
       import parser_gromacs
-      nsnapshots, lv, dhdlt, u_klt = parser_gromacs.readDataGromacs(P)
+      nsnapshots, lv, dhdlt, u_klt = parser_gromacs.readDataGromacs(parser, P)
    elif P.software == 'Sire':
       import parser_sire
-      nsnapshots, lv, dhdlt, u_klt = parser_sire.readDataSire(P)
+      nsnapshots, lv, dhdlt, u_klt = parser_sire.readDataSire(parser, P)
    else:
       from inspect import currentframe, getframeinfo
       lineno = getframeinfo(currentframe()).lineno

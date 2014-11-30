@@ -1,4 +1,4 @@
-Started on Sat Nov 29 13:13:42 2014
+Started on Sun Nov 30 11:57:19 2014
 Reading metadata from ../data/3-methylindole-11steps/dhdl.0.xvg...
 Reading metadata from ../data/3-methylindole-11steps/dhdl.1.xvg...
 Reading metadata from ../data/3-methylindole-11steps/dhdl.3.xvg...
@@ -69,11 +69,11 @@ Estimating the free energy change with TI, TI-CUBIC, DEXP, IEXP, BAR...
 
 ************************************************************************************************************************************************
 IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII   The above table has been stored in   IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
-IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII             .//results.txt             IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII             ./results.txt              IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII     while the full-precision data      IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII (along with the simulation profile) in IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
-IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII           .//results.pickle            IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII            ./results.pickle            IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 ************************************************************************************************************************************************
 
-Time spent: 0 hours, 0 minutes, and 1.93 seconds.
-Finished on Sat Nov 29 13:13:44 2014
+Time spent: 0 hours, 0 minutes, and 1.81 seconds.
+Finished on Sun Nov 30 11:57:21 2014

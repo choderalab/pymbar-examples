@@ -1,1 +1,1 @@
-`python alchemical_analysis.py -d ../data/3-methylindole-11steps/ -o ./ -g -w -k 2-5-8-9 > screen_printout.txt`
+`python alchemical_analysis.py -d ../data/3-methylindole-11steps/ -o . -g -w -k 2-5-8-9 > screen_printout.txt`

@@ -16,7 +16,7 @@ def wcPy(f):
 # FUNCTIONS: This is the Sire lambda gradient file parser.
 #===================================================================================================
 
-def readDataSire(P):
+def readDataSire(parser, P):
    """Read in Sire's output files; return nsnapshots, lv, dhdlt, and u_klt."""
 
    class F:
@@ -55,10 +55,10 @@ def readDataSire(P):
    # Preliminaries I-III: Sort the dhdl.xvg files; read in the header; count up the equilibrated snapshots.
    datafile_tuple = P.datafile_directory, P.prefix, P.suffix
    fs = glob('%s/%s*%s' % datafile_tuple)
-   len_fstring = max([len(i) for i in fs])
    K = len(fs)
    if not K:
       parser.error("\nNo files found within directory '%s' with prefix '%s' and suffix '%s': check your inputs." % datafile_tuple)
+   len_fstring = max([len(i) for i in fs])
 
    n_components = 1
    lv           = []

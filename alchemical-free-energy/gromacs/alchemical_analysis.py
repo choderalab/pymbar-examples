@@ -118,7 +118,7 @@ def checkUnitsAndMore(units):
    if not P.output_directory:
       P.output_directory = P.datafile_directory
    if P.overlap:
-      if not 'MBAR' in methods:
+      if not 'MBAR' in P.methods:
          parser.error("\nMBAR is not in 'methods'; can't plot the overlap matrix.")
    return units, beta, beta_report
 
@@ -356,13 +356,13 @@ def getSplines(lchange):
 
 def estimatePairs():
 
-   print ("Estimating the free energy change with %s..." % ', '.join(methods)).replace(', MBAR', '')
+   print ("Estimating the free energy change with %s..." % ', '.join(P.methods)).replace(', MBAR', '')
    df_allk = list(); ddf_allk = list()
    
    for k in range(K-1):
       df = dict(); ddf = dict()
    
-      for name in methods:
+      for name in P.methods:
    
          if name == 'TI':
             #===================================================================================================
@@ -482,10 +482,10 @@ def totalEnergies():
    # Perform the energy segmentation; be pedantic about the TI cumulative ddF's (see Section 3.1 of the paper).
    for i in range(len(segments)):
       segment = segments[i]; segstart = segmentstarts[i]; segend = segmentends[i]
-      dF  = dict.fromkeys(methods, 0)
-      ddF = dict.fromkeys(methods, 0)
+      dF  = dict.fromkeys(P.methods, 0)
+      ddF = dict.fromkeys(P.methods, 0)
    
-      for name in methods:
+      for name in P.methods:
          if name == 'MBAR':
             dF['MBAR']  =  Deltaf_ij[segstart, segend]
             ddF['MBAR'] = dDeltaf_ij[segstart, segend]
@@ -521,7 +521,7 @@ def totalEnergies():
       dFs.append(dF)
       ddFs.append(ddF)
    
-   for name in methods: # 'vdWaals' = 'TOTAL' - 'Coulomb'
+   for name in P.methods: # 'vdWaals' = 'TOTAL' - 'Coulomb'
       ddFs[1][name] = (ddFs[2][name]**2 - ddFs[0][name]**2)**0.5
    
    # Display results.
@@ -529,7 +529,7 @@ def totalEnergies():
       """Fills out the results table linewise."""
       print str1,
       text = str1
-      for name in methods:
+      for name in P.methods:
          if d1 == 'plain':
             print str2,
             text += ' ' + str2
@@ -560,7 +560,7 @@ def totalEnergies():
 	     " the states defined by the lambda vectors (0,0,...,0) ",
 	     " and (1,0,...,0), the only varying vector component ",
 	     " being either 'coul-lambda' or 'fep-lambda'. "]
-   w = 12 + (1+len(str_dash))*len(methods)
+   w = 12 + (1+len(str_dash))*len(P.methods)
    str_align = '{:I^%d}' % w
    if len(P.lv_names)>1:
       for i in range(len(segments)):
@@ -640,7 +640,7 @@ def dF_t():
       pl.close(fig)
       return
 
-   if not 'MBAR' in methods:
+   if not 'MBAR' in P.methods:
       parser.error("\nCurrent version of the dF(t) analysis works with MBAR only and the method is not found in the list.")
    if not (P.snap_size[0] == numpy.array(P.snap_size)).all(): # this could be circumvented
       parser.error("\nThe snapshot size isn't the same for all the files; cannot perform the dF(t) analysis.")
@@ -720,18 +720,18 @@ def plotdFvsLambda():
          fig = pl.figure(figsize = (8,6))
       else:
          fig = pl.figure(figsize = (len(x),6))
-      width = 1./(len(methods)+1)
+      width = 1./(len(P.methods)+1)
       elw = 30*width
       colors = {'TI':'#C45AEC', 'TI-CUBIC':'#33CC33', 'DEXP':'#F87431', 'IEXP':'#FF3030', 'GINS':'#EAC117', 'GDEL':'#347235', 'BAR':'#6698FF', 'UBAR':'#817339', 'RBAR':'#C11B17', 'MBAR':'#F9B7FF'}
       lines = tuple()
-      for name in methods:
+      for name in P.methods:
          y = [df_allk[i][name]/P.beta_report for i in x]
          ye = [ddf_allk[i][name]/P.beta_report for i in x]
          line = pl.bar(x+len(lines)*width, y, width, color=colors[name], yerr=ye, lw=0.1*elw, error_kw=dict(elinewidth=elw, ecolor='black', capsize=0.5*elw))
          lines += (line[0],)
       pl.xlabel('States', fontsize=12, color='#151B54')
       pl.ylabel('$\Delta G$ '+P.units, fontsize=12, color='#151B54')
-      pl.xticks(x+0.5*width*len(methods), tuple(['%d--%d' % (i, i+1) for i in x]), fontsize=8)
+      pl.xticks(x+0.5*width*len(P.methods), tuple(['%d--%d' % (i, i+1) for i in x]), fontsize=8)
       pl.yticks(fontsize=8)
       pl.xlim(x[0], x[-1]+len(lines)*width)
       ax = pl.gca()
@@ -741,7 +741,7 @@ def plotdFvsLambda():
       for tick in ax.get_xticklines():
          tick.set_visible(False)
  
-      leg = pl.legend(lines, tuple(methods), loc=3, ncol=2, prop=FP(size=10), fancybox=True)
+      leg = pl.legend(lines, tuple(P.methods), loc=3, ncol=2, prop=FP(size=10), fancybox=True)
       leg.get_frame().set_alpha(0.5)
       pl.title('The free energy change breakdown', fontsize = 12)
       pl.savefig(os.path.join(P.output_directory, 'dF_state_long.pdf'), bbox_inches='tight')
@@ -757,14 +757,14 @@ def plotdFvsLambda():
       xs = numpy.array_split(x, len(x)/nb+1)
       mnb = max([len(i) for i in xs])
       fig = pl.figure(figsize = (8,6))
-      width = 1./(len(methods)+1)
+      width = 1./(len(P.methods)+1)
       elw = 30*width
       colors = {'TI':'#C45AEC', 'TI-CUBIC':'#33CC33', 'DEXP':'#F87431', 'IEXP':'#FF3030', 'GINS':'#EAC117', 'GDEL':'#347235', 'BAR':'#6698FF', 'UBAR':'#817339', 'RBAR':'#C11B17', 'MBAR':'#F9B7FF'}
       ndx = 1
       for x in xs:
          lines = tuple()
          ax = pl.subplot(len(xs), 1, ndx)
-         for name in methods:
+         for name in P.methods:
             y = [df_allk[i][name]/P.beta_report for i in x]
             ye = [ddf_allk[i][name]/P.beta_report for i in x]
             line = pl.bar(x+len(lines)*width, y, width, color=colors[name], yerr=ye, lw=0.05*elw, error_kw=dict(elinewidth=elw, ecolor='black', capsize=0.5*elw))
@@ -776,11 +776,11 @@ def plotdFvsLambda():
                ax.spines[dir].set_color('none')
          pl.yticks(fontsize=10)
          ax.xaxis.set_ticks([])
-         for i in x+0.5*width*len(methods):
+         for i in x+0.5*width*len(P.methods):
             ax.annotate('$\mathrm{%d-%d}$' % (i, i+1), xy=(i, 0), xycoords=('data', 'axes fraction'), xytext=(0, -2), size=10, textcoords='offset points', va='top', ha='center')
          pl.xlim(x[0], x[-1]+len(lines)*width + (mnb - len(x)))
          ndx += 1
-      leg = ax.legend(lines, tuple(methods), loc=0, ncol=2, prop=FP(size=8), title='$\mathrm{\Delta G\/%s\/}\mathit{vs.}\/\mathrm{lambda\/pair}$' % P.units, fancybox=True)
+      leg = ax.legend(lines, tuple(P.methods), loc=0, ncol=2, prop=FP(size=8), title='$\mathrm{\Delta G\/%s\/}\mathit{vs.}\/\mathrm{lambda\/pair}$' % P.units, fancybox=True)
       leg.get_frame().set_alpha(0.5)
       pl.savefig(os.path.join(P.output_directory, 'dF_state.pdf'), bbox_inches='tight')
       pl.close(fig)
@@ -818,7 +818,7 @@ def plotdFvsLambda():
             x = lv[:,j][lj]
             y = y[lj]/P.beta_report
 
-            if 'TI' in methods:
+            if 'TI' in P.methods:
                # Plot the TI integration area.
                ss = 'TI'
                for i in range(len(x)-1):
@@ -832,7 +832,7 @@ def plotdFvsLambda():
                xlegend = [-100*wnum for wnum in range(len(lv_names2))]
                pl.plot(xlegend, [0*wnum for wnum in xlegend], ls='-', color=colors[ndx], label=lv_names2[ndx]) ## for the paper
 
-               if 'TI-CUBIC' in methods:
+               if 'TI-CUBIC' in P.methods:
                   # Plot the TI-CUBIC interpolation curve.
                   ss += ' and TI-CUBIC'
                   xnew = numpy.arange(0, 1+dx, dx)
@@ -913,7 +913,7 @@ def plotdFvsLambda():
 
    plotdFvsLambda1()
    plotdFvsLambda2()
-   if ('TI' in methods or 'TI-CUBIC' in methods):
+   if ('TI' in P.methods or 'TI-CUBIC' in P.methods):
       plotTI()
 
 #===================================================================================================
@@ -981,9 +981,9 @@ if __name__ == "__main__":
    # Simulation profile P (to be stored in 'results.pickle') will amass information about the simulation.
    P = parser.parse_args()[0]
 
-   methods = getMethods(P.methods.upper())
+   P.methods = getMethods(P.methods.upper())
    P.units, P.beta, P.beta_report = checkUnitsAndMore(P.units)
-   if ''.join(methods).replace('TI-CUBIC', '').replace('TI', ''):
+   if ''.join(P.methods).replace('TI-CUBIC', '').replace('TI', ''):
       import pymbar     ## this is not a built-in module ##
    if P.uncorr_threshold:
       import timeseries ## this is not a built-in module ##
@@ -1016,14 +1016,14 @@ if __name__ == "__main__":
    dhdl, N_k, u_kln = uncorrelate(sta=numpy.zeros(K, int), fin=nsnapshots, do_dhdl=True)
 
    # Estimate free energy difference with MBAR -- all states at once.
-   if 'MBAR' in methods:
+   if 'MBAR' in P.methods:
       print "\nEstimating the free energy change with MBAR..."
       Deltaf_ij, dDeltaf_ij = estimatewithMBAR(u_kln, N_k, P.relative_tolerance, regular_estimate=True)
 
    # The TI preliminaries.
-   if ('TI' in methods or 'TI-CUBIC' in methods):
+   if ('TI' in P.methods or 'TI-CUBIC' in P.methods):
       lchange, dlam, ave_dhdl, std_dhdl = TIprelim(dhdl, lv)
-   if 'TI-CUBIC' in methods:
+   if 'TI-CUBIC' in P.methods:
       cubspl, mapl = getSplines(lchange)
 
    # Call other methods. Print stats. Store results.

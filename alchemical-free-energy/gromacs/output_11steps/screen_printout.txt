@@ -1,4 +1,4 @@
-Started on Sat Nov 29 13:10:02 2014
+Started on Sun Nov 30 11:53:50 2014
 Reading metadata from ../data/3-methylindole-11steps/dhdl.0.xvg...
 Reading metadata from ../data/3-methylindole-11steps/dhdl.1.xvg...
 Reading metadata from ../data/3-methylindole-11steps/dhdl.2.xvg...
@@ -93,11 +93,11 @@ Estimating the free energy change with TI, TI-CUBIC, BAR...
 
 ****************************************************************************************************************************
 IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII   The above table has been stored in   IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
-IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII             .//results.txt             IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII             ./results.txt              IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII     while the full-precision data      IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII (along with the simulation profile) in IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
-IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII           .//results.pickle            IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII            ./results.pickle            IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 ****************************************************************************************************************************
 
-Time spent: 0 hours, 0 minutes, and 3.82 seconds.
-Finished on Sat Nov 29 13:10:06 2014
+Time spent: 0 hours, 0 minutes, and 3.34 seconds.
+Finished on Sun Nov 30 11:53:53 2014
