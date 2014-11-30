@@ -23,7 +23,7 @@ invoke specifying the data directory to use with the command:
 
 `python alchemical_analysis.py -d data/3-methylindole-11steps`
 
-For the denser lambda spacing with 38 total states, run
+For the denser lambda spacing with 38 total states, run  
 `python alchemical_analysis.py -d data/3-methylindole-38steps`
 
 Note that all these files were generated in gromacs with `calc-lambda-neighbors = -1`, where one calculates 
@@ -40,7 +40,7 @@ automatically recognized. For an example, try:
 Note how all the output results are the same EXCEPT for MBAR, which
 is omitted from the calculation.
 
-Sample output for both cases is provided in the files:
+Sample output for both cases is provided in the files:  
 output_38steps/screen_printout.txt
 output_11steps/screen_printout.txt
 output_11steps_neighbors/screen_printout.txt
