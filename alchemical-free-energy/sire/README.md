@@ -4,7 +4,8 @@ To run the analysis, execute the script with python
 
 within the directory with the data files.
 
-All the flags were customized to Sire; therefore, there is no need for you -- at least at the stage of getting it to know -- to provide any. Here is a brief overview what these flags are. (The focus is on those that are relevant to Sire, or, more accurately, to the situation when the files to be analyzed contain only the dV/dLambda data. `python alchemical_analysis.py -h` would yield a more detailed description).
+All the flags were customized to Sire; therefore, there is no need for you -- at least at the stage of getting it to know -- to provide any. Here is a brief overview what these flags are. (The focus is on those that are relevant to Sire, or, more accurately, to the situation when the files to be analyzed contain only the dV/dLambda data.  
+`python alchemical_analysis.py -h` would yield a more detailed description).
 
 -a is the name of the software the files come from; set to 'Sire'
 
