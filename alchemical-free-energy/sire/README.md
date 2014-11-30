@@ -27,7 +27,7 @@ All the flags were customized to Sire; therefore, there is no need for you -- at
 
 The file parser (`parser_sire.py`) is separated from the analysis proper (`alchemical_analysis.py`); make sure the former is either handy or a pythonpath is established for it. (There is `parser_gromacs.py`, as well, in case you want to run the analysis on Gromacs' files).
 
-Also, to make it self-contained, all imports of not built-in modules needed for some non-trivial tasks have been hidden under the conditional statements. In other words, if you do not want to bother with the autocorrelation analysis (the -i flag) there is no need to checkout 'timeseries.py' from the pymbar repository. numpy and matplotlib (for the graphs, optional) are the only prerequisites for the script.
+Also, to make it self-contained, all imports of not built-in modules needed for some non-trivial tasks have been hidden under the conditional statements. In other words, if you do not want to bother with the autocorrelation analysis (the -i flag) there is no need to checkout `timeseries.py` from the `pymbar` repository. numpy and matplotlib (for the graphs, optional) are the only prerequisites for the script.
 
 (If you do not have python installed) Install one of its scientific distributions, like Enthought Canopy or Anaconda, and you will get it with a bunch of libraries (among which are numpy and matplotlib) rather than a stand-alone python.
 
