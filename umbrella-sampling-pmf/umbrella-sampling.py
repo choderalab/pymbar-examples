@@ -8,7 +8,6 @@
 # http://dx.doi.org/10.1016/j.jmb.2007.06.002
 
 import numpy # numerical array library
-#from math import *
 import pymbar # multistate Bennett acceptance ratio
 from pymbar import timeseries # timeseries analysis
 # Constants.
@@ -154,4 +153,105 @@ print "PMF (in units of kT)"
 print "%8s %8s %8s" % ('bin', 'f', 'df')
 for i in range(nbins):
     print "%8.1f %8.3f %8.3f" % (bin_center_i[i], f_i[i], df_i[i])
+
+################
+# Now compute PMF assuming a cubit spline
+import pdb
+from scipy.interpolate import interp1d
+from scipy.integrate import quad
+from scipy.optimize import minimize
+
+method = 'spline'
+nspline = 10
+#method = 'periodic'
+#nperiod = 8
+
+# Compute unnormalized log weights for the given reduced potential
+# u_kn.
+log_w_kn = mbar._computeUnnormalizedLogWeights(u_kn)
+
+# Unroll to n-indices
+log_w_n = log_w_kn[mbar.indices]
+w_n = numpy.exp(log_w_n)
+w_n = w_n/numpy.sum(w_n)
+chi_n = chi_kn[mbar.indices]
+# compute KL divergence to the empirical distribution for the trial distribution F
+
+# define functions that can change each iteration
+
+if method == 'spline':
+    xstart = numpy.linspace(chi_min,chi_max,nspline)
+    def trialf(t):
+        return interp1d(xstart, t, kind='quadratic')
+    tstart = 0*xstart
+    for i in range(nspline):
+        tstart[i] = f_i[numpy.argmin(numpy.abs(bin_center_i-xstart[i]))]  # start with nearest PMF value
+
+if method == 'periodic':
+    # vary the magnitude, phase, and period
+    def trialf(t):
+        def interperiod(x):
+            y = numpy.zeros(numpy.size(x))
+            for i in range(nperiod):
+                t[i+2*nperiod] = t[i+2*nperiod]%(360.0) # recenter the offsets, all in range
+                y += t[i]*numpy.cos(t[i+nperiod]*x+t[i+2*nperiod])
+            return y
+        return interperiod
+
+    tstart = numpy.zeros(3*nperiod)
+    # initial values of ampliudes, period, and phase
+    tstart[0:nperiod] = 0
+    d = (chi_max - chi_min)/(nperiod+1)
+    tstart[nperiod:2*nperiod] = (2*numpy.pi/(chi_max-chi_min))
+    tstart[2*nperiod:3*nperiod] = numpy.linspace(chi_min+d/2,chi_max-d/2,nperiod)
+
+# = - <ln P(t,x)> = - \sum_{x_n} w_i(x_n) ln (P(t,x_n)/\int P(t,x_n)) dx
+#                  = - \sum_{x_n} w_i(x_n) ln P(t,x_n) + ln \int P(t,x_n) dx
+#                          set P(t,x) = exp(-F(t,x))
+#                  = [\sum_{x_n} w_i(x_n) F(t,x_n)] + ln \int exp(-F(t,x_n) dx
+#
+# gradient of the parameters could be difficult in general
+#                  = d/dt [\sum_{x_n} w_i(x_n) F(t,x_n)] + ln \int exp(-F(t,x_n) dx
+#                  = \sum_{x_n} w_i(x_n) dF(t,x_n)/dt + d/dt[\int exp(-F(t,x_n))dx ]/\int exp(-F(t,x_n) dx
+#                  = \sum_{x_n} w_i(x_n) dF(t,x_n)/dt - \int dF/dt exp(-F(t,x_n)) dx ]/\int exp(-F(t,x_n) dx
+#                    so we just need to calculate dF/dt.  however, for functional forms like splines, this
+#                    can be rather difficult, since changes in the input parameters (value at boundaries) change
+#                    throughout the function.
+#
+
+def kldiverge(t,ft,x_n,w_n,range):
+
+    # define the function f based on the current parameters t
+    f = ft(t)
+    # define the exponential of f based on the current parameters t
+    expf = lambda x: numpy.exp(-f(x))
+    pE = numpy.dot(w_n,f(x_n))
+    pF = numpy.log(quad(expf,range[0],range[1])[0])  #0 is the value of quad
+    kl = pE + pF
+    #print kl, t, pE, pF
+    return kl
+
+# inputs to kldivergence in minimize are
+# the function that we are computing the kldivergence of
+# the x values we have samples at
+# the weights at the samples
+# the domain of the function
+result = minimize(kldiverge,tstart,args=(trialf,chi_n,w_n,[chi_min,chi_max]))
+pmf_final = trialf(result.x)
+
+nplot = 1000
+import matplotlib.pyplot as plt
+x = numpy.linspace(chi_min,chi_max,nplot)
+plt.plot(bin_center_i,f_i,'rx')
+yout = pmf_final(x)
+ymin = numpy.min(yout)
+yout -= ymin
+# Write out PMF
+print "PMF (in units of kT)"
+print "%8s %8s %8s" % ('bin', 'f', 'df')
+for i in range(nbins):
+    print "%8.1f %8.3f" % (bin_center_i[i], pmf_final(bin_center_i[i])-ymin)
+plt.plot(x,yout,'k-')
+plt.xlim([chi_min,chi_max])
+plt.show()
 
