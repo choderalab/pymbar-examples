@@ -162,7 +162,7 @@ from scipy.integrate import quad
 from scipy.optimize import minimize
 
 method = 'spline'
-nspline = 10
+nspline = 18
 #method = 'periodic'
 #nperiod = 8
 
@@ -173,6 +173,7 @@ log_w_kn = mbar._computeUnnormalizedLogWeights(u_kn)
 # Unroll to n-indices
 log_w_n = log_w_kn[mbar.indices]
 w_n = numpy.exp(log_w_n)
+# normalize the weights
 w_n = w_n/numpy.sum(w_n)
 chi_n = chi_kn[mbar.indices]
 # compute KL divergence to the empirical distribution for the trial distribution F
@@ -182,13 +183,13 @@ chi_n = chi_kn[mbar.indices]
 if method == 'spline':
     xstart = numpy.linspace(chi_min,chi_max,nspline)
     def trialf(t):
-        return interp1d(xstart, t, kind='quadratic')
+        return interp1d(xstart, t, kind='cubic')
     tstart = 0*xstart
     for i in range(nspline):
         tstart[i] = f_i[numpy.argmin(numpy.abs(bin_center_i-xstart[i]))]  # start with nearest PMF value
 
 if method == 'periodic':
-    # vary the magnitude, phase, and period
+    # vary the magnitude, phase, and period: not clear this is really working
     def trialf(t):
         def interperiod(x):
             y = numpy.zeros(numpy.size(x))
