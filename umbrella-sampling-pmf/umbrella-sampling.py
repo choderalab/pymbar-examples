@@ -160,36 +160,37 @@ import pdb
 from scipy.interpolate import interp1d
 from scipy.integrate import quad
 from scipy.optimize import minimize
+verbose = True
 
 method = 'spline'
-nspline = 18
-#method = 'periodic'
-#nperiod = 8
+nspline = 10
+#method = 'periodic' - not really working, try spline
+#nperiod = 3
 
-# Compute unnormalized log weights for the given reduced potential
-# u_kn.
-log_w_kn = mbar._computeUnnormalizedLogWeights(u_kn)
-
-# Unroll to n-indices
-log_w_n = log_w_kn[mbar.indices]
-w_n = numpy.exp(log_w_n)
-# normalize the weights
-w_n = w_n/numpy.sum(w_n)
 chi_n = chi_kn[mbar.indices]
 # compute KL divergence to the empirical distribution for the trial distribution F
+
+# define the bias functions
+def fbias(k,x):
+    dchi = x - chi0_k[k]
+        # vectorize the conditional
+    i = numpy.fabs(dchi) > 180.0
+    dchi = i*(360.0 - numpy.fabs(dchi)) + (1-i)*dchi
+    return beta_k[k] * (K_k[k]/2.0) * dchi**2
 
 # define functions that can change each iteration
 
 if method == 'spline':
     xstart = numpy.linspace(chi_min,chi_max,nspline)
     def trialf(t):
-        return interp1d(xstart, t, kind='cubic')
+        f = interp1d(xstart, t, kind='cubic')
+        return f
     tstart = 0*xstart
-    for i in range(nspline):
-        tstart[i] = f_i[numpy.argmin(numpy.abs(bin_center_i-xstart[i]))]  # start with nearest PMF value
+    #for i in range(nspline):
+    #    tstart[i] = f_i[numpy.argmin(numpy.abs(bin_center_i-xstart[i]))]  # start with nearest PMF value
 
 if method == 'periodic':
-    # vary the magnitude, phase, and period: not clear this is really working
+    # vary the magnitude, phase, and period: not clear this is really working at all
     def trialf(t):
         def interperiod(x):
             y = numpy.zeros(numpy.size(x))
@@ -220,26 +221,48 @@ if method == 'periodic':
 #                    throughout the function.
 #
 
-def kldiverge(t,ft,x_n,w_n,range):
+def sumkldiverge(t,ft,x_n,K,w_kn,fbias,xrange):
 
-    # define the function f based on the current parameters t
-    f = ft(t)
-    # define the exponential of f based on the current parameters t
-    expf = lambda x: numpy.exp(-f(x))
-    pE = numpy.dot(w_n,f(x_n))
-    pF = numpy.log(quad(expf,range[0],range[1])[0])  #0 is the value of quad
-    kl = pE + pF
-    #print kl, t, pE, pF
+    # we are interested in finding the potential that minimizes the
+    # sum of the KL divergence over all of the distributions
+
+    # define the function f, the sum of the KL divergence over all of
+    # the samples, based on the current parameters t
+
+    t -= t[0] # set a reference state, may make the minization faster by removing degenerate solutions
+    #t[len(t)-1] = t[0]
+    feval = ft(t)
+    fx = feval(x_n)  # only need to evaluate this over all points outside
+    kl = 0 
+    # figure out the bias 
+    for k in range(K):
+        # what is the biasing function for this state
+        bias = lambda x: fbias(k,x)
+        # define the exponential of f based on the current parameters t.
+        expf = lambda x: numpy.exp(-feval(x)-bias(x))
+        pE = numpy.dot(w_kn[:,k],fx+bias(x_n))
+        pF = numpy.log(quad(expf,xrange[0],xrange[1])[0])  #0 is the value of quad
+        kl += (pE + pF)
+    if verbose:    
+        print kl,t    
     return kl
 
-# inputs to kldivergence in minimize are
+w_kn = numpy.exp(mbar.Log_W_nk) # normalized weights
+
+# inputs to kldivergence in minimize are:
 # the function that we are computing the kldivergence of
 # the x values we have samples at
+# the number of umbrellas
 # the weights at the samples
+# the umbrella restraints strengths
+# the umbrella restraints centers
 # the domain of the function
-result = minimize(kldiverge,tstart,args=(trialf,chi_n,w_n,[chi_min,chi_max]))
-pmf_final = trialf(result.x)
 
+# set minimizer options to display. Apprently does not exist for
+# BFGS. Probably don't need to set eps.
+options = {'disp':True, 'eps':10**(-3)}
+result = minimize(sumkldiverge,tstart,args=(trialf,chi_n,K,w_kn,fbias,[chi_min,chi_max]),options=options)
+pmf_final = trialf(result.x)
 nplot = 1000
 import matplotlib.pyplot as plt
 x = numpy.linspace(chi_min,chi_max,nplot)
