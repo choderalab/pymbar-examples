@@ -1,7 +1,7 @@
 # Program to convert data files in 
 # pymbar/trunk/examples/alchemical-free-energy/data to format of data files 
 # produced by GROMACS 4.6 so that data files will work with updated
-# alchemical-gromacs.py
+# alchemical-analysis.py
 
 import commands
 from os import remove
