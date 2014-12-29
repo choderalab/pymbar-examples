@@ -1,55 +1,9 @@
 import numpy
 import os                       # operating-system-dependent modules of Python
 import re                       # for regular expressions
+import unixlike                 # some implemented unixlike commands
 from glob import glob           # for pathname matching
 from collections import Counter # for counting elements in an array
-
-#===================================================================================================
-# FUNCTIONS: The unix-like helpers.
-#===================================================================================================
-
-def wcPy(f):
-   """Count up lines in file 'f'."""
-   if not type(f) is file:
-      with open(f, 'r') as f:
-         return wcPy(f)
-   return sum(1 for l in f)
-
-def trPy(s, l='[,\\\\"/()-]', char=' '):
-   """In string 's' replace all the charachters from 'l' with 'char'."""
-   return re.sub(l, char, s)
-
-def grepPy(f, s):
-   """From file 'f' extract the (first occurence of) line that contains string 's'."""
-   if not type(f) is file:
-      with open(f, 'r') as f:
-         return grepPy(f, s)
-   for line in f:
-      if s in line:
-         return line
-   return ''
-
-def tailPy(f, nlines, lenb=1024):
-   if not type(f) is file:
-      with open(f, 'r') as f:
-         return tailPy(f, nlines, lenb)
-   f.seek(0, 2)
-   sizeb = f.tell()
-   n_togo = nlines
-   i = 1
-   excerpt = []
-   while n_togo > 0 and sizeb > 0:
-      if (sizeb - lenb > 0):
-         f.seek(-i*lenb, 2)
-         excerpt.append(f.read(lenb))
-      else:
-         f.seek(0,0)
-         excerpt.append(f.read(sizeb))
-      ll = excerpt[-1].count('\n')
-      n_togo -= ll
-      sizeb -= lenb
-      i += 1
-   return ''.join(excerpt).splitlines()[-nlines:]
 
 #===================================================================================================
 # FUNCTIONS: This is the Gromacs dhdl.xvg file parser.
@@ -94,7 +48,7 @@ def readDataGromacs(parser, P):
  
                elif line.startswith('@'):
                   self.skip_lines += 1
-                  elements = trPy(line).split()
+                  elements = unixlike.trPy(line).split()
                   if not 'legend' in elements:
                      continue
  
@@ -184,8 +138,8 @@ def readDataGromacs(parser, P):
                parser.error("\nThe .log file '%s' is needed to figure out when the Wang-Landau weights have been equilibrated, and it was not found.\nYou may rerun with the -x flag and the data will be discarded to 'equiltime', not bothering\nwith the extraction of the information on when the WL weights equilibration was reached.\nOtherwise, put the proper log file into the directory which is subject to the analysis." % logfilename)
             try:
                with open(logfilename, 'r') as infile:
-                  dt = float(grepPy(infile, s='delta-t').split()[-1])
-                  WLstep = int(grepPy(infile, s='equilibrated').split()[1].replace(':', ''))
+                  dt = float(unixlike.grepPy(infile, s='delta-t').split()[-1])
+                  WLstep = int(unixlike.grepPy(infile, s='equilibrated').split()[1].replace(':', ''))
             except IndexError:
                parser.error("\nThe Wang-Landau weights haven't equilibrated yet.\nIf you comprehend the consequences, rerun with the -x flag and the data will be discarded to 'equiltime'.")
             WLtime = WLstep * dt
@@ -208,7 +162,7 @@ def readDataGromacs(parser, P):
    
    if P.bSkipLambdaIndex:
       try:
-         lambdas_to_skip = [int(l) for l in trPy(P.bSkipLambdaIndex, '-').split()]
+         lambdas_to_skip = [int(l) for l in unixlike.trPy(P.bSkipLambdaIndex, '-').split()]
       except:
          parser.error('\n\nDo not understand the format of the string that follows -k.\nIt should be a string of lambda indices linked by "-".')
       fs = [f for f in fs if not f.state in lambdas_to_skip]
@@ -291,7 +245,7 @@ def readDataGromacs(parser, P):
    
    for nf, f in enumerate(fs):
    
-      f.len_first, f.len_last = (len(line.split()) for line in tailPy(f.filename, 2))
+      f.len_first, f.len_last = (len(line.split()) for line in unixlike.tailPy(f.filename, 2))
       bLenConsistency = (f.len_first != f.len_last)
          
       if f.bExpanded:
@@ -306,7 +260,7 @@ def readDataGromacs(parser, P):
       else:
          equilsnapshots  = int(equiltime/f.snap_size)
          f.skip_lines   += equilsnapshots
-         nsnapshots[nf] += wcPy(f.filename) - f.skip_lines - 1*bLenConsistency
+         nsnapshots[nf] += unixlike.wcPy(f.filename) - f.skip_lines - 1*bLenConsistency
    
       print "First %s ps (%s snapshots) will be discarded due to equilibration from file %s..." % (equiltime, equilsnapshots, f.filename)
    

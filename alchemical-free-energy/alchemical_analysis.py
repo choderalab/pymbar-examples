@@ -5,13 +5,13 @@
 # in TIP3P water through alchemical free energy simulations.
 
 # Adapted by P. Klimovich and D. Mobley, March 2011, to be slightly more general.
-# Additionally adapted by Michael Shirts and P. Klimovich, May 2013
+# Additionally adapted by Michael Shirts and P. Klimovich, May 2013, Dec 2014
 
 #===================================================================================================
 # IMPORTS
 #===================================================================================================
 
-## Not buil-in modules. Will be called from main, whenever needed.    ##
+## Not built-in modules. Will be called from main, whenever needed.    ##
 ## import pymbar     ## Multistate Bennett Acceptance Ratio estimator ##
 ## import timeseries ## for timeseries analysis                       ##
 
@@ -390,7 +390,7 @@ def estimatePairs():
             #===================================================================================================
             # Estimate free energy difference with Forward-direction EXP (in this case, Deletion from solvent).
             #===================================================================================================   
-            (df['DEXP'], ddf['DEXP']) = pymbar.computeEXP(w_F)
+            (df['DEXP'], ddf['DEXP']) = pymbar.exp.EXP(w_F)
    
          if name == 'GDEL':
             #===================================================================================================
@@ -405,7 +405,7 @@ def estimatePairs():
             #===================================================================================================
             # Estimate free energy difference with Reverse-direction EXP (in this case, insertion into solvent).
             #===================================================================================================   
-            (rdf,rddf) = pymbar.computeEXP(w_R)
+            (rdf,rddf) = pymbar.exp.EXP(w_R)
             (df['IEXP'], ddf['IEXP']) = (-rdf,rddf)
    
          if name == 'GINS':
@@ -419,13 +419,13 @@ def estimatePairs():
             #===================================================================================================
             # Estimate free energy difference with BAR; use w_F and w_R computed above.
             #===================================================================================================   
-            (df['BAR'], ddf['BAR']) = pymbar.computeBAR(w_F, w_R, relative_tolerance=P.relative_tolerance, verbose = P.verbose)      
+            (df['BAR'], ddf['BAR']) = pymbar.bar.BAR(w_F, w_R, relative_tolerance=P.relative_tolerance, verbose = P.verbose)      
    
          if name == 'UBAR':
             #===================================================================================================
             # Estimate free energy difference with unoptimized BAR -- assume dF is zero, and just do one evaluation
             #===================================================================================================   
-            (df['UBAR'], ddf['UBAR']) = pymbar.computeBAR(w_F, w_R, verbose = P.verbose,iterated_solution=False)
+            (df['UBAR'], ddf['UBAR']) = pymbar.bar.BAR(w_F, w_R, verbose = P.verbose,iterated_solution=False)
    
          if name == 'RBAR':
             #===================================================================================================
@@ -931,19 +931,23 @@ def plotCFM(u_kln, num_bins=50):
 
    def plotdg_vs_dU(yy, df_allk, ddf_allk):
       fig = pl.figure(figsize = (8,6))
+      sq = (len(yy))**0.5
+      labelsize = 30.0/sq
       matplotlib.rc('axes', facecolor = '#E3E4FA')
       matplotlib.rc('axes', edgecolor = 'white')
-      sq = (len(yy))**0.5
+      matplotlib.rc('xtick', labelsize = labelsize)
+      matplotlib.rc('ytick', labelsize = labelsize)
       h = int(sq)
       w = h + 1 + 1*(sq-h>0.5)
       for i, (xx_i, yy_i) in enumerate(yy):
          ax = pl.subplot(h, w, i+1)
-         ax.plot(xx_i, yy_i, color='r', ls='-', lw=3, marker='o', mec='r')
+         lw = 25.0/len(yy)
+         ms = 75.0/len(yy)
+         ax.plot(xx_i, yy_i, color='r', ls='-', lw=lw, ms=ms, marker='o', mec='r')
          leaveTicksOnlyOnThe('bottom', 'left', ax)
          ax.fill_between(xx_i, df_allk[i]['BAR'] - ddf_allk[i]['BAR'], df_allk[i]['BAR'] + ddf_allk[i]['BAR'], color='#D2B9D3', zorder=-1)
-         ax.annotate(r'$\mathrm{%d-%d}$' % (i, i+1), xy=(0.5, 0.9), xycoords=('axes fraction', 'axes fraction'), xytext=(0, -2), size=14, textcoords='offset points', va='top', ha='center', color='#151B54', bbox = dict(fc='w', ec='none', boxstyle='round', alpha=0.5))
+         ax.annotate(r'$\mathrm{%d-%d}$' % (i, i+1), xy=(0.5, 0.9), xycoords=('axes fraction', 'axes fraction'), xytext=(0, -2), size=40.0/sq, textcoords='offset points', va='top', ha='center', color='#151B54', bbox = dict(fc='w', ec='none', boxstyle='round', alpha=0.5))
          pl.xlim(xx_i.min(), xx_i.max())
-      #pl.subplots_adjust(left=0.1, bottom=0.1, wspace=0.1)
       pl.suptitle(r'$\mathrm{\Delta g_{i+1,i}\/\ vs\/\/\Delta U_{i,i+1}\/(reduced\/units)}$', fontsize=20, color='#151B54')
       pl.savefig(os.path.join(P.output_directory, 'cfm.pdf'))
       pl.close(fig)
@@ -955,8 +959,10 @@ def plotCFM(u_kln, num_bins=50):
    for k in range(0, K-1):
       righ = -u_kln[k,k+1]
       left = u_kln[k+1,k]
-      min1 = min(left.min(), righ.min())
-      max2 = max(righ.max(), left.max())
+      #min1 = min(left.min(), righ.min())
+      #max2 = max(righ.max(), left.max())
+      min1 = min(numpy.percentile(left,1),numpy.percentile(righ,1))
+      max2 = max(numpy.percentile(left,99),numpy.percentile(righ,99))
       (counts_l, xbins_l) = numpy.histogram(left, bins=num_bins, range=(min1, max2))
       (counts_r, xbins_r) = numpy.histogram(righ, bins=num_bins, range=(min1, max2))
 
@@ -994,18 +1000,18 @@ if __name__ == "__main__":
       from matplotlib.font_manager import FontProperties as FP
 
    if P.software == 'Gromacs':
-      import parser_gromacs
-      nsnapshots, lv, dhdlt, u_klt = parser_gromacs.readDataGromacs(parser, P)
+      import parsers.parser_gromacs
+      nsnapshots, lv, dhdlt, u_klt = parsers.parser_gromacs.readDataGromacs(parser, P)
    elif P.software == 'Sire':
-      import parser_sire
-      nsnapshots, lv, dhdlt, u_klt = parser_sire.readDataSire(parser, P)
+      import parsers.parser_sire
+      nsnapshots, lv, dhdlt, u_klt = parsers.parser_sire.readDataSire(parser, P)
    else:
       from inspect import currentframe, getframeinfo
       lineno = getframeinfo(currentframe()).lineno
       print "\n\n%s\n You are analyzing data files that come from neither Gromacs nor Sire. \n Please modify lines %d and %d of this script.\n%s\n\n" % (78*"*", lineno+3, lineno+4, 78*"*")
       #### LINES TO BE MODIFIED
-      import YOUR_OWN_MODULE
-      nsnapshots, lv, dhdlt, u_klt = YOUR_OWN_MODULE.yourDataParser(*args, **kwargs)
+      import YOUR_OWN_FILE_PARSER
+      nsnapshots, lv, dhdlt, u_klt = parsers.YOUR_OWN_FILE_PARSER.yourDataParser(*args, **kwargs)
       #### All the four are numpy arrays.
       #### lv           is the array of lambda vectors.
       #### nsnapshots   is the number of equilibrated snapshots per each state.

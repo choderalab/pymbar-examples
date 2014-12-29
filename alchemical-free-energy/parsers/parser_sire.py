@@ -1,16 +1,6 @@
 import numpy
 from glob import glob # for pathname matching
-
-#===================================================================================================
-# FUNCTIONS: The unix-like helpers.
-#===================================================================================================
-
-def wcPy(f):
-   """Count up lines in file 'f'."""
-   if not type(f) is file:
-      with open(f, 'r') as f:
-         return wcPy(f)
-   return sum(1 for l in f)
+import unixlike
 
 #===================================================================================================
 # FUNCTIONS: This is the Sire lambda gradient file parser.
@@ -44,7 +34,7 @@ def readDataSire(parser, P):
                      break
             equilsnapshots  = int(P.equiltime/self.snap_size)
             self.skip_lines += equilsnapshots
-            nsnapshots.append(wcPy(infile) + 2 - equilsnapshots)
+            nsnapshots.append(unixlike.wcPy(infile) + 2 - equilsnapshots)
             print "first %s ps (%s snapshots) will be discarded due to equilibration..." % (P.equiltime, equilsnapshots)
 
       def loadtxtSire(self, state):
