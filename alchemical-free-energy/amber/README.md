@@ -1,4 +1,4 @@
-There are five subdirectories in `/data` named `ti00[1-5]`, each containing `ti00[1-5].out` (which are copies of the `ti001.out`, with `clambda` edited)
+There are five subdirectories in `data/` named `ti00[1-5]`, each containing `ti00[1-5].out` (which are copies of the `ti001.out`, with `clambda` edited)
 and `ti00[1-5].en` (copies of `ti001.en`).
 
 The output files were obtained by executing the script with the following options:
