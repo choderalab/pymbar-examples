@@ -1,15 +1,16 @@
 import numpy
-import os                       # operating-system-dependent modules of Python
+import os                       # for os interface
 import re                       # for regular expressions
-import unixlike                 # some implemented unixlike commands
 from glob import glob           # for pathname matching
 from collections import Counter # for counting elements in an array
+
+import unixlike                 # some implemented unixlike commands
 
 #===================================================================================================
 # FUNCTIONS: This is the Gromacs dhdl.xvg file parser.
 #===================================================================================================
 
-def readDataGromacs(parser, P):
+def readDataGromacs(P):
    """Read in .xvg files; return nsnapshots, lv, dhdlt, and u_klt."""
    
    class F:
@@ -25,19 +26,20 @@ def readDataGromacs(parser, P):
          l = [i for i in re.split('\.|-|_', meat) if i]
          try:
             self.state = l[0] = int(l[0]) # Will be of use for selective MBAR analysis.
-         except ValueError:
-            parser.error("\nFile's prefix should be followed by a numerical character. Cannot sort the files.")
+         except:
+            print "\nERROR!\nFile's prefix should be followed by a numerical character. Cannot sort the files.\n"
+            raise
          return tuple(l)
  
       def readHeader(self):
-         self.skip_lines   = 0  # Number of lines from the top that are to be skipped.
-         self.lv_names     = () # Lambda type names, e.g. 'coul', 'vdw'.
-         snap_size         = [] # Time from first two snapshots to determine snapshot's size.
-         self.lv           = [] # Lambda vectors, e.g. (0, 0), (0.2, 0), (0.5, 0).
+         self.skip_lines = 0  # Number of lines from the top that are to be skipped.
+         self.lv_names   = () # Lambda type names, e.g. 'coul', 'vdw'.
+         snap_size       = [] # Time from first two snapshots to determine snapshot's size.
+         self.lv         = [] # Lambda vectors, e.g. (0, 0), (0.2, 0), (0.5, 0).
  
-         self.bEnergy   = False
-         self.bPV       = False
-         self.bExpanded = False
+         self.bEnergy    = False
+         self.bPV        = False
+         self.bExpanded  = False
  
          print "Reading metadata from %s..." % self.filename
          with open(self.filename,'r') as infile:
@@ -135,13 +137,14 @@ def readDataGromacs(parser, P):
          if not(P.bIgnoreWL):
             logfilename = self.filename.replace('.xvg', '.log')
             if not os.path.isfile(logfilename):
-               parser.error("\nThe .log file '%s' is needed to figure out when the Wang-Landau weights have been equilibrated, and it was not found.\nYou may rerun with the -x flag and the data will be discarded to 'equiltime', not bothering\nwith the extraction of the information on when the WL weights equilibration was reached.\nOtherwise, put the proper log file into the directory which is subject to the analysis." % logfilename)
+               raise SystemExit("\nERROR!\nThe .log file '%s' is needed to figure out when the Wang-Landau weights have been equilibrated, and it was not found.\nYou may rerun with the -x flag and the data will be discarded to 'equiltime', not bothering\nwith the extraction of the information on when the WL weights equilibration was reached.\nOtherwise, put the proper log file into the directory which is subject to the analysis." % logfilename)
             try:
                with open(logfilename, 'r') as infile:
                   dt = float(unixlike.grepPy(infile, s='delta-t').split()[-1])
                   WLstep = int(unixlike.grepPy(infile, s='equilibrated').split()[1].replace(':', ''))
-            except IndexError:
-               parser.error("\nThe Wang-Landau weights haven't equilibrated yet.\nIf you comprehend the consequences, rerun with the -x flag and the data will be discarded to 'equiltime'.")
+            except:
+               print "\nERROR!\nThe Wang-Landau weights haven't equilibrated yet.\nIf you comprehend the consequences,\nrerun with the -x flag and the data\nwill be discarded to 'equiltime'.\n"
+               raise
             WLtime = WLstep * dt
          else:
             WLtime = -1
@@ -156,7 +159,7 @@ def readDataGromacs(parser, P):
    n_files = len(fs)
    
    if not n_files:
-      parser.error("\nNo files found within directory '%s' with prefix '%s' and suffix '%s': check your inputs." % datafile_tuple)
+      raise SystemExit("\nERROR!\nNo files found within directory '%s' with prefix '%s' and suffix '%s': check your inputs." % datafile_tuple)
    if n_files > 1:
       fs = sorted(fs, key=F.sortedHelper)
    
@@ -164,7 +167,8 @@ def readDataGromacs(parser, P):
       try:
          lambdas_to_skip = [int(l) for l in unixlike.trPy(P.bSkipLambdaIndex, '-').split()]
       except:
-         parser.error('\n\nDo not understand the format of the string that follows -k.\nIt should be a string of lambda indices linked by "-".')
+         print '\nERROR!\nDo not understand the format of the string that follows -k.\nIt should be a string of lambda indices linked by "-".\n'
+         raise
       fs = [f for f in fs if not f.state in lambdas_to_skip]
       n_files = len(fs)
    
@@ -178,11 +182,11 @@ def readDataGromacs(parser, P):
    
          if not f.lv_names == lv_names:
             if not len(f.lv_names) == n_components:
-               parser.error("\nFiles do not contain the same number of lambda gradient components; I cannot combine the data.")
+               raise SystemExit("\nERROR!\nFiles do not contain the same number of lambda gradient components; I cannot combine the data.")
             else:
-               parser.error("\nThe lambda gradient components have different names; I cannot combine the data.")
+               raise SystemExit("\nERROR!\nThe lambda gradient components have different names; I cannot combine the data.")
          if not f.bPV == bPV:
-            parser.error("\nSome files contain the PV energies, some do not; I cannot combine the files.")
+            raise SystemExit("\nERROR!\nSome files contain the PV energies, some do not; I cannot combine the files.")
    
       else:
    
@@ -201,7 +205,7 @@ def readDataGromacs(parser, P):
    # Scenario #1: Each file has all the dE columns -- can use MBAR.
    if len(ndE_unique) == 1: # [K]
       if not numpy.array([i == lv[0] for i in lv]).all():
-         parser.error("\nArrays of lambda vectors are different; I cannot combine the data.")
+         raise SystemExit("\nERROR!\nArrays of lambda vectors are different; I cannot combine the data.")
       else:
          lv = lv[0]
          # Handle the case when only some particular files/lambdas are given.
@@ -231,7 +235,7 @@ def readDataGromacs(parser, P):
       print "The files contain the number of the dE columns I cannot deal with; will terminate.\n\n%-10s %s " % ("# of dE's", "File")
       for nf, f in enumerate(fs):
          print "%6d     %s" % (ndE[nf], f.filename)
-      parser.error("\nThere are more than 3 groups of files (%s, to be exact) each having different number of the dE columns; I cannot combine the data." % len(ndE_unique))
+      raise SystemExit("\nERROR!\nThere are more than 3 groups of files (%s, to be exact) each having different number of the dE columns; I cannot combine the data." % len(ndE_unique))
    
    lv = numpy.array(lv, float) # *** Lambda vectors.
    K  = len(lv)                # *** Number of lambda states.

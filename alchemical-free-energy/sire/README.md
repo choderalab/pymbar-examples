@@ -2,16 +2,14 @@ To run the analysis on the example files, execute the script with the command:
 
 `python ../alchemical_analysis.py -a Sire -d data/ -p actual_grad_ -q dat -u kcal`
 
-within the directory with the data files.
-
 Here is a brief overview of the flags and how to call them for Sire. (The focus is on those that are relevant to Sire, or, more accurately, to the situation when the files to be analyzed contain only the dV/dLambda data.  
 `python alchemical_analysis.py -h` would yield a more detailed description).
 
--a is the name of the software the files come from; set to 'Sire'
+-a is the name of the software the files come from
 
--p is the data file prefix; set to 'actual_grad_'
+-p is the data file prefix
 
--q is the data file suffix; set to 'dat'
+-q is the data file suffix
 
 -d is the path to where the data files are; set to by default to '.'
 
@@ -35,17 +33,17 @@ Also, to make it self-contained, all imports of not built-in modules needed for 
 Below is a list of the command the output files were obtained with.
 
 screen_printout_1.txt:   
-`python alchemical_analysis.py -s Sire -d data/ -o . -q dat -u kcal`
+`python alchemical_analysis.py -a Sire -d data/ -p actual_grad_ -q dat -u kcal`
 (Analysis with default settings)
 
 screen_printout_2.txt:   
-`python alchemical_analysis.py -a Sire -d data/ -o . -m ti_cubic -u kJ -r 8 -q dat`
+`python alchemical_analysis.py -a Sire -d data/ -p actual_grad_ -q dat -m ti_cubic -u kJ -r 8`
 (The free energies are to be estimated with TI-CUBIC and reported in kJ/mol, with 8 decimal places)
 
 screen_printout_3.txt:   
-`python alchemical_analysis.py -a Sire -d data/ -o . -s 50 -q dat -u kcal`
+`python alchemical_analysis.py -a Sire -d data/ -p actual_grad_ -q dat -u kcal`
 (Skip first 50 ps)
 
-The dataset contained in the data/ directory is obtained from a 16-window simulation of the gas-phase methane-to-ethane transformation run in the Michel lab at the University of Edinburgh.
+The dataset contained in the data/ directory is obtained from a 16-window simulation of the gas-phase methanol-to-ethane transformation run in the Michel lab at the University of Edinburgh.
 
 ```
