@@ -158,13 +158,13 @@ def uncorrelate(sta, fin, do_dhdl=False):
       # Determine indices of uncorrelated samples from potential autocorrelation analysis at state k
       # (alternatively, could use the energy differences -- here, we will use total dhdl).
       g[k] = pymbar.timeseries.statisticalInefficiency(dhdl_sum)
-      indices = numpy.array(pymbar.timeseries.subsampleCorrelatedData(dhdl_sum, g=g[k])) # indices of uncorrelated samples
+      indices = sta[k] + numpy.array(pymbar.timeseries.subsampleCorrelatedData(dhdl_sum, g=g[k])) # indices of uncorrelated samples
       N = len(indices) # number of uncorrelated samples
       # Handle case where we end up with too few.
       if N < P.uncorr_threshold:
          if do_dhdl:
             print "WARNING: Only %s uncorrelated samples found at lambda number %s; proceeding with analysis using correlated samples..." % (N, k)
-         indices = numpy.arange(len(dhdl_sum))
+         indices = sta[k] + numpy.arange(len(dhdl_sum))
          N = len(indices)
       N_k[k] = N # Store the number of uncorrelated samples from state k.
       if not (u_klt is None):
