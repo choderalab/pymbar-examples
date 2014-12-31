@@ -13,4 +13,4 @@ the name of those subdirectories (in a form of the glob pattern) should preface 
 
 Whenever the `-v` flag (verbose option) is used, the averages and RMS fluctuations computed for each quantity present in the MDEN file (`ti00X.en` in our example; no requirement for it to bear the same prefix as the MDOUT file) will be computed and displayed.
 
-The dataset contained in the data/ directory was generated from the files obtained from a 21-window simulation of the vdw gas-phase methanol-to-ethane transformation run by Hannes Loeffler at STFC, UK.
+The dataset contained in the `data/` directory was generated from the files obtained from a 21-window simulation of the vdw gas-phase methanol-to-ethane transformation run by Hannes Loeffler at STFC, UK.
