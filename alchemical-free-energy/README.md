@@ -5,7 +5,7 @@ calculations, and comparison of MBAR to a number of other free energy
 methods described in Paliwal and Shirts, J. Chem. Theory Comp, v. 7,
 4115-4134 (2011).
 
-See description in `gromacs/README.md` and `sire/README.md`.
+See description in `gromacs/README.md`, `sire/README.md`, and `amber/README.md`.
 
 
 Help for `alchemical_analysis.py` (obtained with `python alchemical_analysis.py -h`) is:
@@ -13,8 +13,8 @@ Help for `alchemical_analysis.py` (obtained with `python alchemical_analysis.py 
 ```Options:
   -h, --help            show this help message and exit
   -a SOFTWARE, --software=SOFTWARE
-                        Package's name the data files come from. Default:
-                        Gromacs.  Options are currently 'Gromacs' and 'Sire'
+                        Package's name the data files come from: Gromacs,
+                        Sire, or AMBER. Default: Gromacs.
   -c, --cfm             The Curve-Fitting-Method-based consistency inspector.
                         Default: False.
   -d DATAFILE_DIRECTORY, --dir=DATAFILE_DIRECTORY
@@ -31,7 +31,7 @@ Help for `alchemical_analysis.py` (obtained with `python alchemical_analysis.py 
                         Perform the analysis with rather all the data if the
                         number of uncorrelated samples is found to be less
                         than this number. If 0 is given, the time series
-                        analysis will not be performed at all.
+                        analysis will not be performed at all. Default: 50.
   -k BSKIPLAMBDAINDEX, --koff=BSKIPLAMBDAINDEX
                         Give a string of lambda indices separated by '-' and
                         they will be removed from the analysis. (Another
@@ -57,7 +57,7 @@ Help for `alchemical_analysis.py` (obtained with `python alchemical_analysis.py 
                         Suffix for datafile sets, i.e. 'xvg' (default).
   -r DECIMAL, --decimal=DECIMAL
                         The number of decimal places the free energies are to
-                        be reported with. This is for the text
+                        be reported with. No worries, this is for the text
                         output only; the full-precision data will be stored in
                         'results.pickle'. Default: 3.
   -s EQUILTIME, --skiptime=EQUILTIME
@@ -69,7 +69,7 @@ Help for `alchemical_analysis.py` (obtained with `python alchemical_analysis.py 
   -u UNITS, --units=UNITS
                         Units to report energies: 'kJ', 'kcal', and 'kBT'.
                         Default: 'kJ'
-  -v, --verbose         Verbose option for BAR and MBAR. Default: False.
+  -v, --verbose         Verbose option. Default: False.
   -w, --overlap         Print out and plot the overlap matrix. Default: False.
   -x, --ignoreWL        Do not check whether the WL weights are equilibrated.
                         No log file needed as an accompanying input.
