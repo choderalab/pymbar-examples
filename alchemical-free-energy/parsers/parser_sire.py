@@ -1,12 +1,13 @@
 import numpy
 from glob import glob # for pathname matching
-import unixlike
+
+import unixlike       # some implemented unixlike commands
 
 #===================================================================================================
 # FUNCTIONS: This is the Sire lambda gradient file parser.
 #===================================================================================================
 
-def readDataSire(parser, P):
+def readDataSire(P):
    """Read in Sire's output files; return nsnapshots, lv, dhdlt, and u_klt."""
 
    class F:
@@ -47,7 +48,7 @@ def readDataSire(parser, P):
    fs = glob('%s/%s*%s' % datafile_tuple)
    K = len(fs)
    if not K:
-      parser.error("\nNo files found within directory '%s' with prefix '%s' and suffix '%s': check your inputs." % datafile_tuple)
+      raise SystemExit("\nERROR!\nNo files found within directory '%s' with prefix '%s' and suffix '%s': check your inputs." % datafile_tuple)
    len_fstring = max([len(i) for i in fs])
 
    n_components = 1
