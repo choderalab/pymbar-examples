@@ -31,7 +31,7 @@ parser.add_option('-c', '--cfm', dest = 'bCFM', help = 'The Curve-Fitting-Method
 parser.add_option('-d', '--dir', dest = 'datafile_directory', help = 'Directory in which data files are stored. Default: Current directory.', default = '.')
 parser.add_option('-f', '--forwrev', dest = 'bForwrev', help = 'Plotting the free energy change as a function of time in both directions. The number of time points (an integer) is to be followed the flag. Default: 0', default = 0, type=int)
 parser.add_option('-g', '--breakdown', dest = 'breakdown', help = 'Plotting the free energy differences evaluated for each pair of adjacent states for all methods. Default: False.', default = False, action = 'store_true')
-parser.add_option('-i', '--threshold', dest = 'uncorr_threshold', help = 'Perform the analysis with rather all the data if the number of uncorrelated samples is found to be less than this number. If 0 is given, the time series analysis will not be performed at all. Default: 50.', default = 50, type=int)
+parser.add_option('-i', '--threshold', dest = 'uncorr_threshold', help = 'Proceed with correlated samples if the number of uncorrelated samples is found to be less than this number. If 0 is given, the time series analysis will not be performed at all. Default: 50.', default = 50, type=int)
 parser.add_option('-k', '--koff', dest = 'bSkipLambdaIndex', help = 'Give a string of lambda indices separated by \'-\' and they will be removed from the analysis. (Another approach is to have only the files of interest present in the directory). Default: None.', default = '')
 parser.add_option('-m', '--methods', dest = 'methods', help = 'A list of the methods to esitimate the free energy with. Default: [TI, TI-CUBIC, DEXP, IEXP, BAR, MBAR]. To add/remove methods to the above list provide a string formed of the method strings preceded with +/-. For example, \'-ti_cubic+gdel\' will turn methods into [TI, DEXP, IEXP, BAR, MBAR, GDEL]. \'ti_cubic+gdel\', on the other hand, will call [TI-CUBIC, GDEL]. \'all\' calls the full list of supported methods [TI, TI-CUBIC, DEXP, IEXP, GINS, GDEL, BAR, UBAR, RBAR, MBAR].', default = '')
 parser.add_option('-o', '--out', dest = 'output_directory', help = 'Directory in which the output files produced by this script will be stored. Default: Same as datafile_directory.', default = '')
@@ -158,13 +158,13 @@ def uncorrelate(sta, fin, do_dhdl=False):
       # Determine indices of uncorrelated samples from potential autocorrelation analysis at state k
       # (alternatively, could use the energy differences -- here, we will use total dhdl).
       g[k] = pymbar.timeseries.statisticalInefficiency(dhdl_sum)
-      indices = numpy.array(pymbar.timeseries.subsampleCorrelatedData(dhdl_sum, g=g[k])) # indices of uncorrelated samples
+      indices = sta[k] + numpy.array(pymbar.timeseries.subsampleCorrelatedData(dhdl_sum, g=g[k])) # indices of uncorrelated samples
       N = len(indices) # number of uncorrelated samples
       # Handle case where we end up with too few.
       if N < P.uncorr_threshold:
          if do_dhdl:
             print "WARNING: Only %s uncorrelated samples found at lambda number %s; proceeding with analysis using correlated samples..." % (N, k)
-         indices = numpy.arange(len(dhdl_sum))
+         indices = sta[k] + numpy.arange(len(dhdl_sum))
          N = len(indices)
       N_k[k] = N # Store the number of uncorrelated samples from state k.
       if not (u_klt is None):
