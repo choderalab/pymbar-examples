@@ -298,9 +298,6 @@ for i in range(nbins):
 # Initialize MBAR.
 #===================================================================================================
 
-# Compute initial guess using histogram WHAM.
-print "Using WHAM to generate histogram-based initial guess of dimensionless free energies f_k..."
-
 # Initialize MBAR
 mbar = pymbar.MBAR(u_kln, N_k, verbose = True)
 
