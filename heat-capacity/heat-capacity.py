@@ -263,7 +263,7 @@ for n in range(nBoots_work):
 	else:
 		initial_f_k = mbar.f_k # start from the previous final free energies to speed convergence
 		
-	mbar = pymbar.MBAR(u_kln, Nall_k, method = 'adaptive', verbose=False, relative_tolerance=1e-12, initial_f_k=initial_f_k)
+	mbar = pymbar.MBAR(u_kln, Nall_k, verbose=False, relative_tolerance=1e-12, initial_f_k=initial_f_k)
 
         #------------------------------------------------------------------------
 	# Compute Expectations for E_kt and E2_kt as E_expect and E2_expect
@@ -274,13 +274,13 @@ for n in range(nBoots_work):
  	E_kln = u_kln  # not a copy, we are going to write over it, but we don't need it any more.
  	for k in range(K):
  		E_kln[:,k,:]*=beta_k[k]**(-1)  # get the 'unreduced' potential -- we can't take differences of reduced potentials because the beta is different.
-	(E_expect, dE_expect) = mbar.computeExpectations(E_kln)
+	(E_expect, dE_expect) = mbar.computeExpectations(E_kln, state_dependent = True)
 	allE_expect[:,n] = E_expect[:]
         # expectations for the differences, which we need for numerical derivatives
-	(DeltaE_expect, dDeltaE_expect) = mbar.computeExpectations(E_kln,output='differences')
+	(DeltaE_expect, dDeltaE_expect) = mbar.computeExpectations(E_kln,output='differences', state_dependent = True)
 
         print "Computing Expectations for E^2..."
-        (E2_expect,dE2_expect) = mbar.computeExpectations(E_kln**2)
+        (E2_expect,dE2_expect) = mbar.computeExpectations(E_kln**2, state_dependent = True)
 	allE2_expect[:,n] = E2_expect[:]
 
 	# get the free energies
