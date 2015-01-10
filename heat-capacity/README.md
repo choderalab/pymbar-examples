@@ -1,6 +1,6 @@
 USAGE:  
 
-For calling with bootstrap error estimates:
+For calling with MBAR error estimates:
 
 python heat-capacity.py -d energydata > heat-capacity.py.sample_out_no_bootstrap
  
