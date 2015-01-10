@@ -20,7 +20,7 @@ parser = OptionParser()
 
 parser.add_option("-d", "--directory", dest="simulation",
                   help="the directory of the energies we care about")
-parser.add_option("-b", "--nboostraps", dest="nBoots",type = int, default=0,
+parser.add_option("-b", "--nbootstraps", dest="nBoots",type = int, default=0,
                   help="Number of samples at the beginning that are ignored") 
 parser.add_option("-s", "--spacing", dest="NumIntermediates",type = "int", default = 100,
                   help="Number of intermediate simulations used to calculate finite differences (default 100)")
