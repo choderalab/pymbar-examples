@@ -1,45 +1,28 @@
-Parallel tempering data for alanine dipeptide in explicit solvent.
-Only (phi,psi) trajectories and energies have been collected here.
+# Estimate 2D potential of mean force for alanine dipeptide parallel tempering data using MBAR.
 
-Data for the alanine dipeptide data can be found here:
+This example demonstrates how MBAR [1] can be used to estimate a 2D potential of mean force from parallel tempering simulation data [2].
+The system of interest is terminally-blocked alanine peptide in explicit solvent (described in [2]), and the 2D PMF is computed for a simple binning of phi and psi torsion angles.
 
-http://www.dillgroup.ucsf.edu/~jchodera/exports/jan-hendrik.prinz/alanine-dipeptide
+## Protocol
 
-there is a torsion-trajectories/ directory with one file for each
-temperature.  All torsion trajectories are concatenated, with 20 ps
-per trajectory and samples written every 0.1 ps (for 200 samples /
-trajectory).  The torsion angles are written in scientific notation,
-such as
+* Potential energies and (phi, psi) torsions from parallel tempering simulation are read in by temperature
+* Replica trajectories of potential energies and torsions are reconstructed to reflect their true temporal correlation, and then subsampled to produce statistically independent samples, collecting them again by temperature
+* The `pymbar` class is initialized to compute the dimensionless free energies at each temperature using MBAR
+* The torsions are binned into sequentially labeled bins in two dimensions
+* The relative free energies and uncertainties of these torsion bins at the temperature of interest is estimated
+* The 2D PMF is written out
 
-L0 3.587457e+01 1.769885e+02 -1.573196e+02 1.750121e+02 -1.714699e+02
+## References
 
-Where you should ignore the first 'L0' column and use the remaining
-numbers, which are
+>  [1] Shirts MR and Chodera JD. Statistically optimal analysis of samples from multiple equilibrium states.
+>  J. Chem. Phys. 129:124105, 2008
+>  http://dx.doi.org/10.1063/1.2978177
+>
+>  [2] Chodera JD, Swope WC, Pitera JW, and Dill KA. Long-time protein folding dynamics from short-time molecular dynamics simulations.
+>  Multiscale Modeling & Simulation, Special Section on Multiscale Modeling in Biology, 5(4):1214-1226, 2006.
+>  http://dx.doi.org/10.1137/06065146X
 
-psi1
-omega1
-phi2
-psi2
-omega2
+## Manifest
 
-You want 'phi2' and 'psi2'.
-
-The temperatures are listed in the file 'temps', with the first
-temperature starting from 0.  That means that 5.tors is for 302 K and
-19.tors is for 400 K.
-
-The first line of the files are blank.
-
-The coordinate trajectories (which I've only copied for temperature
-indices 5 and 19) are in coordinate-trajectories/.  I've provided you
-with gzipped AMBER trajectories.
-
-I've also copied a PDB file of the solute and the whole system so you
-know which atoms are which, and the number of atoms in the coordinate
-files.
-
-etot.out - total energies for each trajectory
-
-The etot.out file has 100200 lines and 40 columns.  Each column is the total energy trajectory for one of the temperatures.  You will probably want to average the energy for all 200 snapshots in each trajectory segment of 20 ps to produce the energy you will use in reweighting.
-
-It appears that I *did* run 501 iterations of 20 ps each, because I started counting at 0 and stopped counting after 500.  I don't know why I didn't remember this, but I think my analysis may have excluded the last iteration for the paper.
+* `parallel-tempering-2dpmf.py` - Python script to execute this data analysis example
+* `data/` - data directory (see `data/README.md` for documentation of data files)
