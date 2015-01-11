@@ -1,24 +1,25 @@
 #!/usr/bin/python
 
-# Estimate 2D potential of mean force for alanine dipeptide parallel tempering data using MBAR.
-#
-# PROTOCOL
-#
-# * Potential energies and (phi, psi) torsions from parallel tempering simulation are read in by temperature
-# * Replica trajectories of potential energies and torsions are reconstructed to reflect their true temporal
-#   correlation, and then subsampled to produce statistically independent samples, collecting them again by temperature
-# * The `pymbar` class is initialized to compute the dimensionless free energies at each temperature using MBAR
-# * The torsions are binned into sequentially labeled bins in two dimensions
-# * The relative free energies and uncertainties of these torsion bins at the temperature of interest is estimated
-# * The 2D PMF is written out
-#
-#
-# REFERENCES
-#
-# [1] Shirts MR and Chodera JD. Statistically optimal analysis of samples from multiple equilibrium states.
-# J. Chem. Phys. 129:124105, 2008
-# http://dx.doi.org/10.1063/1.2978177
-#
+"""
+Estimate 2D potential of mean force for alanine dipeptide parallel tempering data using MBAR.
+
+PROTOCOL
+
+* Potential energies and (phi, psi) torsions from parallel tempering simulation are read in by temperature
+* Replica trajectories of potential energies and torsions are reconstructed to reflect their true temporal
+  correlation, and then subsampled to produce statistically independent samples, collecting them again by temperature
+* The `pymbar` class is initialized to compute the dimensionless free energies at each temperature using MBAR
+* The torsions are binned into sequentially labeled bins in two dimensions
+* The relative free energies and uncertainties of these torsion bins at the temperature of interest is estimated
+* The 2D PMF is written out
+
+REFERENCES
+
+[1] Shirts MR and Chodera JD. Statistically optimal analysis of samples from multiple equilibrium states.
+J. Chem. Phys. 129:124105, 2008
+http://dx.doi.org/10.1063/1.2978177
+"""
+
 #===================================================================================================
 # IMPORTS
 #===================================================================================================
