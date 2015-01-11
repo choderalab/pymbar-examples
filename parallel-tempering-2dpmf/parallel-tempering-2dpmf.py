@@ -6,9 +6,8 @@
 #
 # * Potential energies and (phi, psi) torsions from parallel tempering simulation are read in by temperature
 # * Replica trajectories of potential energies and torsions are reconstructed to reflect their true temporal
-# correlation, and then subsampled to produce statistically independent samples, collecting them again by temperature
-# * The MBAR class is initialized with this initial guess at dimensionless free energies f_k, reducing time for
-# solution of self-consistent equations
+#   correlation, and then subsampled to produce statistically independent samples, collecting them again by temperature
+# * The `pymbar` class is initialized to compute the dimensionless free energies at each temperature using MBAR
 # * The torsions are binned into sequentially labeled bins in two dimensions
 # * The relative free energies and uncertainties of these torsion bins at the temperature of interest is estimated
 # * The 2D PMF is written out
@@ -279,7 +278,7 @@ for i in range(nbins):
 #===================================================================================================
 
 # Initialize MBAR
-mbar = pymbar.MBAR(u_kln, N_k, verbose = True)
+mbar = pymbar.MBAR(u_kln, N_k, verbose=True)
 
 #===================================================================================================
 # Compute PMF at the desired temperature.
