@@ -1,25 +1,25 @@
 #!/usr/bin/python
 
-# Estimate 2D potential of mean force for alanine dipeptide parallel tempering data using MBAR.
-#
-# PROTOCOL
-#
-# * Potential energies and (phi, psi) torsions from parallel tempering simulation are read in by temperature
-# * Replica trajectories of potential energies and torsions are reconstructed to reflect their true temporal
-# correlation, and then subsampled to produce statistically independent samples, collecting them again by temperature
-# * The MBAR class is initialized with this initial guess at dimensionless free energies f_k, reducing time for
-# solution of self-consistent equations
-# * The torsions are binned into sequentially labeled bins in two dimensions
-# * The relative free energies and uncertainties of these torsion bins at the temperature of interest is estimated
-# * The 2D PMF is written out
-# 
-#
-# REFERENCES
-#
-# [1] Shirts MR and Chodera JD. Statistically optimal analysis of samples from multiple equilibrium states.
-# J. Chem. Phys. 129:124105, 2008
-# http://dx.doi.org/10.1063/1.2978177
-#
+"""
+Estimate 2D potential of mean force for alanine dipeptide parallel tempering data using MBAR.
+
+PROTOCOL
+
+* Potential energies and (phi, psi) torsions from parallel tempering simulation are read in by temperature
+* Replica trajectories of potential energies and torsions are reconstructed to reflect their true temporal
+  correlation, and then subsampled to produce statistically independent samples, collecting them again by temperature
+* The `pymbar` class is initialized to compute the dimensionless free energies at each temperature using MBAR
+* The torsions are binned into sequentially labeled bins in two dimensions
+* The relative free energies and uncertainties of these torsion bins at the temperature of interest is estimated
+* The 2D PMF is written out
+
+REFERENCES
+
+[1] Shirts MR and Chodera JD. Statistically optimal analysis of samples from multiple equilibrium states.
+J. Chem. Phys. 129:124105, 2008
+http://dx.doi.org/10.1063/1.2978177
+"""
+
 #===================================================================================================
 # IMPORTS
 #===================================================================================================
@@ -57,43 +57,23 @@ nbins_per_torsion = 10 # number of bins per torsion dimension
 
 def read_file(filename):
    """Read contents of the specified file.
-      
-   ARGUMENTS
-     filename (string) - the name of the file to be read
-     
-   RETURNS
-     lines (list of strings) - the contents of the file, split by line
+
+   Parameters:
+   -----------
+   filename : str
+      The name of the file to be read
+
+   Returns:
+   lines : list of str
+      The contents of the file, split by line
 
    """
 
    infile = open(filename, 'r')
    lines = infile.readlines()
    infile.close()
-   
+
    return lines
-
-def logSum(log_terms):
-   """Compute the log of a sum of terms whose logarithms are provided.
-
-   REQUIRED ARGUMENTS  
-      log_terms is the array (possibly multidimensional) containing the logs of the terms to be summed.
-
-   RETURN VALUES
-      log_sum is the log of the sum of the terms.
-
-   """
-
-   # compute the maximum argument
-   max_log_term = log_terms.max()
-
-   # compute the reduced terms
-   terms = numpy.exp(log_terms - max_log_term)
-
-   # compute the log sum
-   log_sum = log( terms.sum() ) + max_log_term
-
-   # return the log sum
-   return log_sum
 
 #===================================================================================================
 # MAIN
@@ -113,7 +93,7 @@ temperature_k = numpy.zeros([K], numpy.float32) # temperature_k[k] is temperatur
 for k in range(K):
    temperature_k[k] = float(temperatures[k])
 # Compute inverse temperatures
-beta_k = (kB * temperature_k)**(-1) 
+beta_k = (kB * temperature_k)**(-1)
 
 # Define other constants
 T = trajectory_segment_length * niterations # total number of snapshots per temperature
@@ -143,10 +123,10 @@ phi_kt = numpy.zeros([K,T], numpy.float32) # phi_kt[k,n,t] is phi angle (in degr
 psi_kt = numpy.zeros([K,T], numpy.float32) # psi_kt[k,n,t] is psi angle (in degrees) for snapshot t of temperature k
 for k in range(K):
    phi_filename = os.path.join(data_directory, 'backbone-torsions', '%d.phi' % (k))
-   psi_filename = os.path.join(data_directory, 'backbone-torsions', '%d.psi' % (k))   
+   psi_filename = os.path.join(data_directory, 'backbone-torsions', '%d.psi' % (k))
    phi_lines = read_file(phi_filename)
    psi_lines = read_file(psi_filename)
-   print "k = %d, %d phi lines read, %d psi lines read" % (k, len(phi_lines), len(psi_lines))   
+   print "k = %d, %d phi lines read, %d psi lines read" % (k, len(phi_lines), len(psi_lines))
    for t in range(T):
       # Extract phi and psi
       phi_kt[k,t] = float(phi_lines[t])
@@ -203,7 +183,7 @@ else:
    g_cosphi = timeseries.statisticalInefficiencyMultiple(numpy.cos(phi_kt_replica * numpy.pi / 180.0))
    print "g_cos(phi) = %.1f" % g_cosphi
    g_sinphi = timeseries.statisticalInefficiencyMultiple(numpy.sin(phi_kt_replica * numpy.pi / 180.0))
-   print "g_sin(phi) = %.1f" % g_sinphi   
+   print "g_sin(phi) = %.1f" % g_sinphi
    g_cospsi = timeseries.statisticalInefficiencyMultiple(numpy.cos(psi_kt_replica * numpy.pi / 180.0))
    print "g_cos(psi) = %.1f" % g_cospsi
    g_sinpsi = timeseries.statisticalInefficiencyMultiple(numpy.sin(psi_kt_replica * numpy.pi / 180.0))
@@ -211,9 +191,9 @@ else:
    # Subsample data with maximum of all correlation times.
    print "Subsampling data..."
    g = numpy.max(numpy.array([g_cosphi, g_sinphi, g_cospsi, g_sinpsi]))
-   indices = timeseries.subsampleCorrelatedData(U_kt[k,:], g = g)   
+   indices = timeseries.subsampleCorrelatedData(U_kt[k,:], g = g)
    print "Using g = %.1f to obtain %d uncorrelated samples per temperature" % (g, len(indices))
-   N_max = int(numpy.ceil(T / g)) # max number of samples per temperature   
+   N_max = int(numpy.ceil(T / g)) # max number of samples per temperature
    U_kn = numpy.zeros([K, N_max], numpy.float64)
    phi_kn = numpy.zeros([K, N_max], numpy.float64)
    psi_kn = numpy.zeros([K, N_max], numpy.float64)
@@ -223,7 +203,7 @@ else:
       phi_kn[k,:] = phi_kt[k,indices]
       psi_kn[k,:] = psi_kt[k,indices]
    print "%d uncorrelated samples per temperature" % N_max
-         
+
 #===================================================================================================
 # Generate a list of indices of all configurations in kn-indexing
 #===================================================================================================
@@ -266,7 +246,7 @@ bin_counts = list()
 bin_centers = list() # bin_centers[i] is a (phi,psi) tuple that gives the center of bin i
 for i in range(nbins_per_torsion):
    for j in range(nbins_per_torsion):
-      # Determine (phi,psi) of bin center.      
+      # Determine (phi,psi) of bin center.
       phi = torsion_min + dx * (i + 0.5)
       psi = torsion_min + dx * (j + 0.5)
 
@@ -284,9 +264,9 @@ for i in range(nbins_per_torsion):
          bin_centers.append( (phi, psi) )
          bin_counts.append( bin_count )
 
-         # assign these conformations to the bin index         
+         # assign these conformations to the bin index
          bin_kn[indices_in_bin] = nbins
-         
+
          # increment number of bins
          nbins += 1
 
@@ -299,7 +279,7 @@ for i in range(nbins):
 #===================================================================================================
 
 # Initialize MBAR
-mbar = pymbar.MBAR(u_kln, N_k, verbose = True)
+mbar = pymbar.MBAR(u_kln, N_k, verbose=True)
 
 #===================================================================================================
 # Compute PMF at the desired temperature.
@@ -312,7 +292,7 @@ target_beta = 1.0 / (kB * target_temperature)
 u_kn = target_beta * U_kn
 # Compute PMF at this temperature, returning dimensionless free energies and uncertainties.
 # f_i[i] is the dimensionless free energy of bin i (in kT) at the temperature of interest
-# df_i[i,j] is an estimate of the covariance in the estimate of (f_i[i] - f_j[j], with reference 
+# df_i[i,j] is an estimate of the covariance in the estimate of (f_i[i] - f_j[j], with reference
 # the lowest free energy state.
 (f_i, df_i) = mbar.computePMF(u_kn, bin_kn, nbins, uncertainties='from-lowest')
 
