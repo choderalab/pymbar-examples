@@ -75,33 +75,6 @@ def read_file(filename):
 
    return lines
 
-def logSum(log_terms):
-   """Compute the log of a sum of terms whose logarithms are provided.
-
-   Parameters:
-   -----------
-   log_terms : numpy array
-      The array (possibly multidimensional) containing the logs of the terms to be summed.
-
-   Returns:
-   --------
-   log_sum : float
-      The log of the sum of the terms.
-
-   """
-
-   # compute the maximum argument
-   max_log_term = log_terms.max()
-
-   # compute the reduced terms
-   terms = numpy.exp(log_terms - max_log_term)
-
-   # compute the log sum
-   log_sum = log( terms.sum() ) + max_log_term
-
-   # return the log sum
-   return log_sum
-
 #===================================================================================================
 # MAIN
 #===================================================================================================
