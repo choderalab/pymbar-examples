@@ -10,7 +10,7 @@ REFERENCES
 
 MANIFEST
 
-original-data/ - original data in Excel spreadsheet form, provided by Michael T. Woodside <Michael.Woodside@nrc-cnrc.gc.ca>, corresponding author of [1]
+original-data/ - original data in Excel spreadsheet form, provided by Michael T. Woodside <Michael.Woodside@nrc-cnrc.gc.ca>, corresponding author of [1].  Data has been compressed with bzip2 as 20R55_4T_data.xls.bz2
 processed-data/ - external biasing forces (in pN) and extension trajectories (in nm, 0.1 ms time resolution) extracted from the Excel files in original-data/
 extract-data.py - Python script to extract data from Excel datafiles (slow!)
 force-bias-optical-trap.py - Python script to compute potentials of mean force (PMFs) using MBAR

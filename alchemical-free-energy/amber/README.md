@@ -1,5 +1,9 @@
-There are five subdirectories in `data/` named `ti00[1-5]`, each containing `ti00[1-5].out` (which are copies of the `ti001.out`, with `clambda` edited)
+There are five subdirectories in `data/` named `ti00[1-5]`, each containing `ti00[1-5].out.bz2` (which are copies of the `ti001.out`, with `clambda` edited then compressed with bzip2 )
 and `ti00[1-5].en` (copies of `ti001.en`).
+
+ti00[1-5].out.bz2 files are compressed for space reasons in the
+repository (each about 6 MB before compression and 1 MB after).  They
+must be decompressed by running 'bunzip data/*.bz2'.
 
 The output files were obtained by executing the script with the following options:
 
